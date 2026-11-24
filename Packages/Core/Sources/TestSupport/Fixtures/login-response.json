@@ -1,0 +1,24 @@
+{
+  "user": {
+    "id": "user_fixture",
+    "username": "fixture-user",
+    "type": "user",
+    "isActive": true,
+    "isLocked": false,
+    "accessToken": "<redacted>",
+    "refreshToken": "<redacted>",
+    "token": "<redacted>",
+    "librariesAccessible": ["library_book_fixture", "library_podcast_fixture"],
+    "permissions": {},
+    "mediaProgress": [],
+    "bookmarks": []
+  },
+  "userDefaultLibraryId": "library_book_fixture",
+  "serverSettings": {
+    "version": "2.35.1",
+    "language": "en-us",
+    "authActiveAuthMethods": ["local"]
+  },
+  "ereaderDevices": [],
+  "Source": "server"
+}

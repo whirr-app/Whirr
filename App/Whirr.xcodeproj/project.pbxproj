@@ -1,0 +1,1183 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D83FBDFF048754E71E8A4CD /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = BF4168654E465BFAFEDC17E8 /* DesignSystem */; };
+		2C56C3943050174F002E71D3 /* WhirrWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2C56C38A3050174E002E71D3 /* WhirrWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2C56C39B30501787002E71D3 /* WatchProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 2C56C39A30501787002E71D3 /* WatchProtocol */; };
+		2C56C39D305017A4002E71D3 /* WatchProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 2C56C39C305017A4002E71D3 /* WatchProtocol */; };
+		2C56C3B7305027E2002E71D3 /* WatchPlayback in Frameworks */ = {isa = PBXBuildFile; productRef = 2C56C3B6305027E2002E71D3 /* WatchPlayback */; };
+		2C56C3B9305027F9002E71D3 /* ABSApi in Frameworks */ = {isa = PBXBuildFile; productRef = 2C56C3B8305027F9002E71D3 /* ABSApi */; };
+		2C56C3BB30502819002E71D3 /* PlayerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C56C3BA30502819002E71D3 /* PlayerCore */; };
+		2C7E0BF4309E3716002F04A0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0BF3309E3716002F04A0 /* WidgetKit.framework */; };
+		2C7E0BF6309E3716002F04A0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E0BF5309E3716002F04A0 /* SwiftUI.framework */; };
+		2C7E0C05309E3718002F04A0 /* WhirrWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2C7E0BF2309E3716002F04A0 /* WhirrWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2C7E0C0F309E5069002F04A0 /* WidgetProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 2C7E0C0E309E5069002F04A0 /* WidgetProtocol */; };
+		2C7E0C11309E5071002F04A0 /* WidgetProtocol in Frameworks */ = {isa = PBXBuildFile; productRef = 2C7E0C10309E5071002F04A0 /* WidgetProtocol */; };
+		2CA8FD7330B36D790010B6FD /* TestSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA8FD7230B36D790010B6FD /* TestSupport */; };
+		2CC9F97B300F652C000E4DA8 /* AppModel in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC9F97A300F652C000E4DA8 /* AppModel */; };
+		2CCFE87630B1A85500628E0E /* PodcastFeeds in Frameworks */ = {isa = PBXBuildFile; productRef = 2CCFE87530B1A85500628E0E /* PodcastFeeds */; };
+		2CCFFBEB30754BE300F5D0FC /* AdSkip in Frameworks */ = {isa = PBXBuildFile; productRef = 2CCFFBEA30754BE300F5D0FC /* AdSkip */; };
+		5CCC8E06E457C3B9F058525C /* ABSApi in Frameworks */ = {isa = PBXBuildFile; productRef = D06A0918BBDF15631BE154A0 /* ABSApi */; };
+		607C029A505DC5191EDD31E0 /* Persistence in Frameworks */ = {isa = PBXBuildFile; productRef = 87FBD1240DD49FED4337F249 /* Persistence */; };
+		66661A9A117542958285A6AF /* ReadiumAdapterGCDWebServer in Frameworks */ = {isa = PBXBuildFile; productRef = CCD79E985EBD403DAA433626 /* ReadiumAdapterGCDWebServer */; };
+		78723F7E7C204DAA72C7D790 /* PlayerCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8EE8C8FA82A287141B40FA53 /* PlayerCore */; };
+		A1B2C3D4E5F60000C0DE0001 /* CoreSupport in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F60000C0DE0002 /* CoreSupport */; };
+		CDB9FED7EEE3A0FBA46754F5 /* ReaderCore in Frameworks */ = {isa = PBXBuildFile; productRef = B5DF24CF406924DB8D26FD95 /* ReaderCore */; };
+		DD05E835A562403C9F1D6246 /* ReadiumNavigator in Frameworks */ = {isa = PBXBuildFile; productRef = 907654D2DF5A40619196DAC3 /* ReadiumNavigator */; };
+		E2EFDD01A7F54D268B663938 /* ReadiumShared in Frameworks */ = {isa = PBXBuildFile; productRef = EF24EC73C5E34248A79E95FE /* ReadiumShared */; };
+		E8732BCB77444BCE871F40CA /* ReadiumStreamer in Frameworks */ = {isa = PBXBuildFile; productRef = 71D2AE05D2F04022AA434D77 /* ReadiumStreamer */; };
+		FBD79165D2A40AC18F8F561E /* SyncEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 798A35EE5DD192CFD5FA6A46 /* SyncEngine */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C56C3923050174F002E71D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CE0CE11300F5E6900DA1351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C56C3893050174E002E71D3;
+			remoteInfo = "WhirrWatch Watch App";
+		};
+		2C7E0C03309E3718002F04A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CE0CE11300F5E6900DA1351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C7E0BF1309E3716002F04A0;
+			remoteInfo = WhirrWidgetsExtension;
+		};
+		A1B2C3D400000000000000A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CE0CE11300F5E6900DA1351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CE0CE18300F5E6900DA1351;
+			remoteInfo = Whirr;
+		};
+		AC93193CEE874330B58988A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CE0CE11300F5E6900DA1351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CE0CE18300F5E6900DA1351;
+			remoteInfo = Whirr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C56C3953050174F002E71D3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2C56C3943050174F002E71D3 /* WhirrWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C7E0C0A309E3718002F04A0 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2C7E0C05309E3718002F04A0 /* WhirrWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1116AE851C72462192B844C0 /* WhirrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhirrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C56C38A3050174E002E71D3 /* WhirrWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WhirrWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7E0BF2309E3716002F04A0 /* WhirrWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhirrWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C7E0BF3309E3716002F04A0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2C7E0BF5309E3716002F04A0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2C7E0C0B309E37C1002F04A0 /* WhirrWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhirrWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		2CE0CE19300F5E6900DA1351 /* Whirr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whirr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D400000000000000A1 /* WhirrPerformanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhirrPerformanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2C7E0C09309E3718002F04A0 /* Exceptions for "WhirrWidgets" folder in "WhirrWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2C7E0BF1309E3716002F04A0 /* WhirrWidgetsExtension */;
+		};
+		2C7E0C15309E61E5002F04A0 /* Exceptions for "Whirr" folder in "WhirrWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Playback/SiriPlaybackIntents.swift,
+			);
+			target = 2C7E0BF1309E3716002F04A0 /* WhirrWidgetsExtension */;
+		};
+		2CC9F989300FA775000E4DA8 /* Exceptions for "Whirr" folder in "Whirr" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2CE0CE18300F5E6900DA1351 /* Whirr */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2C56C38B3050174E002E71D3 /* WhirrWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WhirrWatch Watch App";
+			sourceTree = "<group>";
+		};
+		2C7E0BF7309E3716002F04A0 /* WhirrWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2C7E0C09309E3718002F04A0 /* Exceptions for "WhirrWidgets" folder in "WhirrWidgetsExtension" target */,
+			);
+			path = WhirrWidgets;
+			sourceTree = "<group>";
+		};
+		2CE0CE1B300F5E6900DA1351 /* Whirr */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2CC9F989300FA775000E4DA8 /* Exceptions for "Whirr" folder in "Whirr" target */,
+				2C7E0C15309E61E5002F04A0 /* Exceptions for "Whirr" folder in "WhirrWidgetsExtension" target */,
+			);
+			path = Whirr;
+			sourceTree = "<group>";
+		};
+		9C15A2C729B746279677B063 /* WhirrTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WhirrTests;
+			sourceTree = "<group>";
+		};
+		A1B2C3D400000000000000A2 /* WhirrPerformanceTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WhirrPerformanceTests;
+			sourceTree = "<group>";
+		};
+		A1B2C3D400000000000000B1 /* WatchShared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WatchShared;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DE32F408A04431F95B6F419 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CA8FD7330B36D790010B6FD /* TestSupport in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C56C3873050174E002E71D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CCFE87630B1A85500628E0E /* PodcastFeeds in Frameworks */,
+				2C56C3BB30502819002E71D3 /* PlayerCore in Frameworks */,
+				2C56C3B9305027F9002E71D3 /* ABSApi in Frameworks */,
+				2C56C39B30501787002E71D3 /* WatchProtocol in Frameworks */,
+				2C56C3B7305027E2002E71D3 /* WatchPlayback in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C7E0BEF309E3716002F04A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7E0BF6309E3716002F04A0 /* SwiftUI.framework in Frameworks */,
+				2C7E0C11309E5071002F04A0 /* WidgetProtocol in Frameworks */,
+				2C7E0BF4309E3716002F04A0 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CE0CE16300F5E6900DA1351 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC9F97B300F652C000E4DA8 /* AppModel in Frameworks */,
+				2C7E0C0F309E5069002F04A0 /* WidgetProtocol in Frameworks */,
+				5CCC8E06E457C3B9F058525C /* ABSApi in Frameworks */,
+				607C029A505DC5191EDD31E0 /* Persistence in Frameworks */,
+				FBD79165D2A40AC18F8F561E /* SyncEngine in Frameworks */,
+				78723F7E7C204DAA72C7D790 /* PlayerCore in Frameworks */,
+				CDB9FED7EEE3A0FBA46754F5 /* ReaderCore in Frameworks */,
+				0D83FBDFF048754E71E8A4CD /* DesignSystem in Frameworks */,
+				A1B2C3D4E5F60000C0DE0001 /* CoreSupport in Frameworks */,
+				2C56C39D305017A4002E71D3 /* WatchProtocol in Frameworks */,
+				E2EFDD01A7F54D268B663938 /* ReadiumShared in Frameworks */,
+				E8732BCB77444BCE871F40CA /* ReadiumStreamer in Frameworks */,
+				DD05E835A562403C9F1D6246 /* ReadiumNavigator in Frameworks */,
+				2CCFFBEB30754BE300F5D0FC /* AdSkip in Frameworks */,
+				66661A9A117542958285A6AF /* ReadiumAdapterGCDWebServer in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D400000000000000A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C56C39930501787002E71D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C7E0BF3309E3716002F04A0 /* WidgetKit.framework */,
+				2C7E0BF5309E3716002F04A0 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2CE0CE10300F5E6900DA1351 = {
+			isa = PBXGroup;
+			children = (
+				2C7E0C0B309E37C1002F04A0 /* WhirrWidgetsExtension.entitlements */,
+				2CE0CE1B300F5E6900DA1351 /* Whirr */,
+				9C15A2C729B746279677B063 /* WhirrTests */,
+				A1B2C3D400000000000000A2 /* WhirrPerformanceTests */,
+				2C56C38B3050174E002E71D3 /* WhirrWatch Watch App */,
+				A1B2C3D400000000000000B1 /* WatchShared */,
+				2C7E0BF7309E3716002F04A0 /* WhirrWidgets */,
+				2C56C39930501787002E71D3 /* Frameworks */,
+				2CE0CE1A300F5E6900DA1351 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CE0CE1A300F5E6900DA1351 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CE0CE19300F5E6900DA1351 /* Whirr.app */,
+				1116AE851C72462192B844C0 /* WhirrTests.xctest */,
+				A1B2C3D400000000000000A1 /* WhirrPerformanceTests.xctest */,
+				2C56C38A3050174E002E71D3 /* WhirrWatch Watch App.app */,
+				2C7E0BF2309E3716002F04A0 /* WhirrWidgetsExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C56C3893050174E002E71D3 /* WhirrWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C56C3983050174F002E71D3 /* Build configuration list for PBXNativeTarget "WhirrWatch Watch App" */;
+			buildPhases = (
+				2C56C3863050174E002E71D3 /* Sources */,
+				2C56C3873050174E002E71D3 /* Frameworks */,
+				2C56C3883050174E002E71D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2C56C38B3050174E002E71D3 /* WhirrWatch Watch App */,
+				A1B2C3D400000000000000B1 /* WatchShared */,
+			);
+			name = "WhirrWatch Watch App";
+			packageProductDependencies = (
+				2C56C39A30501787002E71D3 /* WatchProtocol */,
+				2C56C3B6305027E2002E71D3 /* WatchPlayback */,
+				2C56C3B8305027F9002E71D3 /* ABSApi */,
+				2C56C3BA30502819002E71D3 /* PlayerCore */,
+				2CCFE87530B1A85500628E0E /* PodcastFeeds */,
+			);
+			productName = "WhirrWatch Watch App";
+			productReference = 2C56C38A3050174E002E71D3 /* WhirrWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C7E0BF1309E3716002F04A0 /* WhirrWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C7E0C06309E3718002F04A0 /* Build configuration list for PBXNativeTarget "WhirrWidgetsExtension" */;
+			buildPhases = (
+				2C7E0BEE309E3716002F04A0 /* Sources */,
+				2C7E0BEF309E3716002F04A0 /* Frameworks */,
+				2C7E0BF0309E3716002F04A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2C7E0BF7309E3716002F04A0 /* WhirrWidgets */,
+			);
+			name = WhirrWidgetsExtension;
+			packageProductDependencies = (
+				2C7E0C10309E5071002F04A0 /* WidgetProtocol */,
+			);
+			productName = WhirrWidgetsExtension;
+			productReference = 2C7E0BF2309E3716002F04A0 /* WhirrWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2CE0CE18300F5E6900DA1351 /* Whirr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CE0CE24300F5E6A00DA1351 /* Build configuration list for PBXNativeTarget "Whirr" */;
+			buildPhases = (
+				2CE0CE15300F5E6900DA1351 /* Sources */,
+				2CE0CE16300F5E6900DA1351 /* Frameworks */,
+				2CE0CE17300F5E6900DA1351 /* Resources */,
+				2C56C3953050174F002E71D3 /* Embed Watch Content */,
+				2C7E0C0A309E3718002F04A0 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C56C3933050174F002E71D3 /* PBXTargetDependency */,
+				2C7E0C04309E3718002F04A0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2CE0CE1B300F5E6900DA1351 /* Whirr */,
+				A1B2C3D400000000000000B1 /* WatchShared */,
+			);
+			name = Whirr;
+			packageProductDependencies = (
+				2CC9F97A300F652C000E4DA8 /* AppModel */,
+				D06A0918BBDF15631BE154A0 /* ABSApi */,
+				87FBD1240DD49FED4337F249 /* Persistence */,
+				798A35EE5DD192CFD5FA6A46 /* SyncEngine */,
+				8EE8C8FA82A287141B40FA53 /* PlayerCore */,
+				B5DF24CF406924DB8D26FD95 /* ReaderCore */,
+				BF4168654E465BFAFEDC17E8 /* DesignSystem */,
+				A1B2C3D4E5F60000C0DE0002 /* CoreSupport */,
+				EF24EC73C5E34248A79E95FE /* ReadiumShared */,
+				71D2AE05D2F04022AA434D77 /* ReadiumStreamer */,
+				907654D2DF5A40619196DAC3 /* ReadiumNavigator */,
+				CCD79E985EBD403DAA433626 /* ReadiumAdapterGCDWebServer */,
+				2C56C39C305017A4002E71D3 /* WatchProtocol */,
+				2CCFFBEA30754BE300F5D0FC /* AdSkip */,
+				2C7E0C0E309E5069002F04A0 /* WidgetProtocol */,
+			);
+			productName = Whirr;
+			productReference = 2CE0CE19300F5E6900DA1351 /* Whirr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1B2C3D400000000000000A3 /* WhirrPerformanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D400000000000000A9 /* Build configuration list for PBXNativeTarget "WhirrPerformanceTests" */;
+			buildPhases = (
+				A1B2C3D400000000000000A4 /* Sources */,
+				A1B2C3D400000000000000A5 /* Frameworks */,
+				A1B2C3D400000000000000A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B2C3D400000000000000A7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A1B2C3D400000000000000A2 /* WhirrPerformanceTests */,
+			);
+			name = WhirrPerformanceTests;
+			packageProductDependencies = (
+			);
+			productName = WhirrPerformanceTests;
+			productReference = A1B2C3D400000000000000A1 /* WhirrPerformanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F866C807BFD146C1A6B153EC /* WhirrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2CAE04FA1BE48449301CBD3 /* Build configuration list for PBXNativeTarget "WhirrTests" */;
+			buildPhases = (
+				926154A30FC24CD18266DDE5 /* Sources */,
+				0DE32F408A04431F95B6F419 /* Frameworks */,
+				D85C2DA2DD874460B6A08E2C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD704AED1CD741C6A304A362 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9C15A2C729B746279677B063 /* WhirrTests */,
+			);
+			name = WhirrTests;
+			packageProductDependencies = (
+				2CA8FD7230B36D790010B6FD /* TestSupport */,
+			);
+			productName = WhirrTests;
+			productReference = 1116AE851C72462192B844C0 /* WhirrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CE0CE11300F5E6900DA1351 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2720;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					2C56C3893050174E002E71D3 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					2C7E0BF1309E3716002F04A0 = {
+						CreatedOnToolsVersion = 27.2;
+					};
+					2CE0CE18300F5E6900DA1351 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A1B2C3D400000000000000A3 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 2CE0CE18300F5E6900DA1351;
+					};
+					F866C807BFD146C1A6B153EC = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = 2CE0CE18300F5E6900DA1351;
+					};
+				};
+			};
+			buildConfigurationList = 2CE0CE14300F5E6900DA1351 /* Build configuration list for PBXProject "Whirr" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CE0CE10300F5E6900DA1351;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */,
+				2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2CE0CE1A300F5E6900DA1351 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CE0CE18300F5E6900DA1351 /* Whirr */,
+				F866C807BFD146C1A6B153EC /* WhirrTests */,
+				A1B2C3D400000000000000A3 /* WhirrPerformanceTests */,
+				2C56C3893050174E002E71D3 /* WhirrWatch Watch App */,
+				2C7E0BF1309E3716002F04A0 /* WhirrWidgetsExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C56C3883050174E002E71D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C7E0BF0309E3716002F04A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CE0CE17300F5E6900DA1351 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D400000000000000A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D85C2DA2DD874460B6A08E2C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C56C3863050174E002E71D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C7E0BEE309E3716002F04A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2CE0CE15300F5E6900DA1351 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		926154A30FC24CD18266DDE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D400000000000000A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C56C3933050174F002E71D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C56C3893050174E002E71D3 /* WhirrWatch Watch App */;
+			targetProxy = 2C56C3923050174F002E71D3 /* PBXContainerItemProxy */;
+		};
+		2C7E0C04309E3718002F04A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C7E0BF1309E3716002F04A0 /* WhirrWidgetsExtension */;
+			targetProxy = 2C7E0C03309E3718002F04A0 /* PBXContainerItemProxy */;
+		};
+		A1B2C3D400000000000000A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CE0CE18300F5E6900DA1351 /* Whirr */;
+			targetProxy = A1B2C3D400000000000000A8 /* PBXContainerItemProxy */;
+		};
+		AD704AED1CD741C6A304A362 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CE0CE18300F5E6900DA1351 /* Whirr */;
+			targetProxy = AC93193CEE874330B58988A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		152FF8724FC4402F9DB1A263 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whirr.app/Whirr";
+			};
+			name = Release;
+		};
+		2C56C3963050174F002E71D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WhirrWatch Watch App/WhirrWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WhirrWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Whirr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.remoteconcern.whirr;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		2C56C3973050174F002E71D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WhirrWatch Watch App/WhirrWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WhirrWatch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Whirr;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.remoteconcern.whirr;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		2C7E0C07309E3718002F04A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WhirrWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhirrWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WhirrWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.WhirrWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C7E0C08309E3718002F04A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WhirrWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhirrWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WhirrWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.WhirrWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2CE0CE22300F5E6A00DA1351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6GLXFBPY79;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CE0CE23300F5E6A00DA1351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6GLXFBPY79;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CE0CE25300F5E6A00DA1351 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Whirr/WhirrDebug.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Whirr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Whirr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CE0CE26300F5E6A00DA1351 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Whirr/Whirr.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Whirr/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Whirr;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1B2C3D400000000000000AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteconcern.whirr.performance-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whirr.app/Whirr";
+			};
+			name = Debug;
+		};
+		A1B2C3D400000000000000AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.remoteconcern.whirr.performance-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whirr.app/Whirr";
+			};
+			name = Release;
+		};
+		FA5F81FDEA204D09A3163138 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.remoteconcern.whirr.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whirr.app/Whirr";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C56C3983050174F002E71D3 /* Build configuration list for PBXNativeTarget "WhirrWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C56C3963050174F002E71D3 /* Debug */,
+				2C56C3973050174F002E71D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C7E0C06309E3718002F04A0 /* Build configuration list for PBXNativeTarget "WhirrWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7E0C07309E3718002F04A0 /* Debug */,
+				2C7E0C08309E3718002F04A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CE0CE14300F5E6900DA1351 /* Build configuration list for PBXProject "Whirr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CE0CE22300F5E6A00DA1351 /* Debug */,
+				2CE0CE23300F5E6A00DA1351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CE0CE24300F5E6A00DA1351 /* Build configuration list for PBXNativeTarget "Whirr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CE0CE25300F5E6A00DA1351 /* Debug */,
+				2CE0CE26300F5E6A00DA1351 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D400000000000000A9 /* Build configuration list for PBXNativeTarget "WhirrPerformanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D400000000000000AA /* Debug */,
+				A1B2C3D400000000000000AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2CAE04FA1BE48449301CBD3 /* Build configuration list for PBXNativeTarget "WhirrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA5F81FDEA204D09A3163138 /* Debug */,
+				152FF8724FC4402F9DB1A263 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/Core;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/readium/swift-toolkit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C56C39A30501787002E71D3 /* WatchProtocol */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = WatchProtocol;
+		};
+		2C56C39C305017A4002E71D3 /* WatchProtocol */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = WatchProtocol;
+		};
+		2C56C3B6305027E2002E71D3 /* WatchPlayback */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = WatchPlayback;
+		};
+		2C56C3B8305027F9002E71D3 /* ABSApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = ABSApi;
+		};
+		2C56C3BA30502819002E71D3 /* PlayerCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = PlayerCore;
+		};
+		2C7E0C0E309E5069002F04A0 /* WidgetProtocol */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = WidgetProtocol;
+		};
+		2C7E0C10309E5071002F04A0 /* WidgetProtocol */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = WidgetProtocol;
+		};
+		2CA8FD7230B36D790010B6FD /* TestSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = TestSupport;
+		};
+		2CC9F97A300F652C000E4DA8 /* AppModel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppModel;
+		};
+		2CCFE87530B1A85500628E0E /* PodcastFeeds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = PodcastFeeds;
+		};
+		2CCFFBEA30754BE300F5D0FC /* AdSkip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC9F979300F652C000E4DA8 /* XCLocalSwiftPackageReference "../Packages/Core" */;
+			productName = AdSkip;
+		};
+		71D2AE05D2F04022AA434D77 /* ReadiumStreamer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */;
+			productName = ReadiumStreamer;
+		};
+		798A35EE5DD192CFD5FA6A46 /* SyncEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SyncEngine;
+		};
+		87FBD1240DD49FED4337F249 /* Persistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Persistence;
+		};
+		8EE8C8FA82A287141B40FA53 /* PlayerCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PlayerCore;
+		};
+		907654D2DF5A40619196DAC3 /* ReadiumNavigator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */;
+			productName = ReadiumNavigator;
+		};
+		A1B2C3D4E5F60000C0DE0002 /* CoreSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreSupport;
+		};
+		B5DF24CF406924DB8D26FD95 /* ReaderCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ReaderCore;
+		};
+		BF4168654E465BFAFEDC17E8 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		CCD79E985EBD403DAA433626 /* ReadiumAdapterGCDWebServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */;
+			productName = ReadiumAdapterGCDWebServer;
+		};
+		D06A0918BBDF15631BE154A0 /* ABSApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ABSApi;
+		};
+		EF24EC73C5E34248A79E95FE /* ReadiumShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E57FD0B977C4EBF88773700 /* XCRemoteSwiftPackageReference "swift-toolkit" */;
+			productName = ReadiumShared;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2CE0CE11300F5E6900DA1351 /* Project object */;
+}

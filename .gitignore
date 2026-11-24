@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+DerivedData/
+# Xcode's per-project build directory when it is not writing into DerivedData.
+App/Build/
+*.xcresult
+
+# Swift Package Manager
+.build/
+.build-*/
+.swiftpm/
+Packages/*/.build/
+Packages/*/.build-*/
+
+# Package.resolved is deliberately not ignored: dependency pins are reviewed and committed.
+
+# Local environment files and credentials are never committed.
+*.env
+.env.*

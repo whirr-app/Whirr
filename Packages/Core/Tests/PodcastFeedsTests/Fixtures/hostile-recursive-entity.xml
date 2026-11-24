@@ -1,0 +1,6 @@
+<!DOCTYPE rss [
+  <!ENTITY a "ha">
+  <!ENTITY b "&a;&a;&a;&a;&a;&a;&a;&a;&a;&a;">
+  <!ENTITY c "&b;&b;&b;&b;&b;&b;&b;&b;&b;&b;">
+]>
+<rss><channel><title>&c;</title></channel></rss>

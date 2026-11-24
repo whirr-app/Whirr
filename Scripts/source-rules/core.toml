@@ -1,0 +1,362 @@
+# Rules over Packages/Core sources.
+
+[[rule]]
+id = "only-the-bridge-iterates-an-observation"
+why = """\
+`ObservationBridge` retries a failed GRDB observation with backoff. A store that hand-rolls \
+`for try await value in observation.values(…)` ends its stream for good on one transient SQLite \
+error. Use `ObservationBridge.stream`."""
+files = ["Packages/Core/Sources/**/*.swift", "App/Whirr/**/*.swift"]
+forbid = 'observation\.values\('
+allow = ["Packages/Core/Sources/Persistence/ObservationBridge.swift"]
+example = 'for try await value in observation.values(in: reader) { yield(value) }'
+
+# MARK: - Process globals and waiting in tests
+
+[[rule]]
+id = "tests-never-touch-a-process-global"
+why = """\
+AVAudioSession, Now Playing metadata, remote commands, `URLCache` and `UserDefaults` are \
+process-wide, and a real one damages later cases in the same process. Use the shims in \
+`App/WhirrTests/Fakes/` for the audio session, Now Playing and remote commands; a zero-capacity \
+`URLCache` instance; and `UserDefaults(suiteName:)` with a name unique to the case."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+]
+text = "code-no-strings"
+forbid = 'AVAudioSession\.sharedInstance\(\)|MPNowPlayingInfoCenter\.default\(\)|MPRemoteCommandCenter\.shared\(\)|URLCache\.shared\b|UserDefaults\.standard\b'
+example = 'let session = AVAudioSession.sharedInstance()'
+ok = ['let defaults = UserDefaults(suiteName: "case")', 'let note = "UserDefaults.standard"']
+
+[[rule]]
+id = "tests-never-swallow-sleep-cancellation"
+why = """\
+`try? await Task.sleep` discards the only error `Task.sleep` throws, cancellation, and turns the \
+rest of a wait into a spin no `.timeLimit` can interrupt (one instance spun 600,050 times in \
+1.16 s). Let it throw, or wait through `awaitCondition`/`awaitQuiescence`."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+text = "code-no-strings"
+forbid = 'try\? await Task\.sleep'
+example = 'try? await Task.sleep(for: .milliseconds(1))'
+ok = ['try await Task.sleep(for: .seconds(60))']
+
+[[rule]]
+id = "tests-never-block-on-a-semaphore"
+why = """\
+`DispatchSemaphore` blocks a cooperative-pool thread, which in a test is a deadlock waiting for a \
+busy pool. Use an async fixture. The one allowance is the test that pins GRDB's cross-connection \
+busy-lock contract: it must observe a writer blocked at the SQLite level, its writers are detached \
+threads, and every `wait` there carries a timeout."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+text = "code-no-strings"
+forbid = 'DispatchSemaphore'
+allow = ["Packages/Core/Tests/PersistenceTests/AppDatabaseTests.swift"]
+example = 'let gate = DispatchSemaphore(value: 0)'
+
+[[rule]]
+id = "tests-never-assert-wall-clock-time"
+why = """\
+A duration measured inside a parallel run reports the machine's load as much as the code. Assert \
+on behaviour; put a benchmark behind an environment variable and allow it here. The smart-list \
+benchmark runs only with `WHIRR_BENCHMARKS=1`, alone, on a quiet machine."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+text = "code-no-strings"
+forbid = 'ContinuousClock\(\)|SuspendingClock\(\)|\.measure \{'
+allow = ["Packages/Core/Tests/PersistenceTests/SmartListEpisodesReadingBenchmarkTests.swift"]
+example = 'let elapsed = await clock.measure { await work() }'
+
+[[rule]]
+id = "tests-animate-only-with-a-sped-up-window"
+why = """\
+A UIKit presentation, push or scroll animated in real time holds the process-wide key window for \
+the whole animation, and every hosted-window suite queues behind it. A file that animates must \
+speed its window's layer (`scope.window.layer.speed`) and wait on states, not delays. The rule is \
+per file, so a violation is reported at line 1: search the file for `animated: true`."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+text = "code-no-strings"
+forbid = '\A(?![\s\S]*layer\.speed)[\s\S]*?^(?=[^\n]*animated: true)[^\n]*?(?:\.present\(|\.dismiss\(|pushViewController\(|popViewController\(|setViewControllers\(|setContentOffset\(|scrollToItem\(|scrollToRow\(|scrollRectToVisible\()'
+example = 'presenter.present(page, animated: true)'
+ok = [
+  "scope.window.layer.speed = 5\npresenter.present(page, animated: true)",
+  'let step = Step.move(to: -168, animated: true)',
+]
+
+# A fixed `Task.sleep` before an assertion guesses how long the work takes. The sites below predate
+# the rule: the ratchet rules cap each file at its count, so none may be added. When a file drops
+# below its cap, lower its cap (or move it to the strict rule once it reaches zero).
+[[rule]]
+id = "tests-never-add-a-fixed-sleep"
+why = """\
+A fixed `Task.sleep` guesses how long the work takes: too short flakes, long enough costs every \
+run. Wait for the state with `awaitCondition`, or for nothing to happen with `awaitQuiescence`. A \
+fake that hangs until cancelled can say so on one line: \
+`do { try await Task.sleep(for: .seconds(60)) } catch {}`. The files in the ratchet rules below \
+keep their existing counts."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+exclude = [
+  "App/WhirrPerformanceTests/NowPlayingSwitchMemoryTests.swift",
+  "App/WhirrTests/CoverPaletteSurfaceTests.swift",
+  "App/WhirrTests/EndpointSwitchCompositionTests.swift",
+  "App/WhirrTests/EndpointSwitchTriggersTests.swift",
+  "App/WhirrTests/LibraryShellPresentationTests.swift",
+  "App/WhirrTests/PathUpdateLatchTests.swift",
+  "App/WhirrTests/PlayerMorphTransitionTests.swift",
+  "App/WhirrTests/WatchCataloguePublisherTests.swift",
+  "Packages/Core/Tests/AppModelTests/PlaybackTrimModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/PodcastShowSettingsModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/ProblemReportModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/RSSEpisodeChapterResolverTests.swift",
+  "Packages/Core/Tests/AppModelTests/RSSFeedRefreshCoordinatorTests.swift",
+  "Packages/Core/Tests/TestSupportTests/OnDiskDatabaseGateTests.swift",
+  "Packages/Core/Tests/TestSupportTests/WaitUntilTests.swift",
+]
+text = "code-no-strings"
+forbid = '^(?![^\n]*(?:catch|while true))[^\n]*try await Task\.sleep\('
+example = 'try await Task.sleep(for: .milliseconds(300))'
+ok = [
+  'do { try await Task.sleep(for: .seconds(60)) } catch {}',
+  'while true { try await Task.sleep(for: .seconds(1)) }',
+]
+
+[[rule]]
+id = "tests-fixed-sleep-ratchet-one"
+why = """\
+These files hold one fixed `Task.sleep` that predates `tests-never-add-a-fixed-sleep`. Do not add \
+another; if you remove it, delete the file from this list so the strict rule covers it."""
+files = [
+  "App/WhirrPerformanceTests/NowPlayingSwitchMemoryTests.swift",
+  "App/WhirrTests/CoverPaletteSurfaceTests.swift",
+  "App/WhirrTests/LibraryShellPresentationTests.swift",
+  "App/WhirrTests/PathUpdateLatchTests.swift",
+  "Packages/Core/Tests/AppModelTests/PlaybackTrimModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/PodcastShowSettingsModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/ProblemReportModelTests.swift",
+  "Packages/Core/Tests/AppModelTests/RSSEpisodeChapterResolverTests.swift",
+  "Packages/Core/Tests/AppModelTests/RSSFeedRefreshCoordinatorTests.swift",
+  "Packages/Core/Tests/TestSupportTests/WaitUntilTests.swift",
+]
+at_most = 1
+text = "code-no-strings"
+forbid = '^(?![^\n]*(?:catch|while true))[^\n]*try await Task\.sleep\('
+example = 'try await Task.sleep(for: .milliseconds(300))'
+
+[[rule]]
+id = "tests-fixed-sleep-ratchet-two"
+why = """\
+These files hold two fixed `Task.sleep` calls that predate `tests-never-add-a-fixed-sleep`. Do \
+not add another."""
+files = [
+  "App/WhirrTests/EndpointSwitchTriggersTests.swift",
+  "App/WhirrTests/WatchCataloguePublisherTests.swift",
+]
+at_most = 2
+text = "code-no-strings"
+forbid = '^(?![^\n]*(?:catch|while true))[^\n]*try await Task\.sleep\('
+example = 'try await Task.sleep(for: .milliseconds(300))'
+
+[[rule]]
+id = "tests-fixed-sleep-ratchet-three"
+why = """\
+These files hold three fixed `Task.sleep` calls that predate `tests-never-add-a-fixed-sleep`. Do \
+not add another."""
+files = [
+  "App/WhirrTests/EndpointSwitchCompositionTests.swift",
+  "Packages/Core/Tests/TestSupportTests/OnDiskDatabaseGateTests.swift",
+]
+at_most = 3
+text = "code-no-strings"
+forbid = '^(?![^\n]*(?:catch|while true))[^\n]*try await Task\.sleep\('
+example = 'try await Task.sleep(for: .milliseconds(300))'
+
+[[rule]]
+id = "tests-fixed-sleep-ratchet-four"
+why = """\
+This file holds four fixed `Task.sleep` calls that predate `tests-never-add-a-fixed-sleep`. Do \
+not add another."""
+files = ["App/WhirrTests/PlayerMorphTransitionTests.swift"]
+at_most = 4
+text = "code-no-strings"
+forbid = '^(?![^\n]*(?:catch|while true))[^\n]*try await Task\.sleep\('
+example = 'try await Task.sleep(for: .milliseconds(300))'
+
+# MARK: - Persistence and transport boundaries
+
+[[rule]]
+id = "rss-episode-state-has-one-production-writer"
+why = """\
+A SQLite trigger would fire for every writer; a Swift funnel only catches writers going through \
+`RSSEpisodeStateStore`. A second production writer of `rssEpisodeState` would commit local state \
+that resolves no Saved intent and, once the cloud resolver is attached, sends nothing. Route the \
+write through `RSSEpisodeStateStore`, or extend the store. `Schema/` owns the table's DDL and \
+backfill. Constructing the row is the tell: a writer must build one to persist it."""
+files = ["Packages/Core/Sources/**/*.swift", "App/Whirr/**/*.swift"]
+exclude = ["Packages/Core/Sources/Persistence/Schema/**"]
+forbid = 'RSSEpisodeStateRecord\(|(?i:(?:insert into|update|delete from)\s+rssEpisodeState)'
+allow = ["Packages/Core/Sources/Persistence/RSSEpisodeStateStore.swift"]
+example = 'let row = RSSEpisodeStateRecord(accountId: 1, episodeId: 2)'
+
+[[rule]]
+id = "resolution-center-uses-async-persistence"
+why = """\
+Resolution actions run in async contexts, where a blocking DAO or store call holds a cooperative \
+thread while it waits for a database connection. Call the `…Async` twin of every DAO or store \
+method on `accountDAO`, `mediaProgressDAO`, `itemDAO`, `outboxStore` and `sessionStore`."""
+files = ["Packages/Core/Sources/SyncEngine/ResolutionCenter.swift"]
+forbid = '\b(?:accountDAO|mediaProgressDAO|itemDAO|outboxStore|sessionStore)\.(?!\w*Async\()\w+\('
+example = 'let account = try accountDAO.fetch()'
+ok = ['let account = try await accountDAO.fetchAsync()']
+
+[[rule]]
+id = "outbox-drainer-acknowledges-asynchronously"
+why = """\
+The drainer acknowledges an operation from an async context, where a blocking store call holds a \
+cooperative thread while it waits for a database connection. Use the `…Async` twins for \
+acknowledgement. (`fetchSession(` is still called blocking in `OutboxDrainer+PlaybackSession.swift`, \
+so it is not covered here.)"""
+files = ["Packages/Core/Sources/SyncEngine/OutboxDrainer*.swift"]
+forbid = '\b(?:sessionStore\.(?:acknowledgeSync|acknowledgeClose)|outboxStore\.acknowledge)\('
+example = 'try sessionStore.acknowledgeSync(operationId: id, sessionId: session)'
+ok = ['try await outboxStore.acknowledgeAsync(operationId: id) { _ in }']
+
+[[rule]]
+id = "only-the-oidc-endpoint-surfaces-redirects-and-cookies"
+why = """\
+Only the two OIDC legs may surface a redirect and its cookies, which are session secrets. The \
+opt-in is internal to ABSApi, but internal reaches every ABSApi file, so this rule is what keeps \
+another endpoint from quietly taking it."""
+files = ["Packages/Core/Sources/**/*.swift", "App/Whirr/**/*.swift"]
+forbid = '\.surfacingRedirectAndCookies\(\)|\.replacingCookieHeader\('
+allow = ["Packages/Core/Sources/ABSApi/OIDCLoginEndpoint.swift"]
+example = 'request = request.surfacingRedirectAndCookies()'
+
+# MARK: - Release audit
+
+[[rule]]
+id = "no-pasted-token-literal-in-source"
+why = """\
+A pasted credential ships in the repository history. This matches a whole JWT, or `Bearer` \
+followed by enough literal characters to be a credential rather than an interpolation \
+(`Bearer \\(token)` is fine). The rule files themselves are excluded: their examples are tokens."""
+files = ["**/*.{swift,plist,pbxproj,yaml,yml,sh,md,xcconfig,toml,ini,conf,json,xml}"]
+exclude = ["Scripts/source-rules/*.toml"]
+text = "raw"
+forbid = '(?i:\bBearer\s+[A-Za-z0-9._~+/=-]{24,}\b)|\beyJ[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\b'
+example = [
+  'h["Authorization"] = "Bearer sk-9f3b2c8d4e7a1650fbc93de2aa"',
+  'let t = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dBjftJeZ4CVPmB92K27uhbUJU1p1r"',
+]
+ok = [
+  'h["Authorization"] = "Bearer \\(accessToken)"',
+  'h["Authorization"] = "Bearer header-secret"',
+]
+
+[[rule]]
+id = "no-token-shaped-value-in-fixtures"
+why = """\
+A fixture or property list holding a real-looking credential leaks it into the repository. Use \
+`<redacted>`, `redacted`, `fixture`, `placeholder` or `changeme`."""
+files = [
+  "Packages/Core/Sources/TestSupport/Fixtures/**/*.{csv,json,plist,schema,txt,xml}",
+  "**/*.plist",
+]
+text = "raw"
+forbid = '(?i:"(?:access[_-]?token|refresh[_-]?token|token|api[_-]?key|secret|password|authorization|credential)"\s*:\s*"(?!(?:<redacted>|redacted|fixture|placeholder|changeme)")[^"]+")|(?i:\bBearer\s+[A-Za-z0-9._~+/=-]{24,}\b)|\beyJ[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\.[A-Za-z0-9_-]{16,}\b'
+example = '{"accessToken":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"}'
+ok = ['{"accessToken":"<redacted>","refreshToken":"<redacted>"}']
+
+[[rule]]
+id = "no-analytics-tracking-or-crash-framework-import"
+why = """\
+Whirr ships no analytics, tracking or third-party crash reporting (docs/SECURITY.md). A module \
+whose name carries one of these fragments is refused wherever it is imported; MetricKit and OSLog \
+are system diagnostics and fine."""
+files = ["App/Whirr/**/*.swift", "Packages/Core/Sources/**/*.swift", "Packages/Core/Package.swift"]
+forbid = '(?i:^[ \t]*(?:@testable[ \t]+)?import[ \t]+\w*?(?:adjust|amplitude|analytics|appsflyer|bugsnag|crashlytics|crashreporter|datadog|firebase|fullstory|heap|mixpanel|newrelic|posthog|rollbar|segment|sentry|telemetry|tracking))'
+example = 'import Sentry'
+ok = ['import MetricKit', 'import OSLog']
+
+[[rule]]
+id = "no-analytics-tracking-or-crash-framework-linked"
+why = """\
+Whirr ships no analytics, tracking or third-party crash reporting (docs/SECURITY.md). The Xcode \
+project may not link a framework or name a product whose name carries one of these fragments."""
+files = ["App/Whirr.xcodeproj/project.pbxproj"]
+text = "raw"
+forbid = '(?i:/\*[^\n]*?(?:adjust|amplitude|analytics|appsflyer|bugsnag|crashlytics|crashreporter|datadog|firebase|fullstory|heap|mixpanel|newrelic|posthog|rollbar|segment|sentry|telemetry|tracking)[^\n]*? in Frameworks \*/|productName = [^\n]*(?:adjust|amplitude|analytics|appsflyer|bugsnag|crashlytics|crashreporter|datadog|firebase|fullstory|heap|mixpanel|newrelic|posthog|rollbar|segment|sentry|telemetry|tracking))'
+example = [
+  '/* Sentry in Frameworks */',
+  'productName = FirebaseAnalytics;',
+]
+ok = ['/* GRDB in Frameworks */', 'productName = Whirr;']
+
+[[rule]]
+id = "no-analytics-tracking-or-crash-framework-resolved"
+why = """\
+Whirr ships no analytics, tracking or third-party crash reporting (docs/SECURITY.md). A resolved \
+package whose identity or location carries one of these fragments is refused."""
+files = [
+  "Packages/Core/Package.resolved",
+  "App/Whirr.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved",
+]
+text = "raw"
+forbid = '(?i:"(?:identity|location)"\s*:\s*"[^"\n]*(?:adjust|amplitude|analytics|appsflyer|bugsnag|crashlytics|crashreporter|datadog|firebase|fullstory|heap|mixpanel|newrelic|posthog|rollbar|segment|sentry|telemetry|tracking))'
+example = '"location" : "https://github.com/getsentry/sentry-cocoa.git",'
+ok = ['"location" : "https://github.com/groue/GRDB.swift.git",']
+
+[[rule]]
+id = "widget-extension-uses-no-privacy-manifest-api"
+why = """\
+The widget extension's privacy manifest declares no required-reason API, tracking or data \
+collection. Code it compiles (including the Siri playback intents) must not reach one: if it \
+needs `UserDefaults`, `systemUptime`, file timestamps or disk-space reads, declare the reason in \
+`App/WhirrWidgets/PrivacyInfo.xcprivacy` first."""
+files = [
+  "App/WhirrWidgets/**/*.swift",
+  "Packages/Core/Sources/WidgetProtocol/**/*.swift",
+  "App/Whirr/Playback/SiriPlaybackIntents.swift",
+]
+forbid = 'UserDefaults|systemUptime|attributesOfItem|ModificationDate|volumeAvailableCapacity'
+example = 'let value = UserDefaults.standard.integer(forKey: "k")'
+
+[[rule]]
+id = "watch-app-uses-no-undeclared-privacy-api"
+why = """\
+The Watch app's privacy manifest declares boot time, file timestamps and `UserDefaults` only. \
+Disk-space and active-input-mode reads are undeclared: declare the reason in \
+`App/WhirrWatch Watch App/PrivacyInfo.xcprivacy` before code the Watch app compiles or links \
+reaches them."""
+files = [
+  "App/WhirrWatch Watch App/**/*.swift",
+  "App/WatchShared/**/*.swift",
+  "Packages/Core/Sources/WatchPlayback/**/*.swift",
+  "Packages/Core/Sources/PlayerCore/**/*.swift",
+]
+forbid = 'volumeAvailableCapacity|systemFreeSize|activeInputModes'
+example = 'let free = try url.resourceValues(forKeys: [.volumeAvailableCapacityKey])'

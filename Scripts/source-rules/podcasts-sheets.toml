@@ -1,0 +1,309 @@
+# Podcast sheets and settings (server save, import, settings), Downloads, the ad-skip offer and the
+# shows host. Screen rules are in podcasts.toml.
+
+# MARK: - Server save sheets
+
+[[rule]]
+id = "server-save-sheets-confirm-removal-with-an-alert"
+why = """\
+Remove is a destructive centred alert that states its consequence. An anchored confirmation dialog \
+in the save sheets would lose its source once the menu collapses."""
+files = ["App/Whirr/**/NativeEpisodeServerSaveSheets.swift"]
+forbid = '\.confirmationDialog\('
+example = '.confirmationDialog("Remove?", isPresented: $isConfirming) {}'
+
+[[rule]]
+id = "server-save-has-no-confirmation-or-consequence-copy"
+why = """\
+Save runs on the tap with no dialog, so the sheets carry no save-confirmation callback or \
+consequence copy, and the destination hint comes from the count-aware presentation rather than the \
+fixed `existingShowHint`."""
+files = ["App/Whirr/**/NativeEpisodeServerSaveSheets.swift"]
+forbid = 'onSaveConfirmed|saveConsequence|NativeEpisodeServerSaveCopy\.existingShowHint'
+example = 'var onSaveConfirmed: () -> Void'
+
+[[rule]]
+id = "server-save-choice-hands-back-opaque-ids"
+why = """\
+A choice carries only opaque server ids. A display name or the podcast name returned as a choice \
+value, or a URL or path in the sheet, would leak display context into what the model acts on."""
+files = ["App/Whirr/**/NativeEpisodeServerSaveSheets.swift"]
+forbid = 'onChoice\(\.existing\(serverItemID: candidate\.displayName|onChoice\(\.libraryAndFolder\(libraryID: library\.displayName|onChoice\(podcastName|URL\(|path'
+example = 'onChoice(podcastName)'
+
+[[rule]]
+id = "server-save-sheet-sizing-belongs-to-the-modifier"
+why = """\
+The destination view measures its compact card and hands the measurement to the shared adaptive \
+policy as a compact-only input. A popover, compact adaptation, fixed detent or drag indicator in \
+the sheet itself cannot carry it to iPad."""
+files = ["App/Whirr/**/NativeEpisodeServerSaveSheets.swift"]
+forbid = '\.popover\(|\.presentationCompactAdaptation\(|\.presentationDetents\(|\.presentationDragIndicator\('
+example = '.presentationDetents([.medium])'
+
+[[rule]]
+id = "server-save-sheet-text-wraps"
+why = """\
+Title, sentence, footer and primary action wrap rather than truncate under Dynamic Type; a line \
+limit, scale factor or truncation mode would clip them."""
+files = ["App/Whirr/**/NativeEpisodeServerSaveSheets.swift"]
+forbid = '\.lineLimit\(|\.minimumScaleFactor\(|\.truncationMode\('
+example = 'Text(title).lineLimit(1)'
+
+# MARK: - Add feed and OPML import
+
+[[rule]]
+id = "import-sheets-use-the-adaptive-policy"
+why = """\
+The Add Podcast and OPML import sheets open large through the shared adaptive policy. A fixed \
+detent or drag indicator opens them at half height and then grows."""
+files = [
+  "App/Whirr/**/AddFeedSheetView.swift",
+  "App/Whirr/**/PodcastSettingsView.swift",
+  "App/Whirr/**/OPMLImportPreviewView.swift",
+]
+forbid = '\.presentationDetents\(|\.presentationDragIndicator\('
+example = '.presentationDetents([.medium, .large])'
+
+[[rule]]
+id = "add-feed-address-field-is-not-searchable"
+why = """\
+The address field takes focus as the sheet appears. Focusing the system search field moves it into \
+the navigation bar, which shifts the layout when the user taps it."""
+files = ["App/Whirr/**/AddFeedSheetView.swift"]
+forbid = '\.searchable\('
+example = '.searchable(text: $address)'
+
+[[rule]]
+id = "import-commit-is-pinned-outside-the-form"
+why = """\
+Inside the form the commit control scrolled with the rows, and a status line per committed row \
+pushed it off the sheet part-way through an import. Both import commits sit in a pinned bar."""
+files = [
+  "App/Whirr/**/AddFeedSheetView.swift",
+  "App/Whirr/**/OPMLImportPreviewView.swift",
+]
+forbid = 'Section\s*\{\s*followButton\s*\}'
+example = 'Section { followButton }'
+
+[[rule]]
+id = "import-committed-row-is-not-grayed"
+why = """\
+A committed import row swaps its switch for an accessory. A disabled switch reads as "you may not", \
+not as "this one is done"."""
+files = ["App/Whirr/**/OPMLImportPreviewView.swift"]
+forbid = '\.disabled\(row\.status != \.pending'
+example = 'Toggle("", isOn: $row.isOn).disabled(row.status != .pending)'
+
+[[rule]]
+id = "import-sheets-dismiss-as-a-close"
+why = """\
+The import sheets dismiss as a close, claiming neither an undo nor a confirmation, so no toolbar \
+item uses the confirmation placement."""
+files = [
+  "App/Whirr/**/AddFeedSheetView.swift",
+  "App/Whirr/**/OPMLImportPreviewView.swift",
+]
+forbid = 'placement: \.confirmationAction'
+example = 'ToolbarItem(placement: .confirmationAction) { Button("Done") {} }'
+
+# MARK: - Podcast settings
+
+[[rule]]
+id = "podcast-settings-has-no-source-switch"
+why = """\
+Downloads and Show Settings name their sources with the two section headings. A segmented source \
+switch, or a second spelling of "Direct feeds", reads as a different split."""
+files = ["App/Whirr/**/PodcastSettingsView.swift"]
+forbid = '"Direct feeds"|\.pickerStyle\(\.segmented\)'
+example = 'Picker("Source", selection: $source) {}.pickerStyle(.segmented)'
+
+[[rule]]
+id = "podcast-settings-notification-toggle-is-model-owned"
+why = """\
+The notification binding calls `requestEnabled`, which owns the operation. A view-launched `Task` \
+around `setEnabled` makes the view own the operation's lifetime and skips the refusal handling."""
+files = ["App/Whirr/**/PodcastSettingsView.swift"]
+forbid = 'Task\s*\{\s*await notificationModel\.setEnabled\('
+example = 'Task { await notificationModel.setEnabled(enabled) }'
+
+[[rule]]
+id = "show-settings-operations-are-model-owned"
+why = """\
+Notification overrides and feed credential buttons hand operation ownership to the model through \
+`request…` entry points. A view-launched `Task` around the async intent skips that ownership."""
+files = ["App/Whirr/**/PodcastShowSettingsView.swift"]
+forbid = 'Task\s*\{\s*await model\.(?:setNotificationOverride|saveFeedCredential|removeFeedCredential)\('
+example = 'Task { await model.saveFeedCredential() }'
+
+[[rule]]
+id = "show-settings-defers-server-gating-to-the-model"
+why = """\
+Only the model decides whether the server section exists, and the server editor writes through the \
+model's async intents with no local state. The view builds neither the section nor the editor, \
+reads no diagnostics or fingerprint, and raises no alert by assigning `actionErrorMessage`."""
+files = ["App/Whirr/**/PodcastShowSettingsView.swift"]
+forbid = 'PodcastServerSettingsPresentation\.(?:section|editor)\(|observeShowDiagnostics|observeServerCopyItemIDs|PodcastShowDiagnostics|model\.actionErrorMessage\s*=(?!=)'
+example = 'model.actionErrorMessage = "Could not save"'
+ok = ['if model.actionErrorMessage == nil {']
+
+# MARK: - Shows host
+
+[[rule]]
+id = "shows-host-source-picker-is-chips"
+why = """\
+The host owns the shared chrome, and its source picker is the chip filter row, never a segmented \
+control."""
+files = ["App/Whirr/**/PodcastShowsHostView.swift"]
+forbid = '\.pickerStyle\(\.segmented\)'
+example = 'Picker("Source", selection: $source) {}.pickerStyle(.segmented)'
+
+[[rule]]
+id = "shows-host-children-set-no-navigation-title"
+why = """\
+The combined host owns the navigation title; a child screen setting its own would fight it."""
+files = [
+  "App/Whirr/**/PodcastShowsView.swift",
+  "App/Whirr/**/NativePodcastShowsView.swift",
+]
+forbid = '\.navigationTitle\('
+example = '.navigationTitle("Shows")'
+
+# MARK: - Downloads
+
+[[rule]]
+id = "downloads-edit-mode-keeps-the-one-list"
+why = """\
+Edit mode adds checkmarks to the one list. A separate selection list would force every podcast \
+folder open as plain episode rows and drop the storage totals, the low-disk banner and the eviction \
+summary. A show or feed is one selectable row, never a heading over loose episodes."""
+files = [
+  "App/Whirr/**/DownloadsView.swift",
+  "App/Whirr/**/DownloadsView+*.swift",
+]
+forbid = 'selectionRows|Text\(item\.title\)\.font\(\.headline\)'
+example = 'selectionRows(for: items)'
+
+[[rule]]
+id = "downloads-show-is-selected-whole"
+why = """\
+A downloaded show is selected whole, not episode by episode, and podcasts stay in the selectable \
+set."""
+files = [
+  "App/Whirr/**/DownloadsView.swift",
+  "App/Whirr/**/DownloadsView+*.swift",
+]
+forbid = 'SelectionID\.absEpisode|item\.category != \.podcast'
+example = 'SelectionID.absEpisode(itemID: id, episodeID: episode)'
+
+[[rule]]
+id = "downloads-abs-rows-exclude-device-feeds"
+why = """\
+Storage lists device feeds as `rss:` rows so the totals cover the whole device. Passing every \
+storage row id as an item id draws each feed twice, as an item card and as its RSS row; the screen \
+filters through `DownloadsViewPresentation.absItemIDs`."""
+files = [
+  "App/Whirr/**/DownloadsView.swift",
+  "App/Whirr/**/DownloadsView+*.swift",
+]
+forbid = 'absItemIDs: storageModel\.rows\.map\(\\\.itemId\)'
+example = 'absItemIDs: storageModel.rows.map(\.itemId)'
+
+[[rule]]
+id = "downloads-rss-purge-goes-through-the-rss-model"
+why = """\
+The shell gates RSS download rows without deleting retained files. The Downloads screen neither \
+reacts to the preference by purging nor purges feed downloads itself; row deletion routes through \
+the RSS model."""
+files = [
+  "App/Whirr/**/DownloadsView.swift",
+  "App/Whirr/**/DownloadsView+*.swift",
+]
+forbid = '\.onChange\(of: nativeSubscriptionsEnabled|purge(?:Item|Episode)Download\(feedId:'
+example = 'await model.purgeItemDownload(feedId: feed.id)'
+
+[[rule]]
+id = "downloads-feed-card-is-not-hand-built"
+why = """\
+Device feed rows are the same `WideCompactCard` as the server rows, keyed by the wash subject, which \
+carries the artwork source. Hand-built rows that omit the source draw device podcasts grey, so \
+neither Downloads view assembles a row, card chrome or wash read itself."""
+files = [
+  "App/Whirr/**/DownloadsView.swift",
+  "App/Whirr/**/DownloadsView+*.swift",
+  "App/Whirr/**/RSSDownloadsView.swift",
+]
+forbid = 'MediaItemSummaryRow\(|\.editorialCardListRow\(|homeWashProvider\.request\(|homeWashProvider\.wash'
+example = 'MediaItemSummaryRow(item: item)'
+
+[[rule]]
+id = "rss-downloads-feeds-are-passed-in"
+why = """\
+`RSSDownloadsView` draws the feeds the screen hands it (`ForEach(feeds)`). Reading `model.feeds` \
+would bypass the screen's animated membership mirror."""
+files = ["App/Whirr/**/RSSDownloadsView.swift"]
+forbid = 'model\.feeds'
+example = 'ForEach(model.feeds) { feed in Text(feed.title) }'
+
+[[rule]]
+id = "rss-downloads-confirmations-are-hosted-by-the-screen"
+why = """\
+Mounted on the row group, one pending deletion makes every feed row present the same alert, and the \
+presenters cancel each other before the user can answer. The screen hosts the alert."""
+files = ["App/Whirr/**/RSSDownloadsView.swift"]
+forbid = '\.alert\('
+example = '.alert("Remove?", isPresented: $isPresented) {}'
+
+[[rule]]
+id = "rss-downloads-feed-is-one-selectable-row"
+why = """\
+A feed is one selectable row. Selecting individual episodes, or a heading over loose episodes, \
+breaks the parent-owns-children selection."""
+files = ["App/Whirr/**/RSSDownloadsView.swift"]
+forbid = 'SelectionID\.rssEpisode|Text\(feed\.title\)\.font\(\.headline\)|\} header:'
+example = 'Text(feed.title).font(.headline)'
+
+[[rule]]
+id = "rss-downloads-delete-through-the-shared-swipe"
+why = """\
+Both the feed and its episodes delete through the shared `downloadDeleteSwipeAction`. A local \
+`swipeActions` or an inline trash button forks the deletion affordance."""
+files = ["App/Whirr/**/RSSDownloadsView.swift"]
+forbid = '\.swipeActions\(|Image\(systemName: "trash"\)'
+example = 'Image(systemName: "trash")'
+
+[[rule]]
+id = "device-download-ui-has-no-user-facing-rss-string"
+why = """\
+Device downloads use source-neutral copy. A string literal that mentions RSS in the device \
+download view or its model would show a feed-format name to the listener."""
+files = [
+  "App/Whirr/**/RSSDownloadsView.swift",
+  "Packages/Core/Sources/AppModel/RSSDownloadsModel.swift",
+]
+forbid = '"[^"\n]*RSS[^"\n]*"'
+example = 'Text("RSS feeds")'
+ok = ['let id = "feed"']
+
+# MARK: - Ad-skip offer
+
+[[rule]]
+id = "ad-skip-player-never-resolves-the-settings-model"
+why = """\
+The live settings model is resolved lazily, only inside the offer. The player's receipt overlay \
+naming `AdSkipSettingsModel` would resolve it on every playback."""
+files = ["App/Whirr/**/AdSkipReceipt.swift"]
+forbid = 'AdSkipSettingsModel'
+example = '@State private var model = AdSkipSettingsModel.live'
+
+[[rule]]
+id = "ad-skip-settings-and-offer-share-one-download-prompt"
+why = """\
+Settings and the offer present the shared `adSkipDownloadConfirmation` prompt. A confirmation \
+dialog declared in either is a second prompt that drifts."""
+files = [
+  "App/Whirr/**/AdSkipSettingsView.swift",
+  "App/Whirr/**/AdSkipOffer.swift",
+]
+forbid = '\.confirmationDialog\('
+example = '.confirmationDialog("Download?", isPresented: $isPresented) {}'

@@ -1,0 +1,337 @@
+▿ 88 key/value pairs
+  ▿ (2 elements)
+    - key: "alignment"
+    - value: ReaderTextAlignment.left
+  ▿ (2 elements)
+    - key: "alignmentAccessibilityLabel"
+    - value: "Text alignment"
+  ▿ (2 elements)
+    - key: "alignmentOptions"
+    ▿ value: 3 elements
+      ▿ ReaderTextAlignmentOption
+        - accessibilityLabel: "Publisher default"
+        - alignment: ReaderTextAlignment.publisherDefault
+        - title: "Publisher default"
+      ▿ ReaderTextAlignmentOption
+        - accessibilityLabel: "Left"
+        - alignment: ReaderTextAlignment.left
+        - title: "Left"
+      ▿ ReaderTextAlignmentOption
+        - accessibilityLabel: "Justify"
+        - alignment: ReaderTextAlignment.justify
+        - title: "Justify"
+  ▿ (2 elements)
+    - key: "brightness"
+    - value: Optional<Binding<Double>>.none
+  ▿ (2 elements)
+    - key: "brightnessAccessibilityLabel"
+    - value: "Screen brightness"
+  ▿ (2 elements)
+    - key: "brightnessLabel"
+    - value: "Brightness"
+  ▿ (2 elements)
+    - key: "brightnessValue"
+    - value: "42%"
+  ▿ (2 elements)
+    - key: "customiseLabel"
+    - value: "Customise"
+  ▿ (2 elements)
+    - key: "disabledAccessibilityValue"
+    - value: "Unavailable for fixed-layout books"
+  ▿ (2 elements)
+    - key: "fontFamily"
+    - value: ReaderFontFamily.publisher
+  ▿ (2 elements)
+    - key: "fontFamilyAccessibilityLabel"
+    - value: "Font family"
+  ▿ (2 elements)
+    - key: "fontFamilyOptions"
+    ▿ value: 3 elements
+      ▿ ReaderFontFamilyOption
+        - accessibilityLabel: "Publisher font"
+        - family: ReaderFontFamily.publisher
+        - title: "Publisher"
+      ▿ ReaderFontFamilyOption
+        - accessibilityLabel: "Serif font"
+        - family: ReaderFontFamily.serif
+        - title: "Serif"
+      ▿ ReaderFontFamilyOption
+        - accessibilityLabel: "Sans serif font"
+        - family: ReaderFontFamily.sansSerif
+        - title: "Sans serif"
+  ▿ (2 elements)
+    - key: "fontLabel"
+    - value: "Font"
+  ▿ (2 elements)
+    - key: "fontSize"
+    - value: 1.0
+  ▿ (2 elements)
+    - key: "fontSizeAccessibilityLabel"
+    - value: "Text size"
+  ▿ (2 elements)
+    - key: "fontSizeAccessibilityValue"
+    - value: "18 points"
+  ▿ (2 elements)
+    - key: "fontSizeDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease font size"
+      - text: "A−"
+  ▿ (2 elements)
+    - key: "fontSizeIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase font size"
+      - text: "A+"
+  ▿ (2 elements)
+    - key: "fontSizeLabel"
+    - value: "Text size"
+  ▿ (2 elements)
+    - key: "fontSizeRange"
+    ▿ value: 0.75...2.0
+      - lowerBound: 0.75
+      - upperBound: 2.0
+  ▿ (2 elements)
+    - key: "fontSizeStep"
+    - value: 0.125
+  ▿ (2 elements)
+    - key: "hyphenation"
+    - value: false
+  ▿ (2 elements)
+    - key: "hyphenationAccessibilityLabel"
+    - value: "Hyphenation"
+  ▿ (2 elements)
+    - key: "hyphenationLabel"
+    - value: "Hyphenation"
+  ▿ (2 elements)
+    - key: "hyphenationOffValue"
+    - value: "Off"
+  ▿ (2 elements)
+    - key: "hyphenationOnValue"
+    - value: "On"
+  ▿ (2 elements)
+    - key: "identifierPrefix"
+    - value: Optional<String>.none
+  ▿ (2 elements)
+    - key: "isReflowable"
+    - value: true
+  ▿ (2 elements)
+    - key: "isScrollMode"
+    - value: false
+  ▿ (2 elements)
+    - key: "layoutLabel"
+    - value: "Layout"
+  ▿ (2 elements)
+    - key: "letterSpacing"
+    - value: 0.0
+  ▿ (2 elements)
+    - key: "letterSpacingAccessibilityLabel"
+    - value: "Letter spacing"
+  ▿ (2 elements)
+    - key: "letterSpacingAccessibilityValue"
+    - value: "Default"
+  ▿ (2 elements)
+    - key: "letterSpacingDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease letter spacing"
+      - text: "−"
+  ▿ (2 elements)
+    - key: "letterSpacingIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase letter spacing"
+      - text: "+"
+  ▿ (2 elements)
+    - key: "letterSpacingLabel"
+    - value: "Letter spacing"
+  ▿ (2 elements)
+    - key: "letterSpacingRange"
+    ▿ value: 0.0...4.0
+      - lowerBound: 0.0
+      - upperBound: 4.0
+  ▿ (2 elements)
+    - key: "letterSpacingStep"
+    - value: 1.0
+  ▿ (2 elements)
+    - key: "level"
+    - value: ReaderAppearanceLevel.essentials
+  ▿ (2 elements)
+    - key: "lineSpacing"
+    - value: 1.0
+  ▿ (2 elements)
+    - key: "lineSpacingAccessibilityLabel"
+    - value: "Line spacing"
+  ▿ (2 elements)
+    - key: "lineSpacingAccessibilityValue"
+    - value: "1.4 lines"
+  ▿ (2 elements)
+    - key: "lineSpacingDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease line spacing"
+      - text: "−"
+  ▿ (2 elements)
+    - key: "lineSpacingIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase line spacing"
+      - text: "+"
+  ▿ (2 elements)
+    - key: "lineSpacingLabel"
+    - value: "Line spacing"
+  ▿ (2 elements)
+    - key: "lineSpacingRange"
+    ▿ value: 0.8...2.0
+      - lowerBound: 0.8
+      - upperBound: 2.0
+  ▿ (2 elements)
+    - key: "lineSpacingStep"
+    - value: 0.1
+  ▿ (2 elements)
+    - key: "margins"
+    - value: 0.0
+  ▿ (2 elements)
+    - key: "marginsAccessibilityLabel"
+    - value: "Margins"
+  ▿ (2 elements)
+    - key: "marginsAccessibilityValue"
+    - value: "0 margins"
+  ▿ (2 elements)
+    - key: "marginsDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease margins"
+      - text: "−"
+  ▿ (2 elements)
+    - key: "marginsIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase margins"
+      - text: "+"
+  ▿ (2 elements)
+    - key: "marginsLabel"
+    - value: "Margins"
+  ▿ (2 elements)
+    - key: "marginsRange"
+    ▿ value: 0.0...1.0
+      - lowerBound: 0.0
+      - upperBound: 1.0
+  ▿ (2 elements)
+    - key: "marginsStep"
+    - value: 0.25
+  ▿ (2 elements)
+    - key: "onReset"
+    - value: Optional<() -> ()>.none
+  ▿ (2 elements)
+    - key: "paginatedLabel"
+    - value: "Paginated"
+  ▿ (2 elements)
+    - key: "paragraphSpacing"
+    - value: 0.0
+  ▿ (2 elements)
+    - key: "paragraphSpacingAccessibilityLabel"
+    - value: "Paragraph spacing"
+  ▿ (2 elements)
+    - key: "paragraphSpacingAccessibilityValue"
+    - value: "Default"
+  ▿ (2 elements)
+    - key: "paragraphSpacingDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease paragraph spacing"
+      - text: "−"
+  ▿ (2 elements)
+    - key: "paragraphSpacingIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase paragraph spacing"
+      - text: "+"
+  ▿ (2 elements)
+    - key: "paragraphSpacingLabel"
+    - value: "Paragraph spacing"
+  ▿ (2 elements)
+    - key: "paragraphSpacingRange"
+    ▿ value: 0.0...4.0
+      - lowerBound: 0.0
+      - upperBound: 4.0
+  ▿ (2 elements)
+    - key: "paragraphSpacingStep"
+    - value: 1.0
+  ▿ (2 elements)
+    - key: "publisherStyles"
+    - value: false
+  ▿ (2 elements)
+    - key: "publisherStylesAccessibilityLabel"
+    - value: "Publisher styles"
+  ▿ (2 elements)
+    - key: "publisherStylesFooter"
+    - value: "Publisher styles footer"
+  ▿ (2 elements)
+    - key: "publisherStylesLabel"
+    - value: "Publisher styles"
+  ▿ (2 elements)
+    - key: "publisherStylesOffValue"
+    - value: "Off"
+  ▿ (2 elements)
+    - key: "publisherStylesOnValue"
+    - value: "On"
+  ▿ (2 elements)
+    - key: "readingModeAccessibilityLabel"
+    - value: "Reading mode"
+  ▿ (2 elements)
+    - key: "resetLabel"
+    - value: "Reset to defaults"
+  ▿ (2 elements)
+    - key: "sample"
+    - value: Optional<AnyView>.none
+  ▿ (2 elements)
+    - key: "scrollLabel"
+    - value: "Scroll"
+  ▿ (2 elements)
+    - key: "theme"
+    - value: ReaderTheme.light
+  ▿ (2 elements)
+    - key: "themeAccessibilityLabel"
+    - value: "Reading theme"
+  ▿ (2 elements)
+    - key: "themeLabel"
+    - value: "Themes"
+  ▿ (2 elements)
+    - key: "themeOptions"
+    ▿ value: 3 elements
+      ▿ ReaderThemeOption
+        - accessibilityLabel: "Light theme"
+        - theme: ReaderTheme.light
+        - title: "Light"
+      ▿ ReaderThemeOption
+        - accessibilityLabel: "Sepia theme"
+        - theme: ReaderTheme.sepia
+        - title: "Sepia"
+      ▿ ReaderThemeOption
+        - accessibilityLabel: "Dark theme"
+        - theme: ReaderTheme.dark
+        - title: "Dark"
+  ▿ (2 elements)
+    - key: "typographyLabel"
+    - value: "Typography"
+  ▿ (2 elements)
+    - key: "wordSpacing"
+    - value: 0.0
+  ▿ (2 elements)
+    - key: "wordSpacingAccessibilityLabel"
+    - value: "Word spacing"
+  ▿ (2 elements)
+    - key: "wordSpacingAccessibilityValue"
+    - value: "Default"
+  ▿ (2 elements)
+    - key: "wordSpacingDecrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Decrease word spacing"
+      - text: "−"
+  ▿ (2 elements)
+    - key: "wordSpacingIncrement"
+    ▿ value: ReaderAppearanceCellLabel
+      - accessibilityLabel: "Increase word spacing"
+      - text: "+"
+  ▿ (2 elements)
+    - key: "wordSpacingLabel"
+    - value: "Word spacing"
+  ▿ (2 elements)
+    - key: "wordSpacingRange"
+    ▿ value: 0.0...4.0
+      - lowerBound: 0.0
+      - upperBound: 4.0
+  ▿ (2 elements)
+    - key: "wordSpacingStep"
+    - value: 1.0

@@ -1,0 +1,6 @@
+[
+  {"libraryItem": {"id": "valid-hit-id", "mediaType": "book"}, "matchKey": "title", "matchText": "valid"},
+  {"libraryItem": {"id": 123, "mediaType": "book"}, "matchKey": "wrong-type", "matchText": "private-title"},
+  "not-an-object",
+  {"libraryItem": {"mediaType": "book"}, "matchKey": "missing-id", "matchText": "private-title"}
+]

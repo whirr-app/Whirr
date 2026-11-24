@@ -1,0 +1,15 @@
+▿ MediaFilterPicker
+  ▿ _reduceMotion: Environment<Bool>
+    ▿ content: Content
+      - keyPath: WritableKeyPath<EnvironmentValues, Bool>
+  - disabledIndices: 0 members
+  ▿ labels: 4 elements
+    - "All"
+    - "Audiobooks"
+    - "Podcasts"
+    - "eBooks"
+  - onSelect: (Function)
+  - selectedIndex: 1
+  - selectionTint: Optional<Color>.none
+  - style: MediaFilterPickerStyle.segmented
+  - title: "Filter"

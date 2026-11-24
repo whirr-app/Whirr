@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>Fixture Linkblog</title>
+<subtitle>By A. Fixture Writer</subtitle>
+<link rel="alternate" type="text/html" href="https://linkblog.example.com/" />
+<link rel="self" type="application/atom+xml" href="https://linkblog.example.com/feeds/main" />
+<id>https://linkblog.example.com/feeds/main</id>
+
+
+<updated>2026-08-13T02:59:33Z</updated><rights>Copyright © 2026, A. Fixture Writer</rights><entry>
+	<title>Fixture Design Spills Its Coffee on Example/Social</title>
+	<link rel="alternate" type="text/html" href="https://social.example.com/fixturedesign/status/1000000000000000001" />
+	<link rel="shorturl" type="text/html" href="http://short.example.net/fx01" />
+	<link rel="related" type="text/html" href="https://linkblog.example.com/linked/2026/08/12/fixture-design-coffee" />
+	<id>tag:linkblog.example.com,2026:/linked//6.10001</id>
+	<published>2026-08-13T01:03:45Z</published>
+	<updated>2026-08-13T02:59:33Z</updated>
+	<author>
+		<name>A. Fixture Writer</name>
+		<uri>http://linkblog.example.com/</uri>
+	</author>
+	<content type="html" xml:base="https://linkblog.example.com/linked/" xml:lang="en"><![CDATA[
+<p>A few years ago I’d have looked at this placeholder post and assumed it was a test. But this is apparently real — in the fixture sense.</p>
+
+<p>(<a href="https://mirror.example.com/fixturedesign/status/1000000000000000001">Here’s a mirror link</a> for the averse.)</p>
+
+<div>
+<a  title="Permanent link to ‘Fixture Design Spills Its Coffee on Example/Social’"  href="https://linkblog.example.com/linked/2026/08/12/fixture-design-coffee">&nbsp;★&nbsp;</a>
+</div>
+
+	]]></content>
+  </entry><entry>
+	<title>A Writer on the Fixture 11 ‘GlowNote’ Notification Light</title>
+	<link rel="alternate" type="text/html" href="https://news.example.org/p/the-new-fixture-feature?gift_content=00000000-0000-4000-8000-000000000011" />
+	<link rel="shorturl" type="text/html" href="http://short.example.net/fx02" />
+	<link rel="related" type="text/html" href="https://linkblog.example.com/linked/2026/08/12/writer-fixture-glownote" />
+	<id>tag:linkblog.example.com,2026:/linked//6.10000</id>
+	<published>2026-08-12T21:23:30Z</published>
+	<updated>2026-08-12T21:46:45Z</updated>
+	<author>
+		<name>A. Fixture Writer</name>
+		<uri>http://linkblog.example.com/</uri>
+	</author>
+	<content type="html" xml:base="https://linkblog.example.com/linked/" xml:lang="en"><![CDATA[
+<p>A writer, at an example publication (gift link):</p>
+
+<blockquote>
+  <p>The light glows softly when a placeholder
+notification arrives, and stays dark
+otherwise.</p>
+</blockquote>
+
+<div>
+<a  title="Permanent link to ‘A Writer on the Fixture 11 ‘GlowNote’ Notification Light’"  href="https://linkblog.example.com/linked/2026/08/12/writer-fixture-glownote">&nbsp;★&nbsp;</a>
+</div>
+
+	]]></content>
+  </entry><entry>
+	<title>Example Corp Introduces ‘Lens Moods’ With Fixture 11 Phones</title>
+	<link rel="alternate" type="text/html" href="https://tech.example.net/fixture/0001/lens-moods-interview" />
+	<link rel="shorturl" type="text/html" href="http://short.example.net/fx03" />
+	<link rel="related" type="text/html" href="https://linkblog.example.com/linked/2026/08/12/example-corp-lens-moods" />
+	<id>tag:linkblog.example.com,2026:/linked//6.09999</id>
+	<published>2026-08-12T20:58:15Z</published>
+	<updated>2026-08-12T21:04:07Z</updated>
+	<author>
+		<name>A. Fixture Writer</name>
+		<uri>http://linkblog.example.com/</uri>
+	</author>
+	<content type="html" xml:base="https://linkblog.example.com/linked/" xml:lang="en"><![CDATA[
+<p>“Lens Moods” are placeholder presets. Nothing here is real.</p>
+
+<div>
+<a  title="Permanent link to ‘Example Corp Introduces ‘Lens Moods’ With Fixture 11 Phones’"  href="https://linkblog.example.com/linked/2026/08/12/example-corp-lens-moods">&nbsp;★&nbsp;</a>
+</div>
+
+	]]></content>
+  </entry><entry>
+	<title>A Trade Site on Example Corp’s Fixture 11 Lineup</title>
+	<link rel="alternate" type="text/html" href="https://trade.example.com/2026/08/12/fixture-11-lineup/" />
+	<link rel="shorturl" type="text/html" href="http://short.example.net/fx04" />
+	<link rel="related" type="text/html" href="https://linkblog.example.com/linked/2026/08/12/trade-site-fixture-11-lineup" />
+	<id>tag:linkblog.example.com,2026:/linked//6.09998</id>
+	<published>2026-08-12T19:45:58Z</published>
+	<updated>2026-08-12T19:45:59Z</updated>
+	<author>
+		<name>A. Fixture Writer</name>
+		<uri>http://linkblog.example.com/</uri>
+	</author>
+	<content type="html" xml:base="https://linkblog.example.com/linked/" xml:lang="en"><![CDATA[
+<p>A reporter, at an example trade site:</p>
+
+<blockquote>
+  <p>With this year’s Fixture 11 series, Example Corp is thinking more
+about placeholder tasks. Users will be able to do invented
+things, for instance.</p>
+</blockquote>
+
+<p>Another knockout year for the fixture phones.</p>
+
+<div>
+<a  title="Permanent link to ‘A Trade Site on Example Corp’s Fixture 11 Lineup’"  href="https://linkblog.example.com/linked/2026/08/12/trade-site-fixture-11-lineup">&nbsp;★&nbsp;</a>
+</div>
+
+	]]></content>
+  </entry>
+</feed>

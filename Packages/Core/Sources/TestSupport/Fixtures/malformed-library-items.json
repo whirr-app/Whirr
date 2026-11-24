@@ -1,0 +1,6 @@
+[
+  {"id":"valid-id","title":"valid"},
+  {"id":123,"title":"wrong-type"},
+  "not-an-object",
+  {"title":"private-title"}
+]

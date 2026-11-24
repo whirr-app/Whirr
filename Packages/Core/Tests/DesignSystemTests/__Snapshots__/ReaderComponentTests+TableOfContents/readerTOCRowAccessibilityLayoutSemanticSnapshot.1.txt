@@ -1,0 +1,14 @@
+▿ ReaderTOCRow
+  ▿ _dynamicTypeSize: Environment<DynamicTypeSize>
+    ▿ content: Content
+      - keyPath: WritableKeyPath<EnvironmentValues, DynamicTypeSize>
+  - accessibilityValue: "Starts at page 42"
+  - currentIndicatorSystemImage: "checkmark"
+  - depth: 2
+  - isCurrent: false
+  - minimumHitTargetHeight: 44.0
+  - onSelect: (Function)
+  ▿ pageLabel: Optional<String>
+    - some: "Page 42"
+  - theme: ReaderTheme.sepia
+  - title: "A chapter title that remains readable at accessibility sizes"

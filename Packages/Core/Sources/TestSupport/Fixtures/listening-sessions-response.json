@@ -1,0 +1,42 @@
+{
+  "sessions": [
+    {
+      "id": "history_session_1",
+      "userId": "user_fixture",
+      "libraryId": "library_book_fixture",
+      "libraryItemId": "item_book_fixture",
+      "episodeId": null,
+      "mediaType": "book",
+      "displayTitle": "Fixture Book",
+      "displayAuthor": "Fixture Author",
+      "duration": 11670.881451,
+      "playMethod": 0,
+      "startTime": 0,
+      "currentTime": 542.5,
+      "timeListening": 542.5,
+      "startedAt": 1700000000000,
+      "updatedAt": 1700000600000
+    },
+    {
+      "id": "history_session_2",
+      "libraryItemId": "item_book_fixture",
+      "startTime": 542.5,
+      "currentTime": 1830.25,
+      "timeListening": 1287.75,
+      "startedAt": 1700010000000,
+      "updatedAt": 1700011300000
+    },
+    {
+      "id": "history_session_other_item",
+      "libraryItemId": "item_other_fixture",
+      "startTime": 0,
+      "currentTime": 100,
+      "timeListening": 100,
+      "startedAt": 1700020000000,
+      "updatedAt": 1700020100000
+    }
+  ],
+  "total": 3,
+  "page": 0,
+  "itemsPerPage": 50
+}

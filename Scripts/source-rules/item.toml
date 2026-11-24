@@ -1,0 +1,189 @@
+# Item detail, item menus and item rows. Rules about the whole App's screens live in app.toml.
+
+[[rule]]
+id = "item-detail-action-row-no-companion-indicator-text"
+why = """\
+One slot carries everything the Watch says about a book: the status line replaced the bare \
+"Playing on Apple Watch" label rather than sitting beside it. Play's take-over copy must not read \
+the indicator text again in the action row."""
+files = ["App/Whirr/**/ItemDetailActionRow.swift"]
+forbid = 'CompanionDeviceIndicatorPresentation\.text'
+example = 'Text(CompanionDeviceIndicatorPresentation.text)'
+
+[[rule]]
+id = "item-detail-action-row-no-hand-drawn-circle-chrome"
+why = """\
+The row's Chapters and mixed-item Read circles are native glass, not hand-drawn tinted discs. A \
+fixed 46 pt disc next to a capsule sized from the touch-target metric only matched by coincidence."""
+files = ["App/Whirr/**/ItemDetailActionRow.swift"]
+forbid = 'circularControlChrome\('
+example = '.circularControlChrome(diameter: 46)'
+
+[[rule]]
+id = "item-detail-action-row-no-plain-glass-style"
+why = """\
+`.glass` resolves against the device colour scheme, but the detail page's canvas resolves from the \
+artwork, so the two invert on a pale cover. Every control in the row draws from `accentFill`, the \
+canvas ink, through `.glassProminent`."""
+files = ["App/Whirr/**/ItemDetailActionRow.swift"]
+forbid = 'buttonStyle\(\.glass\)'
+example = '.buttonStyle(.glass)'
+ok = ['.buttonStyle(.glassProminent)']
+
+[[rule]]
+id = "item-detail-card-sheet-close-is-the-glyph"
+why = """\
+The label-less `Button(role: .close)` initializer draws the system close glyph. A title, as in \
+`Button("Close", role: .close)`, becomes the label, so the card shipped a "Close" word where every \
+other iOS 26 sheet shows an X."""
+files = ["App/Whirr/**/ItemDetailCardSheet.swift"]
+forbid = 'Button\("Close"'
+example = 'Button("Close", role: .close) { dismiss() }'
+
+[[rule]]
+id = "item-detail-card-sheet-no-detents"
+why = """\
+The card wrapper owns form sizing. A detent stack is the compact presentation the shell chooses \
+elsewhere, and the card is unconditional."""
+files = ["App/Whirr/**/ItemDetailCardSheet.swift"]
+forbid = '\.presentationDetents\('
+example = '.presentationDetents([.medium])'
+
+[[rule]]
+id = "item-detail-card-sheet-no-own-size-class"
+why = """\
+A `.form` sheet is about 570 pt wide on iPad portrait, and SwiftUI resolves that to a compact size \
+class even though the window is regular. A wrapper that asked the environment shipped the detent \
+stack (draggable, no Close) instead of the card. The shell owns the size class and presents this \
+only at regular width, so the card here is unconditional."""
+files = ["App/Whirr/**/ItemDetailCardSheet.swift"]
+forbid = 'horizontalSizeClass|SheetViewPresentation'
+example = '@Environment(\.horizontalSizeClass) private var sizeClass'
+
+[[rule]]
+id = "item-detail-card-sheet-injects-content"
+why = """\
+The wrapper takes its content as a `@ViewBuilder` so the sheet chrome stays independent of the \
+screen it hosts; constructing `ItemDetailView` inside it would make the chrome depend on it."""
+files = ["App/Whirr/**/ItemDetailCardSheet.swift"]
+forbid = 'ItemDetailView\('
+example = 'ItemDetailView(itemId: id)'
+
+[[rule]]
+id = "item-detail-sheets-no-own-detent"
+why = """\
+The chapter and history content views carry no competing leaf detent. Both hosts (item detail and \
+the expanded player) resolve the same `.form` role, so the two cannot drift back to separate width \
+policies."""
+files = [
+  "App/Whirr/**/ItemDetailChaptersSheet.swift",
+  "App/Whirr/**/ItemDetailHistorySheet.swift",
+]
+forbid = '\.presentationDetents\('
+example = '.presentationDetents([.large])'
+
+[[rule]]
+id = "item-action-titles-come-from-media-action-copy"
+why = """\
+`MediaActionCopy` owns every item action's title. A title typed out in a screen is how the same \
+action came to read "Delete Download" in one menu and "Remove Download" in the next. Generic words \
+(Play, Pause, Download, Remove, Transcript) are left out because they are legitimate copy in too \
+many unrelated places for a text scan to tell apart. The Watch app does not link AppModel and \
+spells its own titles, so it is not scanned here (the retired-wording rule below does cover it)."""
+files = ["App/Whirr/**/*.swift", "Packages/Core/Sources/AppModel/**/*.swift"]
+forbid = '"(?:Play Next|Add to Up Next|Save for Later|Remove from Saved|View Details|View Episodes|Listening History|Add Bookmark|Remove Download|Remove Downloads|Removing Download…|Send to Watch|Remove from Watch|Mark as Finished|Reset Progress|Save to Server|Remove from Server)"'
+allow = ["Packages/Core/Sources/AppModel/MediaActionCopy.swift"]
+example = 'Button("Play Next") { play() }'
+ok = ['Button(MediaActionCopy.playNext) { play() }']
+
+[[rule]]
+id = "item-action-titles-no-retired-wording"
+why = """\
+Wording `MediaActionCopy` replaced. Reintroducing one is drift even where no table title applies."""
+files = [
+  "App/Whirr/**/*.swift",
+  "App/WhirrWatch Watch App/**/*.swift",
+  "Packages/Core/Sources/AppModel/**/*.swift",
+]
+forbid = '"(?:Delete Download|Deleting Download…|Play Episode|Pause Episode|Open Book|Open Episode|Save to Audiobookshelf|Remove from Audiobookshelf|Remove from Apple Watch)"'
+example = 'Button("Delete Download") { remove() }'
+
+[[rule]]
+id = "item-card-lists-are-swipe-audited"
+why = """\
+Every full-width item row swipes: a wide row reads as swipeable, so one that does not reads as \
+broken (Home's drill-downs, Search and Library once answered only a long press). A list of item \
+cards (`WideCompactCard(item:`) is allowed only in the files below, each of which gives its rows a \
+swipe: Home More and Saved for Later through the shared item swipe vocabulary, Downloads and the RSS \
+downloads list through the confirmed-delete swipe. A new list of item cards joins this list once it \
+swipes."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'WideCompactCard\(\s*item:'
+allow = [
+  "App/Whirr/**/HomeMoreView.swift",
+  "App/Whirr/**/SavedForLaterView.swift",
+  "App/Whirr/**/DownloadsView+List.swift",
+  "App/Whirr/**/RSSDownloadsView.swift",
+]
+example = 'WideCompactCard(item: summary, onPlay: play)'
+
+[[rule]]
+id = "search-rows-read-episode-playback-status"
+why = """\
+An episode result's swipe and its menu twin read the episode's own status. A lookup keyed by the \
+show's id alone offered Reset on every episode of a finished show."""
+files = ["App/Whirr/**/SearchResultsList.swift"]
+forbid = 'playbackStatus\(menu\.itemID\)'
+example = 'playbackStatus(menu.itemID)'
+
+[[rule]]
+id = "grids-and-carousels-carry-no-item-swipe"
+why = """\
+A grid is long-press only: a horizontal swipe on a tile has no row to reveal."""
+files = [
+  "App/Whirr/**/LibraryBrowseGridTiles.swift",
+  "App/Whirr/**/AuthorSeriesGridTile.swift",
+  "App/Whirr/**/HomeShelfView.swift",
+]
+forbid = 'itemSwipeActions\('
+example = 'tile.itemSwipeActions(subject)'
+
+[[rule]]
+id = "no-trailing-full-swipe"
+why = """\
+A full swipe on the trailing edge fires its first capsule before the user has seen it, so no list \
+allows one; the leading edge's Play and Read are safe to fire."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'edge: \.trailing,\s*allowsFullSwipe: true'
+example = '.swipeActions(edge: .trailing, allowsFullSwipe: true) { delete }'
+ok = ['.swipeActions(edge: .trailing, allowsFullSwipe: false) { delete }']
+
+[[rule]]
+id = "download-bubble-sizes-only-the-ring"
+why = """\
+Only the ring branch is sized: `DownloadProgressRing` strokes a circle, which has no intrinsic \
+size. The plain glyph must not inherit that box or its `.imageScale(.medium)`, or it draws a step \
+smaller than its neighbours in the toolbar group. One fixed frame, one image scale."""
+files = ["App/Whirr/**/ItemDetailDownloadBubbleView.swift"]
+forbid = '\.frame\(width: 22, height: 22\)|\.imageScale\(\.medium\)'
+at_most = 2
+example = '.frame(width: 22, height: 22)'
+
+[[rule]]
+id = "saved-for-later-no-literal-podcast-media-kind"
+why = """\
+A saved episode opens its show through the shared show summary and the feed artwork, as every \
+other episode surface does; a hard-coded media kind string forks that path."""
+files = ["App/Whirr/**/SavedForLaterView.swift"]
+forbid = 'mediaKind: "podcast"'
+example = 'ItemMenuSubject(mediaKind: "podcast", itemID: id)'
+
+[[rule]]
+id = "item-context-menu-feedback-no-notification-haptic"
+why = """\
+`.success` is the notification pattern iOS reserves for something the listener must notice. Adding \
+a row to Up Next is routine, so the confirmations stay on impact taps and only the failure alert \
+escalates."""
+files = ["App/Whirr/**/ItemContextMenuFeedback.swift"]
+forbid = '\.success'
+example = '.sensoryFeedback(.success, trigger: message)'

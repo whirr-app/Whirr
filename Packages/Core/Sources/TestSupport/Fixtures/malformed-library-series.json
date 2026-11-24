@@ -1,0 +1,6 @@
+[
+  {"id": "series_valid", "name": "Valid Series"},
+  {"id": 456, "name": "wrong-type-id"},
+  "not-an-object",
+  {"name": "missing-id"}
+]

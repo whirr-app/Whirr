@@ -1,0 +1,264 @@
+# Podcast screens: the all-shows pair, the Podcasts root, the show page and the episode card.
+
+# MARK: - All shows
+
+[[rule]]
+id = "all-shows-reset-confirmation-is-an-alert"
+why = """\
+Reset is requested from the toolbar's Sort menu, which has collapsed by the time the question \
+appears. An anchored confirmation dialog has no stable source then, so both all-shows screens \
+confirm with a centred alert."""
+files = [
+  "App/Whirr/**/PodcastShowsView.swift",
+  "App/Whirr/**/NativePodcastShowsView.swift",
+]
+forbid = '\.confirmationDialog\('
+example = '.confirmationDialog("Reset show order?", isPresented: $isConfirmingReset) {}'
+
+[[rule]]
+id = "all-shows-reset-copy-is-shared"
+why = """\
+Both all-shows screens spell the reset button through `AllShowsResetCopy`. A screen that writes its \
+own `Button("Reset Order"` forks the copy."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'Button\("Reset Order"'
+example = 'Button("Reset Order", role: .destructive) { reset() }'
+ok = ['Button(AllShowsResetCopy.confirmLabel, role: .destructive) { reset() }']
+
+[[rule]]
+id = "all-shows-screens-own-no-grid"
+why = """\
+The two all-shows screens share one grid. A screen that declares its own drop delegate, rotor, \
+editing tile, lazy grid or wash provider is a second copy of it that drifts."""
+files = [
+  "App/Whirr/**/PodcastShowsView.swift",
+  "App/Whirr/**/NativePodcastShowsView.swift",
+]
+forbid = 'DropDelegate|func rotorMoves|func accessibleEditingTile|LazyVGrid\(|HomeWashProvider|PodcastShowTileView\('
+example = 'LazyVGrid(columns: columns) { content }'
+
+[[rule]]
+id = "show-grids-use-dynamic-type-tile-width"
+why = """\
+A grid sized from the bare `showGridTileWidth` property ignores Dynamic Type; the function \
+`showGridTileWidth(` takes the accessibility size into account."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.adaptive\(minimum:\s*PodcastsViewPresentation\.showGridTileWidth\)'
+example = 'GridItem(.adaptive(minimum: PodcastsViewPresentation.showGridTileWidth))'
+ok = ['GridItem(.adaptive(minimum: PodcastsViewPresentation.showGridTileWidth(isAccessibilitySize: true)))']
+
+# MARK: - Podcasts root and directory detail
+
+[[rule]]
+id = "podcasts-root-latest-rows-are-stack-content"
+why = """\
+No `List` draws the Latest rows, so edit mode does not apply to them: the Podcasts root reads no \
+`editMode`."""
+files = [
+  "App/Whirr/**/PodcastsView.swift",
+  "App/Whirr/**/PodcastsView+*.swift",
+]
+forbid = 'editMode'
+example = '@Environment(\.editMode) private var editMode'
+
+[[rule]]
+id = "podcasts-root-one-merged-shows-section"
+why = """\
+The root draws one merged Your Shows section and gives the ABS projections no native-preference \
+gate. A separate native-shows callback or a server episode count brings back the native/server pair."""
+files = [
+  "App/Whirr/**/PodcastsView.swift",
+  "App/Whirr/**/PodcastsView+*.swift",
+]
+forbid = 'onOpenNativeShows|podcastServerEpisodeCount'
+example = 'let onOpenNativeShows: () -> Void'
+
+[[rule]]
+id = "podcast-page-reading-measure-from-presentation"
+why = """\
+The show page, the Podcasts root and the directory detail take their inset from presentation \
+layout, which derives it from the reading measure. A 760 literal in a view is a second copy of that \
+measure."""
+files = [
+  "App/Whirr/**/DirectoryPodcastDetailView.swift",
+  "App/Whirr/**/PodcastShowContentView.swift",
+  "App/Whirr/**/PodcastsView.swift",
+]
+forbid = '\b760\b'
+text = "code-no-strings"
+example = '.frame(maxWidth: 760)'
+ok = ['.frame(maxWidth: PodcastsViewPresentation.episodeReadingMeasure)']
+
+# MARK: - Show page
+
+[[rule]]
+id = "show-page-confirms-with-centred-alerts"
+why = """\
+Unfollow, mark played, mark unplayed and remove downloads are all launched from the toolbar menu, \
+which collapses before SwiftUI presents the question. An anchored confirmation dialog then loses \
+its source view and its Cancel button, so the show page confirms with a centred alert."""
+files = [
+  "App/Whirr/**/PodcastShowView.swift",
+  "App/Whirr/**/PodcastShowView+*.swift",
+]
+forbid = '\.confirmationDialog\('
+example = '.confirmationDialog("Unfollow?", isPresented: $isConfirming) {}'
+
+[[rule]]
+id = "show-page-episode-row-lives-in-content-view"
+why = """\
+Episode composition moved to `PodcastShowContentView`. The screen defining an `episodeRow` of its \
+own would be a second composition of the row."""
+files = ["App/Whirr/**/PodcastShowView.swift"]
+forbid = 'private func episodeRow\('
+example = 'private func episodeRow(_ episode: Episode) -> some View { EmptyView() }'
+
+[[rule]]
+id = "show-batch-save-skips-selection-action-pipeline"
+why = """\
+Batch Save to Audiobookshelf runs through `beginBatchServerSave`. Routing it through the regular \
+selection action pipeline would reuse a confirm-and-perform path built for local actions."""
+files = ["App/Whirr/**/PodcastShowView+Selection.swift"]
+forbid = '(?:request|perform)SelectionAction\(\.saveToServer'
+example = 'requestSelectionAction(.saveToServer, ids: ids)'
+
+[[rule]]
+id = "show-selection-toolbar-ignores-save-state"
+why = """\
+Batch-save working state belongs to the selection chrome (`isWorking:`). Disabling the show's \
+toolbar on `selection.isPerforming ||` something else moves that rule into the screen."""
+files = ["App/Whirr/**/PodcastShowView.swift"]
+forbid = '\.disabled\(selection\.isPerforming\s*\|\|'
+example = '.disabled(selection.isPerforming || isBatchServerSaveWorking)'
+ok = ['.disabled(selection.isPerforming)']
+
+# MARK: - Episode card
+
+[[rule]]
+id = "episode-card-sheet-is-not-scroll-first"
+why = """\
+The card body is one `ScrollView`, so scroll-first interaction would leave the grabber as the only \
+way out of `.medium`; compact detents are reachable only at `.automatic`. The wrapper's Close is \
+the role-based system button, not a hand-built one."""
+files = ["App/Whirr/**/PodcastEpisodeCardSheet.swift"]
+forbid = '\.presentationContentInteraction\(|Button\("Close"'
+example = '.presentationContentInteraction(.scrolls)'
+
+[[rule]]
+id = "episode-card-half-sheet-keeps-system-glass"
+why = """\
+The compact half sheet uses the system's Liquid Glass at `.medium`. Painting a presentation \
+background hides it."""
+files = ["App/Whirr/**/PodcastEpisodeCardSheet.swift"]
+forbid = '\.presentationBackground\('
+example = '.presentationBackground(Color.black)'
+
+[[rule]]
+id = "episode-card-notes-measure-is-the-shared-one"
+why = """\
+The card's notes measure is `AdaptiveLayoutPresentation.readingMeasure`. A literal 640 forks the \
+shared reading measure."""
+files = ["App/Whirr/**/PodcastEpisodeCardViewPresentation.swift"]
+forbid = 'notesReadingMeasure\b[^=\n]*=\s*640\b'
+example = 'static let notesReadingMeasure: CGFloat = 640'
+ok = ['static let notesReadingMeasure = AdaptiveLayoutPresentation.readingMeasure']
+
+[[rule]]
+id = "episode-card-hosts-leave-sheet-sizing-to-wrapper"
+why = """\
+`PodcastEpisodeCardSheet` owns the sheet's detents and drag indicator. A host that applies either \
+inline overrides the compact/regular mode policy."""
+files = [
+  "App/Whirr/**/LibraryShellView.swift",
+  "App/Whirr/**/LibraryShellView+*.swift",
+  "App/Whirr/**/ExpandedPlayerSheets.swift",
+]
+forbid = '\.presentationDetents\(|\.presentationDragIndicator\('
+example = '.presentationDetents([.medium])'
+
+[[rule]]
+id = "episode-card-controls-share-one-treatment"
+why = """\
+The three inline secondary controls share one translucent circle (`episodeCardControlChrome`), and \
+the `Menu` adds no trigger chrome of its own. Material fills, glass styles and glass effects on the \
+card or its menu would split that treatment."""
+files = [
+  "App/Whirr/**/PodcastEpisodeCardView.swift",
+  "App/Whirr/**/PodcastEpisodeCardView+*.swift",
+  "App/Whirr/**/PodcastEpisodeCardActionMenu.swift",
+]
+forbid = 'fill: \.thinMaterial|\.buttonStyle\(\.glass|\.glassEffect\('
+example = '.glassEffect(.regular)'
+
+[[rule]]
+id = "episode-card-menu-fill-is-a-concrete-colour"
+why = """\
+Over the half-height sheet's glass a hierarchical fill turns vibrant on the plain buttons but not \
+inside the `Menu` label, so the ellipsis looked lighter than its neighbours. The menu fills with a \
+concrete colour, not `.tertiary`."""
+files = ["App/Whirr/**/PodcastEpisodeCardActionMenu.swift"]
+forbid = 'fill: \.tertiary\)'
+example = 'ellipsisGlyph(fill: .tertiary)'
+
+[[rule]]
+id = "episode-card-ink-comes-from-the-policy"
+why = """\
+The card's secondary copy reads its ink from `secondaryInk(onSystemGlass:)`, so it renders against \
+the glass. The fixed `textSecondary` token on the card bypasses that policy."""
+files = [
+  "App/Whirr/**/PodcastEpisodeCardView.swift",
+  "App/Whirr/**/PodcastEpisodeCardView+*.swift",
+]
+forbid = 'WhirrColorToken\.textSecondary'
+example = '.foregroundStyle(WhirrColorToken.textSecondary.color)'
+
+[[rule]]
+id = "episode-card-no-show-save-line"
+why = """\
+Only the show surface asks the server-save sheet for its Save Show line. The episode card passing \
+`savesShow` would offer a whole-show save from one episode."""
+files = ["App/Whirr/**/PodcastEpisodeCardView.swift"]
+forbid = 'savesShow'
+example = 'savesShow: true'
+
+[[rule]]
+id = "podcast-download-failure-copy-lives-in-one-place"
+why = """\
+The show row and the episode card present a failed download through one modifier and one \
+presentation type. Spelling "Download failed" or "Try Again" in either surface forks the failure \
+copy."""
+files = [
+  "App/Whirr/**/PodcastShowView.swift",
+  "App/Whirr/**/PodcastShowView+*.swift",
+  "App/Whirr/**/PodcastEpisodeCardView.swift",
+  "App/Whirr/**/PodcastEpisodeCardView+*.swift",
+]
+forbid = 'Download failed|Try Again'
+example = 'Button("Try Again") { retry() }'
+
+# MARK: - Episode rows
+
+[[rule]]
+id = "remove-download-swipe-keeps-its-row"
+why = """\
+A destructive `ButtonRole` inside `swipeActions` tells SwiftUI the source row is being deleted. \
+Remove Download deletes only offline bytes, so that role makes List collapse the row optimistically \
+before the unchanged projection restores it. The renderer keeps the standard role and an explicit \
+red tint."""
+files = ["App/Whirr/**/PodcastEpisodeSwipeButtons.swift"]
+forbid = 'Button\(role:'
+example = 'Button(role: .destructive) { action() } label: { Label("Remove", systemImage: "trash") }'
+ok = ['Button { action() } label: { Label("Remove", systemImage: "trash") }']
+
+[[rule]]
+id = "queue-identity-through-the-action-policy"
+why = """\
+`ListeningIdentity`'s factories are failable and accept only the ABS namespace, so a view calling \
+one resolves a native feed's `rss:` id to nil and quietly hides its actions. \
+`ListeningQueueActionPolicy.identity(itemID:episodeID:category:)` maps the rss namespace to \
+`.rssEpisode`. The UI harness builds ABS-only fixture ids, where the factory cannot fail."""
+files = ["App/Whirr/**/*.swift"]
+allow = ["App/Whirr/UIHarness+Queue.swift"]
+forbid = 'ListeningIdentity\.(?:podcastEpisode|audiobook|rssEpisode)\('
+example = 'ListeningIdentity.podcastEpisode(itemID: itemID, episodeID: episodeID)'
+ok = ['ListeningQueueActionPolicy.identity(itemID: itemID, episodeID: episodeID, category: .podcast)']

@@ -1,0 +1,268 @@
+# Rules about shared chrome: badges, covers, editorial cards, the top scroll edge, sheets and the
+# ambient pages.
+
+[[rule]]
+id = "badge-sources-draw-no-material"
+why = """\
+Badges repeat: up to two on every cover in a grid, one on every search result. A material behind \
+each is a live backdrop blur and an offscreen pass in the render server, and on the iPad Library \
+those passes held scrolling at about 80 fps in a profiled capture. \
+Every badge draws on the shared flat `badgeBackground(in:)` instead."""
+files = [
+  "Packages/Core/Sources/DesignSystem/Components/BadgeBackground.swift",
+  "Packages/Core/Sources/DesignSystem/Components/MediaKindBadgeView.swift",
+  "Packages/Core/Sources/DesignSystem/Components/OfflineBadgeView.swift",
+  "App/Whirr/**/SearchResultsList.swift",
+]
+forbid = 'Material'
+example = '.background(.ultraThinMaterial, in: Capsule())'
+
+[[rule]]
+id = "detail-hero-badge-measured-from-artwork"
+why = """\
+The detail hero draws its badge outside the cover's clip, so its shadow is not cut off at the \
+artwork's edge, and takes only the corner from the artwork (`.coverArtworkOverlay`). A badge \
+overlaid on the 140-point box puts it in the wrong place whenever the cover is inset in its box."""
+files = ["App/Whirr/**/ItemDetailHeroView.swift"]
+forbid = '\.overlay\(alignment: \.bottomTrailing\)'
+example = 'cover.overlay(alignment: .bottomTrailing) { badge }'
+ok = ['cover.coverArtworkOverlay(alignment: .bottomTrailing)']
+
+[[rule]]
+id = "unfilled-card-rows-built-only-by-the-card"
+why = """\
+`PodcastEpisodeCardRow` and `MediaItemSummaryRow` declare `paintsCardBackground == false`: the call \
+site draws the fill (only it knows whether a swipe container will mask one inside the cell) and \
+requests the wash with the item's artwork source. `WideCompactCard` holds that contract, so a \
+second construction site would assemble chrome and wash a second way."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\b(?:MediaItemSummaryRow|PodcastEpisodeCardRow)\('
+allow = ["App/Whirr/**/WideCompactCard.swift"]
+example = 'MediaItemSummaryRow(item: item)'
+
+[[rule]]
+id = "wash-read-through-subjects"
+why = """\
+Screens may warm a page of washes or read a page palette, but only through subjects, which carry \
+their artwork source. A bare-id request or a read of the wash dictionary drops the source, so an \
+`rss:` item is never coloured."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.washes\[|washesFor:|preloadCachedWashes\(for:'
+example = 'let wash = provider.washes[itemID]'
+
+[[rule]]
+id = "author-series-cards-flat-and-opaque"
+why = """\
+Editorial cards use one opaque wash block with no gradients, effects, materials or animation. A \
+forbidden card treatment is a reviewable implementation choice that SwiftUI's rendered tree cannot \
+assert."""
+files = [
+  "App/Whirr/**/AuthorSeriesView.swift",
+  "App/Whirr/**/AuthorSeriesGridSection.swift",
+  "App/Whirr/**/AuthorSeriesStandaloneBooks.swift",
+  "App/Whirr/**/AuthorSeriesGridTile.swift",
+  "App/Whirr/**/AuthorSeriesGridMetrics.swift",
+]
+forbid = 'LinearGradient|RadialGradient|AngularGradient|\.blur\(|\.shadow\(|\.(?:ultraThin|thin|regular|thick|bar)Material|\.animation\(|withAnimation'
+example = 'card.shadow(radius: 4)'
+
+[[rule]]
+id = "author-series-grid-is-not-a-list"
+why = """\
+The author-series destination is a ScrollView of lazy grids with `editorialCardSurface`, not a List. \
+List-row semantics, a list style or a list background would reintroduce the cell hoisting the grid \
+tiles exist to avoid."""
+files = [
+  "App/Whirr/**/AuthorSeriesView.swift",
+  "App/Whirr/**/AuthorSeriesGridSection.swift",
+  "App/Whirr/**/AuthorSeriesStandaloneBooks.swift",
+  "App/Whirr/**/AuthorSeriesGridTile.swift",
+  "App/Whirr/**/AuthorSeriesGridMetrics.swift",
+]
+forbid = '\.editorialCardListRow\(|\.listStyle\(|\.scrollContentBackground\('
+example = 'content.listStyle(.plain)'
+
+[[rule]]
+id = "author-series-screen-hands-sections-to-the-grid"
+why = """\
+Each tile owns the interaction a UIKit list cell would otherwise hoist. The screen hands whole \
+sections to `AuthorSeriesGridSection`; constructing tiles directly would skip the section's grid."""
+files = ["App/Whirr/**/AuthorSeriesView.swift"]
+forbid = 'AuthorSeriesGridTile\('
+example = 'AuthorSeriesGridTile(row: row)'
+
+[[rule]]
+id = "author-series-tile-marks-sit-on-the-cover"
+why = """\
+The media badge and playback mark are drawn on the artwork by the cover, which knows where the \
+fitted artwork is. Overlaid on the tile frame they float in the inset beside a narrower cover; \
+inline they shared a line with the sequence and duration and wrapped on a narrow tile."""
+files = ["App/Whirr/**/AuthorSeriesGridTile.swift"]
+forbid = '\.overlay\(alignment: \.top(?:Trailing|Leading)\)|LibraryPlaybackStatusBadge\(|AuthorSeriesRowPresentation\.sequenceDetail\(|MediaKindBadgeView\('
+example = 'cover.overlay(alignment: .topTrailing) { mark }'
+
+[[rule]]
+id = "author-series-tile-frames-its-own-artwork"
+why = """\
+`CoverImageView` declares no size, so an `.aspectRatio` frame with no resolved height falls back to \
+the decoded image's dimensions: a portrait cover draws at full tile width and a square one at a \
+fraction of it, in the same row. An adaptive column likewise hides the tile width the cover frame \
+needs."""
+files = [
+  "App/Whirr/**/AuthorSeriesView.swift",
+  "App/Whirr/**/AuthorSeriesGridSection.swift",
+  "App/Whirr/**/AuthorSeriesStandaloneBooks.swift",
+  "App/Whirr/**/AuthorSeriesGridTile.swift",
+  "App/Whirr/**/AuthorSeriesGridMetrics.swift",
+]
+forbid = '\.aspectRatio\(|\.adaptive\(minimum:'
+example = 'cover.aspectRatio(2.0 / 3.0, contentMode: .fit)'
+
+[[rule]]
+id = "author-series-uses-the-home-card-artwork-rung"
+why = """\
+Author-series covers request the shared 140-point home-card rung. The deleted square cover-size \
+contract, or a fall back to the library-thumbnail rung, would decode a second variant of every \
+cover."""
+files = [
+  "App/Whirr/**/AuthorSeriesView.swift",
+  "App/Whirr/**/AuthorSeriesGridSection.swift",
+  "App/Whirr/**/AuthorSeriesStandaloneBooks.swift",
+  "App/Whirr/**/AuthorSeriesGridTile.swift",
+  "App/Whirr/**/AuthorSeriesGridMetrics.swift",
+]
+forbid = 'AuthorSeriesView\.coverSize|\.libraryThumbnail'
+example = 'CoverImageView(role: .libraryThumbnail)'
+
+[[rule]]
+id = "library-authors-index-keeps-the-thumbnail-rung"
+why = """\
+The Library Authors index draws a small cover stack on the library-thumbnail rung. Requesting the \
+destination's home-card rung there would decode a second, larger variant of every cover."""
+files = ["App/Whirr/**/LibraryBrowseEntitiesView.swift"]
+forbid = '\.homeCard'
+example = 'CoverImageView(role: .homeCard)'
+
+[[rule]]
+id = "library-authors-index-draws-neutral-cards"
+why = """\
+The Authors index is alphabetical, not editorial. A per-row wash taken from one of an author's \
+covers encodes nothing: a one-book author borrows that book's colour, and a twenty-five-book author \
+borrows whichever cover sorted first. Colour belongs on the author's own destination."""
+files = ["App/Whirr/**/LibraryBrowseEntitiesView.swift"]
+forbid = 'HomeWashProvider|preloadCachedWashes|authorWashPreloadItemIDs|intent: \.visible'
+example = 'let provider: HomeWashProvider'
+
+[[rule]]
+id = "scroll-edge-pushed-screens-claim-the-titled-role"
+why = """\
+`.soft` replaces the treatment iOS would otherwise give the bar, so a pushed titled screen that \
+applies the role-less modifier opts its own title out of the system backdrop \
+(adr/0010-tab-root-titles-stay-on-the-system-default.md). A pushed screen names `role: .titled`."""
+files = ["App/Whirr/**/AuthorSeriesView.swift", "App/Whirr/**/AllShowsGrid.swift"]
+forbid = '\.primaryScrollEdgeEffect\((?!role:)'
+example = 'content.primaryScrollEdgeEffect()'
+ok = ['content.primaryScrollEdgeEffect(role: .titled)']
+
+[[rule]]
+id = "scroll-edge-selectable-titled-screens-never-soften"
+why = """\
+A titled, selectable screen names its role conditionally (`? .selecting : .titled`). The \
+selection-only spelling `primaryScrollEdgeEffect(isSelecting:)` resolves to `.untitledRoot` when \
+not selecting, which softens a titled screen's edge."""
+files = [
+  "App/Whirr/**/DownloadsView+List.swift",
+  "App/Whirr/**/HomeMoreView.swift",
+  "App/Whirr/**/SavedForLaterView.swift",
+]
+forbid = '\.primaryScrollEdgeEffect\(isSelecting:'
+example = 'list.primaryScrollEdgeEffect(isSelecting: editMode.isEditing)'
+
+[[rule]]
+id = "scroll-edge-backdrop-owners-keep-the-soft-edge"
+why = """\
+Item detail's hero runs to the physical edge under a title that fades in by itself, and the podcast \
+show page's accent wash is a page background drawn behind the navigation bar. Both already solve \
+what a hard edge would, so a titled role would only add a second backdrop."""
+files = [
+  "App/Whirr/**/ItemDetailScrollContentView.swift",
+  "App/Whirr/**/PodcastShowView.swift",
+]
+forbid = 'role: \.titled'
+example = 'scroll.primaryScrollEdgeEffect(role: .titled)'
+
+[[rule]]
+id = "scroll-edge-bare-bar-roots-keep-the-soft-edge"
+why = """\
+A hard edge paints a backdrop and separator, which suits a bar row with a title or selection count. \
+A tab root's row holds only trailing controls, so a hard edge would draw a filled strip around a \
+lone gear."""
+files = [
+  "App/Whirr/**/HomeView.swift",
+  "App/Whirr/**/PodcastsView.swift",
+  "App/Whirr/**/LibraryBrowseIndexView.swift",
+  "App/Whirr/**/LibraryBrowseCollectionController.swift",
+  "App/Whirr/**/SearchIdleView.swift",
+  "App/Whirr/**/SearchResultsList.swift",
+]
+forbid = '\.primaryScrollEdgeEffect\(role: \.titled\)'
+example = 'list.primaryScrollEdgeEffect(role: .titled)'
+
+[[rule]]
+id = "sheet-close-button-draws-the-system-x"
+why = """\
+iOS 26 sheets close with the system X in the leading corner. Passing a title to `Button(_:role:)` \
+makes the title the label, so the sheet shows a word where every other iOS 26 sheet shows an X."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'Button\(\s*[^\s)][^)]*?,\s*role:\s*\.close'
+example = 'Button("Close", role: .close) { dismiss() }'
+ok = ['Button(role: .close) { dismiss() }']
+
+[[rule]]
+id = "player-up-next-text-reads-the-page-ladder"
+why = """\
+The inline Up Next surfaces draw supporting text from the ambient page's ladder. Hierarchical \
+`.secondary` and the editorial page's opaque `textSecondary` ignore it; on a light page they \
+measured 2.2-2.8:1."""
+files = [
+  "App/Whirr/**/ExpandedPlayerLayoutView.swift",
+  "App/Whirr/**/ListeningQueueSheet.swift",
+  "Packages/Core/Sources/DesignSystem/Components/ListeningQueueRowView.swift",
+]
+forbid = '\.foregroundStyle\(\.secondary\)|WhirrColorToken\.textSecondary'
+example = 'Text(detail).foregroundStyle(.secondary)'
+
+[[rule]]
+id = "ambient-canvases-draw-no-full-bleed-overlay"
+why = """\
+Ink is not forbidden, but a full-bleed overlay is: a gradient, scrim, veil or vignette spanning the \
+ambient page muddies the artwork's colour that the page exists to show."""
+files = [
+  "App/Whirr/**/PlayerAmbientBackground.swift",
+  "App/Whirr/**/ItemDetailScrollContentView.swift",
+]
+forbid = 'LinearGradient|scrimFloor'
+example = 'LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)'
+
+[[rule]]
+id = "ambient-pages-never-pin-a-literal-appearance"
+why = """\
+Neither ambient page resolves its canvas against a literal appearance: it must pass the effective \
+app appearance through to its held palette, or the page ignores the reader's preference."""
+files = [
+  "App/Whirr/**/ExpandedPlayerView.swift",
+  "App/Whirr/**/ExpandedPlayerView+Ambient.swift",
+  "App/Whirr/**/ItemDetailView.swift",
+]
+forbid = 'canvas\(\s*for: \.dark'
+example = 'palette.canvas(for: .dark)'
+
+[[rule]]
+id = "player-surfaces-state-no-color-scheme"
+why = """\
+No player surface states its own colour scheme: its system-hosted sheets, menus, alerts and status \
+bar resolve against the presentation host's UIKit trait, which gets the effective app appearance \
+first. A scheme set on a surface is one the host cannot correct."""
+files = ["App/Whirr/Views/Player/**/*.swift"]
+forbid = 'preferredColorScheme'
+example = 'content.preferredColorScheme(.dark)'

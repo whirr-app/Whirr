@@ -1,0 +1,18 @@
+# Transcript sheet, paragraphs and ad blocks.
+
+[[rule]]
+id = "transcript-quiet-text-concrete-colour"
+why = """\
+The transcript sheet is glass at the half detent and opaque at full height. A hierarchical style \
+over glass is drawn vibrant, so it changed weight as the sheet grew; a concrete colour \
+(`Color(uiColor: .secondaryLabel)`) never is. The episode card's controls had the same fix."""
+files = [
+  "App/Whirr/Transcript/EpisodeTranscriptSheet.swift",
+  "App/Whirr/Transcript/TranscriptProgressStrip.swift",
+  "App/Whirr/Transcript/TranscriptParagraphView.swift",
+  "App/Whirr/Transcript/TranscriptTimestampButton.swift",
+  "App/Whirr/Transcript/TranscriptAdBlock.swift",
+]
+forbid = '\.foregroundStyle\(\.(?:secondary|tertiary)\)'
+example = 'Text(label).foregroundStyle(.secondary)'
+ok = ['Text(label).foregroundStyle(Color(uiColor: .secondaryLabel))']

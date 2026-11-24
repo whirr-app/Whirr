@@ -1,0 +1,109 @@
+# Player, Up Next sheet-adjacent playback surfaces, and playhead reads. Up Next sheet rules live in
+# up-next.toml.
+
+[[rule]]
+id = "no-view-layer-playback-volume"
+why = """\
+The expanded player has no volume control, and "add a volume slider" has been tried. \
+`AVPlayer.volume` is app-level attenuation, not system output volume: it can only cut what the \
+system is playing and drifts from the hardware buttons, Control Center and the lock screen as soon \
+as any moves. Only the audio engines' own `setVolume`, which serves ducking and interruption \
+handling, may set it."""
+files = [
+  "App/Whirr/**/*.swift",
+  "App/WhirrWatch Watch App/**/*.swift",
+  "Packages/Core/Sources/DesignSystem/**/*.swift",
+]
+forbid = 'setVolume\(|\.volume ='
+allow = [
+  "App/Whirr/**/AVQueuePlayerAudioEngine.swift",
+  "App/Whirr/**/AudioEngineShims.swift",
+  "App/Whirr/**/UIHarness+Audio.swift",
+]
+example = 'player.volume = 0.5'
+
+[[rule]]
+id = "no-system-volume-view"
+why = """\
+`MPVolumeView` is the whole of the removed volume mechanism. It shipped, then shipped again under \
+an invisible `PlaybackScrubber`, and caused three device defects from one root: only a system view \
+can set output volume, and it must be visible or iOS stops suppressing its own overlay and \
+pointing the hardware buttons at media volume. Reinstating it is a product decision."""
+files = [
+  "App/Whirr/**/*.swift",
+  "App/WhirrWatch Watch App/**/*.swift",
+  "Packages/Core/Sources/DesignSystem/**/*.swift",
+]
+forbid = 'MPVolumeView'
+example = 'MPVolumeView(frame: .zero)'
+
+[[rule]]
+id = "views-read-playhead-through-resolver"
+why = """\
+Views reach the playhead only through `PlaybackModel.displayedPositionSeconds` (players) or \
+`listPositionSeconds` (rows, cards, captions; about once a minute), called from the view that \
+prints it. The resolvers read the playhead only for the loaded identity, so other rows stay \
+independent of it. A direct read of `playback.currentTime` or `displayedItemPositionSeconds` skips \
+that guard, and in a list's parent body the whole list depends on the playhead. It still compiles. \
+Allowed: the overflow menu's retained-bookmark state, and the two transcript sheets, which are \
+player surfaces that host no list of other titles."""
+files = ["App/Whirr/**/*.swift"]
+exclude = ["App/Whirr/Watch/**", "App/Whirr/UIHarness*.swift"]
+forbid = 'playback\.currentTime|playback\.listPlayheadSeconds|playback\.displayedItemPositionSeconds'
+allow = [
+  "App/Whirr/Views/Player/ListeningMetadataSection.swift",
+  "App/Whirr/Transcript/EpisodeTranscriptSheet.swift",
+  "App/Whirr/Transcript/PlayerLookBackSheet.swift",
+]
+example = 'let seconds = playback.currentTime'
+ok = ['let seconds = playback.listPositionSeconds(itemID: id, episodeID: nil, persisted: 0)']
+
+[[rule]]
+id = "item-detail-chapters-no-active-item-gate"
+why = """\
+The detail page's chapter list marks the current and completed chapters from the same position the \
+player prints: the live playhead once loaded, else the retained bookmark's, else the saved \
+progress. Gating it on the loaded item left a cold launch's list unmarked."""
+files = ["App/Whirr/**/ItemDetailChaptersSection.swift"]
+forbid = 'activeItemID'
+example = 'if playback.activeItemID == itemID {'
+
+[[rule]]
+id = "playback-rate-failure-alert-one-host"
+why = """\
+Every speed surface (player menu and sheet, mini-player, Show Settings, lock screen, CarPlay) \
+writes through the one shared coordinator. A second host of the failure alert would raise a \
+competing alert from the same value, so only the app root installs it."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.playbackRateWriteFailureAlert\('
+allow = ["App/Whirr/RootView.swift"]
+example = 'content.playbackRateWriteFailureAlert(coordinator)'
+
+[[rule]]
+id = "queue-sheet-keeps-scroll-first-detents-off"
+why = """\
+The compact Up Next queue scrolls across both detents. Scroll-first content interaction would \
+leave the grabber as the only route to `.large`."""
+files = ["App/Whirr/**/PlayerSheetPresentationModifiers.swift"]
+forbid = '\.presentationContentInteraction\('
+example = '.presentationContentInteraction(.scrolls)'
+
+[[rule]]
+id = "expanded-player-leaves-sheet-grabber-to-modifiers"
+why = """\
+The expanded player presents its sheets through the shared queue and detent modifiers, which \
+decide the drag indicator. Setting it again on the host would fight the modifier that hides it \
+beside the form sizing."""
+files = ["App/Whirr/**/ExpandedPlayerView.swift", "App/Whirr/**/ExpandedPlayerView+*.swift"]
+forbid = '\.presentationDragIndicator\('
+example = '.presentationDragIndicator(.visible)'
+
+[[rule]]
+id = "focus-filter-composes-nothing"
+why = """\
+`perform()` can run before first unlock and without a scene. Building the audio engine or opening \
+the database there would trap, or start playback from a Settings toggle, so the Focus filter's file \
+names no composition type; it only delivers to `FocusPlaybackSpeedState.shared`."""
+files = ["App/Whirr/**/PlaybackSpeedFocusFilter.swift"]
+forbid = 'PlaybackHardware|DatabaseHardware|RootComposition|AppEnvironment'
+example = 'let environment = AppEnvironment.shared'

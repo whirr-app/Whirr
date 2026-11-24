@@ -1,0 +1,6 @@
+▿ EmptyStateView
+  - action: Optional<() -> ()>.none
+  - actionLabel: Optional<String>.none
+  - message: "Items you add to your library will show up here."
+  - systemImage: "books.vertical"
+  - title: "No audiobooks yet"

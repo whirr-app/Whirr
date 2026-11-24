@@ -1,0 +1,26 @@
+name: Feature request
+description: Something you would like Whirr to do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do
+      description: Describe the situation, not the solution. What gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would help
+  - type: dropdown
+    id: content
+    attributes:
+      label: Content type
+      multiple: true
+      options:
+        - Audiobook
+        - Server podcast
+        - RSS podcast (no server)
+        - EPUB ebook
+        - Whole app

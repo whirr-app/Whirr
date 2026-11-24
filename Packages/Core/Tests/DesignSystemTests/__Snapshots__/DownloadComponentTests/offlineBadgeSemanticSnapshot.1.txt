@@ -1,0 +1,4 @@
+▿ OfflineBadgeView
+  - isCompact: false
+  - label: "Downloaded"
+  - systemImage: "arrow.down.circle.fill"

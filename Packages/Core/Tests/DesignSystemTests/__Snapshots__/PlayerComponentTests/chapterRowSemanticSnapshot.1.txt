@@ -1,0 +1,12 @@
+▿ ChapterRow
+  - accessibilityIdentifier: Optional<String>.none
+  - accessibilityLabel: "Chapter 3: The Signal"
+  - accessibilityValue: "Starts at 42 minutes, 18 minutes long"
+  - isCompleted: false
+  - isCurrent: true
+  - minimumHitTargetHeight: 44.0
+  - onSelect: (Function)
+  - timingText: ""
+  - title: "Chapter 3: The Signal"
+  ▿ trailingIndicatorSystemImage: Optional<String>
+    - some: "checkmark"

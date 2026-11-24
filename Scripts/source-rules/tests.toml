@@ -1,0 +1,104 @@
+# Rules over test code and test-only products. Rules about waiting and process globals in tests
+# live in core.toml beside the Core rules they grew from.
+
+[[rule]]
+id = "testsupport-links-only-into-whirrtests"
+why = """\
+`TestSupport` is a library product only so the App's unit tests can share Core's fakes and \
+waiters. Linked into a shipping target, it puts fakes, watchdogs and `import Testing` into the \
+app binary. Link it into `WhirrTests` and nothing else; Core's own targets are covered by \
+`LayeringTests.productionTargetsDoNotDependOnTestSupport`."""
+files = ["App/Whirr.xcodeproj/project.pbxproj"]
+text = "raw"
+forbid = 'name = (?!WhirrTests;)[^;\n]+;\n\s*packageProductDependencies = \([^)]*/\* TestSupport \*/'
+example = '''
+			name = Whirr;
+			packageProductDependencies = (
+				2C0000000000000000000001 /* AppModel */,
+				2C0000000000000000000002 /* TestSupport */,
+			);'''
+ok = '''
+			name = WhirrTests;
+			packageProductDependencies = (
+				2C0000000000000000000002 /* TestSupport */,
+			);'''
+
+[[rule]]
+id = "tests-never-restate-a-design-token"
+why = """\
+`#expect(WhirrSpacing.small == 12)` restates the token's declaration: it fails on every deliberate \
+design change and catches no bug. The token's name is the contract. Assert what depends on the \
+token instead, such as a layout computed from it."""
+files = ["Packages/Core/Tests/**/*.swift", "App/WhirrTests/**/*.swift"]
+forbid = '#expect\(\s*Whirr(Spacing|Metric|Radius)\.\w+\s*==\s*[0-9][0-9_.]*\s*\)'
+example = '#expect(WhirrSpacing.small == 12)'
+ok = ['#expect(tileWidth == WhirrMetric.minimumTouchTarget + 2 * WhirrSpacing.small)']
+
+# A test that parks callers on a hand-rolled array of continuations rebuilds `TestGate` or
+# `CallRecorder` without their watchdog: a waiter nobody releases hangs the run instead of failing
+# it. The files below predate the rule; the ratchets cap each at its count.
+[[rule]]
+id = "tests-wait-through-the-shared-recorder"
+why = """\
+Park a fake's callers on a `TestGate`, and wait for calls with `CallRecorder.waitUntil`, both in \
+TestSupport. A hand-rolled `[CheckedContinuation<…>]` has no watchdog, so a waiter that is never \
+released hangs the run instead of failing the test that leaked it."""
+files = [
+  "Packages/Core/Tests/**/*.swift",
+  "App/WhirrTests/**/*.swift",
+  "App/WhirrPerformanceTests/**/*.swift",
+  "Scripts/watch-regressions/**/*.swift",
+]
+exclude = [
+  "App/WhirrTests/CarPlay/CarPlayTestFakes.swift",
+  "App/WhirrTests/CoverPaletteBackfillTests.swift",
+  "App/WhirrTests/CoverPaletteServiceTests.swift",
+  "App/WhirrTests/EndpointSwitchCompositionTests.swift",
+  "App/WhirrTests/WatchPhoneArtworkEndpointTests.swift",
+  "App/WhirrTests/WatchPhoneSetupModelTests.swift",
+  "App/WhirrTests/WatchSetupTestSupport.swift",
+  "Packages/Core/Tests/SyncEngineTests/OutboxDrainTests.swift",
+  "Packages/Core/Tests/SyncEngineTests/SessionOutboxDrainTests.swift",
+  "Packages/Core/Tests/WatchPlaybackTests/WatchLibraryClientTestSupport.swift",
+  "Scripts/watch-regressions/HardwareStubs.swift",
+]
+text = "code-no-strings"
+forbid = '\[CheckedContinuation<'
+example = 'private var waiters: [CheckedContinuation<Void, Never>] = []'
+ok = 'let gate = TestGate<Void>(label: "fetch")'
+
+[[rule]]
+id = "tests-continuation-ratchet-one"
+why = """\
+These files hold one continuation array that predates `tests-wait-through-the-shared-recorder`. \
+Do not add another; if you remove it, delete the file from this list and from that rule's \
+`exclude` so the strict rule covers it."""
+files = [
+  "App/WhirrTests/CoverPaletteBackfillTests.swift",
+  "App/WhirrTests/EndpointSwitchCompositionTests.swift",
+  "App/WhirrTests/WatchPhoneSetupModelTests.swift",
+  "Packages/Core/Tests/SyncEngineTests/OutboxDrainTests.swift",
+  "Packages/Core/Tests/SyncEngineTests/SessionOutboxDrainTests.swift",
+]
+at_most = 1
+text = "code-no-strings"
+forbid = '\[CheckedContinuation<'
+example = 'private var waiters: [CheckedContinuation<Void, Never>] = []'
+
+[[rule]]
+id = "tests-continuation-ratchet-two"
+why = """\
+These files hold two continuation arrays that predate `tests-wait-through-the-shared-recorder`. \
+Do not add another."""
+files = [
+  "App/WhirrTests/CarPlay/CarPlayTestFakes.swift",
+  "App/WhirrTests/CoverPaletteServiceTests.swift",
+  "App/WhirrTests/WatchPhoneArtworkEndpointTests.swift",
+  "App/WhirrTests/WatchSetupTestSupport.swift",
+  "Packages/Core/Tests/WatchPlaybackTests/WatchLibraryClientTestSupport.swift",
+  "Scripts/watch-regressions/HardwareStubs.swift",
+]
+at_most = 2
+text = "code-no-strings"
+forbid = '\[CheckedContinuation<'
+example = 'private var waiters: [CheckedContinuation<Void, Never>] = []'

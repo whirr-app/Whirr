@@ -1,0 +1,6 @@
+▿ BrowseSectionHeaderView
+  ▿ accessibilityHint: Optional<String>
+    - some: "Shows everything in Continue Listening."
+  ▿ onSelect: Optional<() -> ()>
+    - some: (Function)
+  - title: "Continue Listening"

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+xmlns:podcast="https://podcastindex.org/namespace/1.0"
+xmlns:rawvoice="https://blubrry.com/developer/rawvoice-rss/"
+>
+<channel>
+	<title>Fixture Conversations Podcast</title>
+	<atom:link href="https://example.com/feed/podcast/" rel="self" type="application/rss+xml" />
+	<link>https://example.com/</link>
+	<description>Placeholder conversations that explore invented topics with fixture guests from all walks of life.</description>
+	<lastBuildDate>Wed, 12 Aug 2026 13:11:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>Blubrry PowerPress/11.17.3</generator>
+		<atom:link rel="hub" href="https://hub.example.net/" />
+	<itunes:new-feed-url>https://example.com/feed/podcast/</itunes:new-feed-url>
+	<itunes:author>Fixture Host</itunes:author>
+	<itunes:explicit>false</itunes:explicit>
+	<itunes:image href="https://example.com/wordpress/wp-content/uploads/powerpress/artwork_3000-230.png" />
+	<itunes:owner>
+		<itunes:name>Fixture Host</itunes:name>
+		<itunes:email>host@example.com</itunes:email>
+	</itunes:owner>
+	<podcast:medium>podcast</podcast:medium>
+	<image>
+		<title>Fixture Conversations Podcast</title>
+		<url>https://example.com/wordpress/wp-content/uploads/powerpress/artwork_3000-230.png</url>
+		<link>https://example.com/podcast</link>
+	</image>
+	<itunes:category text="Technology" />
+	<itunes:category text="Science" />
+	<itunes:category text="Society &amp; Culture">
+		<itunes:category text="Philosophy" />
+	</itunes:category>
+	<podcast:podping usesPodping="true" />
+	<podcast:guid>00000000-0000-5000-8000-0000000f1x7e</podcast:guid>
+	<rawvoice:subscribe feed="https://example.com/feed/podcast/" itunes="https://podcasts.example.net/show/id0000000000" tunein="https://radio.example.net/podcasts/fixture/" spotify="https://listen.example.net/show/FixtureShowId"></rawvoice:subscribe>
+	<item>
+		<title>#500 – Fixture Guest: Topic One, Topic Two, Topic Three &#038; Topic Four</title>
+		<link>https://example.com/fixture-guest-one/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=fixture-guest-one</link>
+		<pubDate>Wed, 12 Aug 2026 13:11:45 +0000</pubDate>
+		<guid isPermaLink="false">https://example.com/?p=6494</guid>
+		<comments>https://example.com/fixture-guest-one/#respond</comments>
+		<wfw:commentRss>https://example.com/fixture-guest-one/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>A fixture guest joins the host for a placeholder conversation. It&#8217;s invented for this test.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://example.com/sponsors/fixture-guest-one">https://example.com/sponsors/fixture-guest-one</a><br />
+See below for timestamps and to give feedback.</p>
+<p><b>CONTACT:</b><br />
+<b>Feedback</b> &#8211; give feedback: <a href="https://example.com/survey">https://example.com/survey</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Example Sponsor:</b> A placeholder product.<br />
+Go to <a href="https://example.com/s/sponsor">https://example.org/fixture</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(12:34) &#8211; First placeholder topic<br />
+(1:02:03) &#8211; Second placeholder topic &#8211; part two</p>]]></description>
+		<enclosure url="https://media.example.net/fixture/ins.example.net/fixture/fixture_guest_one.mp3" length="5242880" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<rawvoice:pid>100000001</rawvoice:pid>
+	</item>
+	<item>
+		<title>#499 – Placeholder Historian: Era One, Era Two &#038; Era Three</title>
+		<link>https://example.com/placeholder-historian/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=placeholder-historian</link>
+		<pubDate>Tue, 28 Jul 2026 20:06:06 +0000</pubDate>
+		<guid isPermaLink="false">https://example.com/?p=6474</guid>
+		<comments>https://example.com/placeholder-historian/#respond</comments>
+		<wfw:commentRss>https://example.com/placeholder-historian/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>A fixture guest joins the host for a placeholder conversation. It&#8217;s invented for this test.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://example.com/sponsors/placeholder-historian">https://example.com/sponsors/placeholder-historian</a><br />
+See below for timestamps and to give feedback.</p>
+<p><b>CONTACT:</b><br />
+<b>Feedback</b> &#8211; give feedback: <a href="https://example.com/survey">https://example.com/survey</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Example Sponsor:</b> A placeholder product.<br />
+Go to <a href="https://example.com/s/sponsor">https://example.org/fixture</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(12:34) &#8211; First placeholder topic<br />
+(1:02:03) &#8211; Second placeholder topic &#8211; part two</p>]]></description>
+		<enclosure url="https://media.example.net/fixture/ins.example.net/fixture/placeholder_historian.mp3" length="186289694" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:duration>3:53:07</itunes:duration>
+		<rawvoice:pid>100000001</rawvoice:pid>
+	</item>
+	<item>
+		<title>#498 – Example Scholar: Empire One, Empire Two, Rise &#038; Fall of Examples</title>
+		<link>https://example.com/example-scholar/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=example-scholar</link>
+		<pubDate>Tue, 30 Jun 2026 21:33:40 +0000</pubDate>
+		<guid isPermaLink="false">https://example.com/?p=6466</guid>
+		<comments>https://example.com/example-scholar/#respond</comments>
+		<wfw:commentRss>https://example.com/example-scholar/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>A fixture guest joins the host for a placeholder conversation. It&#8217;s invented for this test.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://example.com/sponsors/example-scholar">https://example.com/sponsors/example-scholar</a><br />
+See below for timestamps and to give feedback.</p>
+<p><b>CONTACT:</b><br />
+<b>Feedback</b> &#8211; give feedback: <a href="https://example.com/survey">https://example.com/survey</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Example Sponsor:</b> A placeholder product.<br />
+Go to <a href="https://example.com/s/sponsor">https://example.org/fixture</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(12:34) &#8211; First placeholder topic<br />
+(1:02:03) &#8211; Second placeholder topic &#8211; part two</p>]]></description>
+		<enclosure url="https://media.example.net/fixture/ins.example.net/fixture/example_scholar.mp3" length="191739073" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<rawvoice:pid>100000002</rawvoice:pid>
+	</item>
+	<item>
+		<title>#497 – Biggest Mysteries in Fixtures: Placeholder Matter &#038; Example Energy</title>
+		<link>https://example.com/fixture-mysteries/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=fixture-mysteries</link>
+		<pubDate>Fri, 29 May 2026 16:22:02 +0000</pubDate>
+		<guid isPermaLink="false">https://example.com/?p=6457</guid>
+		<comments>https://example.com/fixture-mysteries/#respond</comments>
+		<wfw:commentRss>https://example.com/fixture-mysteries/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<category><![CDATA[ai]]></category>
+		<description><![CDATA[<p>A fixture guest joins the host for a placeholder conversation. It&#8217;s invented for this test.<br />
+Thank you for listening ❤ Check out our sponsors: <a href="https://example.com/sponsors/fixture-mysteries">https://example.com/sponsors/fixture-mysteries</a><br />
+See below for timestamps and to give feedback.</p>
+<p><b>CONTACT:</b><br />
+<b>Feedback</b> &#8211; give feedback: <a href="https://example.com/survey">https://example.com/survey</a></p>
+<p><b>SPONSORS:</b><br />
+To support this podcast, check out our sponsors &#38; get discounts:<br />
+<b>Example Sponsor:</b> A placeholder product.<br />
+Go to <a href="https://example.com/s/sponsor">https://example.org/fixture</a></p>
+<p><b>OUTLINE:</b><br />
+(00:00) &#8211; Introduction<br />
+(12:34) &#8211; First placeholder topic<br />
+(1:02:03) &#8211; Second placeholder topic &#8211; part two</p>]]></description>
+		<enclosure url="https://media.example.net/fixture/ins.example.net/fixture/fixture_mysteries.mp3" length="130943841" type="audio/mpeg" />
+		<itunes:episodeType>full</itunes:episodeType>
+		<itunes:duration>3:01:52</itunes:duration>
+		<rawvoice:pid>100000003</rawvoice:pid>
+	</item>
+</channel>
+</rss>

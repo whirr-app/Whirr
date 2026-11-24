@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fixture Tech Talk</title><link>https://example.com/</link><atom:link href="https://example.com/rss" rel="self" type="application/rss+xml"/><description>Three hosts discussing placeholder technology and loosely related matters.</description><language>en</language><copyright>Copyright 2013–2026 Fixture Tech Talk</copyright><lastBuildDate>Fri, 07 Aug 2026 01:52:54 +0000</lastBuildDate><itunes:author>Host One, Host Two, Host Three</itunes:author><itunes:subtitle>Three hosts discussing placeholder technology and loosely related matters.</itunes:subtitle><itunes:category text="Technology"/><itunes:image href="https://cdn.example.com/artwork"/><itunes:explicit>false</itunes:explicit><itunes:owner><itunes:name>Host One</itunes:name><itunes:email>owner@example.com</itunes:email></itunes:owner><item><guid isPermaLink="false">qpzm4fixture0001</guid><pubDate>Thu, 06 Aug 2026 22:02:11 +0000</pubDate><title>312: A Balanced Fixture Breakfast</title><itunes:title>A Balanced Fixture Breakfast</itunes:title><itunes:episode>312</itunes:episode><itunes:author>FTT</itunes:author><itunes:duration>02:32:25</itunes:duration><enclosure url="https://media.example.com/fixture/fx312.mp3" length="146513628" type="audio/mpeg"/><link>https://example.com/312</link><description><![CDATA[<ul>
+<li>Pre-show: The fixture &#8220;kicking machine&#8221;
+
+<ul>
+<li><a href="https://example.com/blog/2026/07/22/a-walk-down-memory-lane">A listener&#8217;s blog post</a></li>
+<li>Previously in <a href="https://example.com/episodes/224">Episode 224: Automatic Kicking Machine</a></li>
+</ul></li>
+<li>Follow-up:
+
+<ul>
+<li><a href="https://example.org/forum/build-1169">Transcript search in build #1169</a> [<em>The system works! — Ed.</em>]</li>
+<li>&#8220;Odd&#8221; RAM amounts (via a listener)</li>
+<li><a href="https://%20https//example.net/download?utm_source=fixture+show&amp;utm_medium=text&amp;utm_id=FX&amp;utm_content=SSH">Example sponsor</a> (former &amp; future sponsor)</li>
+</ul></li>
+<li>Post-show: car shopping again 🚗💿</li>
+</ul>
+]]></description><itunes:subtitle>Placeholder betas, a backup tool, an upgrade programme, and some very patient car-shopping.</itunes:subtitle></item><item><guid isPermaLink="false">qpzm4fixture0002</guid><pubDate>Mon, 27 Jul 2026 19:28:45 +0000</pubDate><title>311: Isolate the Fixture</title><itunes:title>Isolate the Fixture</itunes:title><itunes:episode>311</itunes:episode><itunes:author>FTT</itunes:author><itunes:duration>02:30:45</itunes:duration><enclosure url="https://media.example.com/fixture/fx311.mp3" length="144739785" type="audio/mpeg"/><link>https://example.com/311</link><description><![CDATA[<ul>
+<li>Pre-show: Three hosts talk about clocks</li>
+<li>Follow-up:
+
+<ul>
+<li><a href="https://example.com/notes/301">Web standards notes</a></li>
+<li>Our&#160;very different packing philosophies 🙌🏻</li>
+</ul></li>
+</ul>
+]]></description><itunes:subtitle>Web standards, maps in cars (?), and our very different philosophies on packing.</itunes:subtitle></item><item><guid isPermaLink="false">qpzm4fixture0003</guid><pubDate>Thu, 23 Jul 2026 21:43:44 +0000</pubDate><title>310: I Improved My Fixture</title><itunes:title>I Improved My Fixture</itunes:title><itunes:episode>310</itunes:episode><itunes:author>FTT</itunes:author><itunes:duration>02:10:55</itunes:duration><enclosure url="https://media.example.com/fixture/fx310.mp3" length="125985726" type="audio/mpeg"/><link>https://example.com/310</link><description><![CDATA[<ul>
+<li>Pre-show: A Mac mini mishap
+
+<ul>
+<li><a href="https://example.org/printing">3D-printing for fun</a> 🫡</li>
+</ul></li>
+<li>Ask the hosts: what is 𝑥 when 𝓍 is unknown? 🗣️</li>
+</ul>
+]]></description><itunes:subtitle>3D-printing for fun and utility, and cutting-edge modern technology such as audio CDs.</itunes:subtitle></item><item><guid isPermaLink="false">qpzm4fixture0004</guid><pubDate>Thu, 16 Jul 2026 18:18:02 +0000</pubDate><title>309: A Damp Fixture Full of Lies</title><itunes:title>A Damp Fixture Full of Lies</itunes:title><itunes:episode>309</itunes:episode><itunes:author>FTT</itunes:author><itunes:duration>01:56:18</itunes:duration><enclosure url="https://example.org/audio/qpzm4fixture0004/fx309.mp3" length="111797868" type="audio/mpeg"/><link>https://example.com/309</link><description><![CDATA[<ul>
+<li>Pre-show: Anniversary Corner!
+
+<ul>
+<li><a href="https://example.com/archive/">The archive</a> (unofficial)</li>
+<li>A sad farewell 💔 and a handshake 🤝</li>
+</ul></li>
+</ul>
+]]></description><itunes:subtitle>The host’s lawsuit round-up, the state of the betas, and looking for a new home for a sync tool.</itunes:subtitle></item>
+</channel>
+</rss>

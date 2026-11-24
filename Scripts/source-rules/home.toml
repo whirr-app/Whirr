@@ -1,0 +1,11 @@
+# Rules about Home's shelves.
+
+[[rule]]
+id = "home-shelf-cards-draw-resolved-widths"
+why = """\
+Shelf cards draw the width `ShelfLayout` resolved for the window (`layout.cardWidth`). The old \
+fixed `HomeView.cardWidth` frame ignores the regular-width layout and the accessibility sizes."""
+files = ["App/Whirr/Views/Home/**/*.swift"]
+forbid = '\.frame\(width: HomeView\.cardWidth\)'
+example = 'card.frame(width: HomeView.cardWidth)'
+ok = ['card.frame(width: layout.cardWidth)']

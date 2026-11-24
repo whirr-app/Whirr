@@ -1,0 +1,18 @@
+{
+  "id": "progress_fixture",
+  "userId": "user_fixture",
+  "libraryItemId": "item_book_fixture",
+  "episodeId": null,
+  "mediaItemId": "media_book_fixture",
+  "mediaItemType": "book",
+  "duration": 0,
+  "progress": 0,
+  "currentTime": 0,
+  "isFinished": false,
+  "hideFromContinueListening": false,
+  "ebookLocation": null,
+  "ebookProgress": null,
+  "lastUpdate": 0,
+  "startedAt": 0,
+  "finishedAt": null
+}

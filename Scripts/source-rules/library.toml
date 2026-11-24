@@ -1,0 +1,121 @@
+# Rules about the Library tab: the shell, the browse screen and Collections.
+
+[[rule]]
+id = "library-shell-reads-dependencies-through-the-value"
+why = """\
+The shell's dependency surface is one value, `LibraryShellDependencies`, with one assembly point. \
+Copying a slot into a stored property of the shell (`self.player = …`) forks it, and the type \
+system cannot say so: the copy builds, it just stops following the value."""
+files = ["App/Whirr/**/LibraryShellView.swift", "App/Whirr/**/LibraryShellView+*.swift"]
+forbid = '\bself\.(?:library|nativePodcastShowsReading|rssEpisodeArtworkReading|requestReachabilityProbe|player|account|downloadReading|downloadIntents|downloadPreferences|serverAccountReading|librarySelectionReading|nativePodcastSubscriptionsReading|nativePodcastSubscriptionsWriting|librarySelectionWriting|sync|artworkCacheAccess|storageReading|rssDownloadsReading|deviceStorageCapacityReading|resolutionCenterAccess|extrasAccess|historyAccess|audioBookmarkIntents|authorSeriesReading|libraryCollections|podcastReading|podcastSettingsReading|nativePodcastSettingsAccess|podcastSettingsWriting|podcastRefreshing|nativeFeedManaging|serverPodcastMutationCapabilityReading|serverPodcastAutomationSettingsWriting|problemReportSources|problemReportExportDirectory|coverClient|paletteService|connectivityModel|storageCeilingSummaryReading|requestLocalSessionUploadDrain|readerStateReading|readerTableOfContents|readerContentsAccess|supplementReading|logoutPreflight)\s*=(?!=)'
+example = 'self.player = dependencies.player'
+ok = ['self.playerModel = dependencies.player']
+
+[[rule]]
+id = "library-shell-owns-no-search-field"
+why = """\
+The Library drawer stays owned by `LibraryBrowseView`, and global Search owns its native field \
+(`SearchView`, with its focus binding). The shell owns only navigation chrome; a `searchable`, \
+focus modifier or `@FocusState` there would absorb Search's behaviour into the shell."""
+files = ["App/Whirr/**/LibraryShellView.swift", "App/Whirr/**/LibraryShellView+*.swift"]
+forbid = '\.searchable\(|\.searchFocused\(|@FocusState'
+example = 'TabView { }.searchable(text: $query)'
+
+[[rule]]
+id = "library-quick-filter-stays-out-of-global-search"
+why = """\
+The Library field narrows the list locally. Routing it through `showSearch` would turn a local \
+narrowing into global Search navigation."""
+files = ["App/Whirr/**/LibraryBrowseView.swift"]
+forbid = 'showSearch'
+example = 'showSearch(query: queryText)'
+
+[[rule]]
+id = "library-reselect-scrolls-through-the-scroller"
+why = """\
+Neither a row anchor nor a `ScrollPosition` edge can reach "above the first row", where the \
+collapsed search drawer sits. A reselect goes through the scroll view's own scroller, so \
+`scrollTo(edge: .top)` or a `ScrollViewReader` here would stop short of the drawer."""
+files = ["App/Whirr/**/LibraryBrowseView.swift"]
+forbid = 'scrollTo\(edge: \.top\)|ScrollViewReader'
+example = 'proxy.scrollTo(edge: .top)'
+
+[[rule]]
+id = "library-rail-is-not-hard-coded-visible"
+why = """\
+Hard-coding the A to Z index as visible leaves it on screen during an effective query. The \
+compiler would not reject that presentation regression."""
+files = ["App/Whirr/**/LibraryBrowseView.swift"]
+forbid = '\.listSectionIndexVisibility\(\.visible\)'
+example = 'list.listSectionIndexVisibility(.visible)'
+
+[[rule]]
+id = "library-browse-root-never-writes-select-presence"
+why = """\
+Select's presence is a function of the browse mode the shell owns, which survives a push \
+untouched. A flag on `LibrarySelectionEntry`, cleared from the browse root's `onDisappear`, dropped \
+Select from the trailing group on every push, so a swipe back laid out the filter and gear \
+without it until the transition reflowed."""
+files = ["App/Whirr/**/LibraryBrowseView.swift"]
+forbid = 'selectionEntry\.isAvailable'
+example = 'selectionEntry.isAvailable = false'
+
+[[rule]]
+id = "library-projection-built-once-in-regular-content"
+why = """\
+One filtered projection feeds all three Library modes, built once in `LibraryBrowseRegularContent`. \
+The root, the collection host and its snapshot, layout and tiles consume it; a second \
+`LibraryQuickFilter.filter` or `indexedSections` pass would regroup per consumer and let the modes \
+disagree about what the filter matched."""
+files = [
+  "App/Whirr/**/LibraryBrowseView.swift",
+  "App/Whirr/**/LibraryBrowseGridTiles.swift",
+  "App/Whirr/**/LibraryBrowseGridViews.swift",
+  "App/Whirr/**/LibraryBrowseCollectionView.swift",
+  "App/Whirr/**/LibraryBrowseCollectionController.swift",
+  "App/Whirr/**/LibraryBrowseCollectionSnapshot.swift",
+  "App/Whirr/**/LibraryBrowseCollectionLayout.swift",
+]
+forbid = 'LibraryQuickFilter\.filter|LibraryBrowsePresentation\.indexedSections'
+example = 'let visible = LibraryQuickFilter.filter(items: items, query: query)'
+
+[[rule]]
+id = "library-root-opens-no-entity-observation"
+why = """\
+The Authors and Series models cannot be handed a read boundary, so only the root could add a second \
+whole-library observation per mode, running the query once per mode on each sync commit."""
+files = ["App/Whirr/**/LibraryBrowseView.swift"]
+forbid = 'observeBrowseList|LibraryReading'
+example = 'for try await rows in library.observeBrowseList(filters: filters) {}'
+
+[[rule]]
+id = "library-mini-player-accessory-never-auto-hides"
+why = """\
+`.never` stays because the `.inline` placement drops the skip controls. Minimisation is smooth, so \
+this guards a design choice rather than performance: `.onScrollDown` is a decision about the \
+accessory's inline content, not a one-modifier change."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.tabBarMinimizeBehavior\(\.onScrollDown\)'
+example = 'TabView {}.tabBarMinimizeBehavior(.onScrollDown)'
+
+[[rule]]
+id = "library-collections-are-read-only"
+why = """\
+Server lists are read-only in Whirr: a footer says where they are edited, and the list screens \
+offer no edit at all. A swipe action would offer one."""
+files = [
+  "App/Whirr/**/LibraryCollectionView.swift",
+  "App/Whirr/**/LibraryCollectionView+*.swift",
+  "App/Whirr/**/LibraryBrowseCollectionsView.swift",
+]
+forbid = '\.swipeActions\s*[({]'
+example = 'row.swipeActions { Button("Delete") {} }'
+
+[[rule]]
+id = "library-collection-up-next-is-one-batch"
+why = """\
+Add to Up Next is one batch, at the header and in selection, so each posts one banner. Queueing \
+entry by entry (`addToUpNext(itemID:` per row) posts one banner per entry."""
+files = ["App/Whirr/**/LibraryCollectionView.swift", "App/Whirr/**/LibraryCollectionView+*.swift"]
+forbid = 'addToUpNext\(itemID:'
+example = 'await actions.addToUpNext(itemID: id, episodeID: nil)'

@@ -1,0 +1,65 @@
+{
+  "results": [
+    {
+      "id": "item_fixture_1",
+      "ino": 0,
+      "libraryId": "library_book_fixture",
+      "folderId": "folder_fixture",
+      "mediaType": "book",
+      "media": {
+        "metadata": {
+          "title": "Fixture Title",
+          "authorName": "Fixture Author",
+          "seriesName": null
+        }
+      },
+      "addedAt": 0,
+      "birthtimeMs": 0,
+      "ctimeMs": 0,
+      "mtimeMs": 0,
+      "updatedAt": 0,
+      "isFile": true,
+      "isInvalid": false,
+      "isMissing": false,
+      "numFiles": 1,
+      "path": "<redacted>",
+      "relPath": "<redacted>",
+      "size": 0
+    },
+    {
+      "id": "item_fixture_2",
+      "ino": 0,
+      "libraryId": "library_book_fixture",
+      "folderId": "folder_fixture",
+      "mediaType": "book",
+      "media": {
+        "metadata": {
+          "title": "Fixture Title 2",
+          "authorName": "Fixture Author 2",
+          "seriesName": null
+        }
+      },
+      "addedAt": 0,
+      "birthtimeMs": 0,
+      "ctimeMs": 0,
+      "mtimeMs": 0,
+      "updatedAt": 0,
+      "isFile": true,
+      "isInvalid": false,
+      "isMissing": false,
+      "numFiles": 1,
+      "path": "<redacted>",
+      "relPath": "<redacted>",
+      "size": 0
+    }
+  ],
+  "total": 385,
+  "limit": 2,
+  "page": 0,
+  "offset": 0,
+  "sortDesc": false,
+  "collapseseries": false,
+  "include": "",
+  "mediaType": "book",
+  "minified": true
+}

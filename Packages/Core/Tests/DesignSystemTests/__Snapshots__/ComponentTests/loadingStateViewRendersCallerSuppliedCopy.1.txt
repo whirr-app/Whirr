@@ -1,0 +1,2 @@
+▿ LoadingStateView
+  - message: "Syncing your library…"

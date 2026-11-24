@@ -1,0 +1,50 @@
+{
+  "id": "session_transcode_fixture",
+  "libraryItemId": "item_book_fixture",
+  "mediaType": "book",
+  "displayTitle": "Fixture Book",
+  "displayAuthor": "Fixture Author",
+  "duration": 11670.881451,
+  "currentTime": 120.25,
+  "playMethod": 2,
+  "deviceInfo": {
+    "deviceId": "device_id_fixture"
+  },
+  "chapters": [
+    {
+      "id": 0,
+      "start": 0,
+      "end": 2679.901678,
+      "title": "Fixture Chapter 1"
+    },
+    {
+      "id": 1,
+      "start": 2679.901678,
+      "end": 5340.681723,
+      "title": "Fixture Chapter 2"
+    },
+    {
+      "id": 2,
+      "start": 5340.681723,
+      "end": 8015.071564,
+      "title": "Fixture Chapter 3"
+    },
+    {
+      "id": 3,
+      "start": 8015.071564,
+      "end": 10544.612426,
+      "title": "Fixture Chapter 4"
+    },
+    {
+      "id": 4,
+      "start": 10544.612426,
+      "end": 11670.881451,
+      "title": "Fixture Chapter 5"
+    }
+  ],
+  "audioTracks": [
+    {
+      "contentUrl": "/hls/session_transcode_fixture/output.m3u8"
+    }
+  ]
+}

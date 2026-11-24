@@ -1,0 +1,78 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Continue listening in ${applicationName}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Continue listening in ${applicationName}",
+              "Resume listening with ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "Pause playback in ${applicationName}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Pause playback in ${applicationName}",
+              "Pause ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "Set the ${applicationName} timer to ${duration}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Set the ${applicationName} timer to ${duration}",
+              "Change the ${applicationName} timer to ${duration}",
+              "Set the sleep timer in ${applicationName} to ${duration}",
+              "Change the sleep timer in ${applicationName} to ${duration}"
+            ]
+          }
+        }
+      }
+    },
+    "Skip back in ${applicationName}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Skip back in ${applicationName}",
+              "Rewind in ${applicationName}"
+            ]
+          }
+        }
+      }
+    },
+    "Skip forward in ${applicationName}" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringSet" : {
+            "state" : "new",
+            "values" : [
+              "Skip forward in ${applicationName}",
+              "Jump forward in ${applicationName}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

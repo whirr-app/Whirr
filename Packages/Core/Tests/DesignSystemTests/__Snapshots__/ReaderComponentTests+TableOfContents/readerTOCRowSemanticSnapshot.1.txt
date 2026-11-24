@@ -1,0 +1,13 @@
+▿ ReaderTOCRow
+  ▿ _dynamicTypeSize: Environment<DynamicTypeSize>
+    ▿ content: Content
+      - keyPath: WritableKeyPath<EnvironmentValues, DynamicTypeSize>
+  - accessibilityValue: "Starts at 42 minutes"
+  - currentIndicatorSystemImage: "checkmark"
+  - depth: 2
+  - isCurrent: false
+  - minimumHitTargetHeight: 44.0
+  - onSelect: (Function)
+  - pageLabel: Optional<String>.none
+  - theme: ReaderTheme.sepia
+  - title: "Chapter 3"

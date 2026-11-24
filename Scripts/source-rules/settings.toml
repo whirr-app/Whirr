@@ -1,0 +1,15 @@
+# Rules about Settings and its navigation.
+
+[[rule]]
+id = "settings-stack-pushes-views-not-routes"
+why = """\
+A value-driven push (`NavigationLink(value:)`) is only correct from a screen the stack's `path` \
+describes. Settings pushes its sub-screens as views, which `path` does not represent, so a route \
+appended from one lands beneath the visible screen: the tap does nothing, back reveals it, each \
+tap stacks another. This broke the Manage Downloads and Resolution Center rows in \
+`DownloadSettingsView`. Push a destination view instead. Scoped to Views: `App/Whirr/Supplements` \
+is a separate stack that Settings does not host."""
+files = ["App/Whirr/Views/**/*.swift"]
+forbid = 'NavigationLink\(value:'
+example = 'NavigationLink(value: Route.storage) { Text("Storage") }'
+ok = ['NavigationLink { StorageView() } label: { Text("Storage") }']

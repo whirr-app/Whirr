@@ -1,0 +1,10 @@
+▿ ResolutionListRowView
+  ▿ actions: 1 element
+    ▿ Action
+      - accessibilityHint: "Signs in again"
+      - isDestructive: false
+      - label: "Sign In Again"
+  - message: "This download paused because you\'re signed out."
+  - onSelectAction: (Function)
+  - systemImage: "lock.circle"
+  - title: "\"Project Hail Mary\" Is Paused"

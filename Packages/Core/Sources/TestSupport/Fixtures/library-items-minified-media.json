@@ -1,0 +1,120 @@
+{
+  "results": [
+    {
+      "id": "item_live_audiobook",
+      "ino": "0",
+      "oldLibraryItemId": null,
+      "libraryId": "library_book_fixture",
+      "folderId": "folder_fixture",
+      "path": "<redacted>",
+      "relPath": "<redacted>",
+      "isFile": false,
+      "mtimeMs": 1741359803201,
+      "ctimeMs": 1741359803201,
+      "birthtimeMs": 1741359803201,
+      "addedAt": 1741359815635,
+      "updatedAt": 1741359815635,
+      "isMissing": false,
+      "isInvalid": false,
+      "mediaType": "book",
+      "media": {
+        "id": "item_live_audiobook_media",
+        "metadata": {
+          "title": "Fixture Audiobook",
+          "authorName": "Fixture Author",
+          "seriesName": null
+        },
+        "coverPath": "<redacted>",
+        "tags": [],
+        "numTracks": 1,
+        "numAudioFiles": 1,
+        "numChapters": 8,
+        "duration": 14220.085986,
+        "size": 0
+      },
+      "numFiles": 3,
+      "size": 0
+    },
+    {
+      "id": "item_live_audiobook_with_pdf",
+      "ino": "0",
+      "oldLibraryItemId": null,
+      "libraryId": "library_book_fixture",
+      "folderId": "folder_fixture",
+      "path": "<redacted>",
+      "relPath": "<redacted>",
+      "isFile": false,
+      "mtimeMs": 1741359994039,
+      "ctimeMs": 1741359994039,
+      "birthtimeMs": 1741359994039,
+      "addedAt": 1741360010201,
+      "updatedAt": 1742049579933,
+      "isMissing": false,
+      "isInvalid": false,
+      "mediaType": "book",
+      "media": {
+        "id": "item_live_audiobook_with_pdf_media",
+        "metadata": {
+          "title": "Fixture Audiobook With PDF",
+          "authorName": "Fixture Author",
+          "seriesName": null
+        },
+        "coverPath": "<redacted>",
+        "tags": [],
+        "numTracks": 1,
+        "numAudioFiles": 1,
+        "numChapters": 46,
+        "duration": 46036.183946,
+        "size": 0,
+        "ebookFormat": "pdf"
+      },
+      "numFiles": 4,
+      "size": 0
+    },
+    {
+      "id": "item_live_ebook",
+      "ino": "0",
+      "oldLibraryItemId": null,
+      "libraryId": "library_book_fixture",
+      "folderId": "folder_fixture",
+      "path": "<redacted>",
+      "relPath": "<redacted>",
+      "isFile": false,
+      "mtimeMs": 1742026221618,
+      "ctimeMs": 1742026221618,
+      "birthtimeMs": 1742026221618,
+      "addedAt": 1742052567692,
+      "updatedAt": 1742052567692,
+      "isMissing": false,
+      "isInvalid": false,
+      "mediaType": "book",
+      "media": {
+        "id": "item_live_ebook_media",
+        "metadata": {
+          "title": "Fixture Ebook",
+          "authorName": "Fixture Author",
+          "seriesName": null
+        },
+        "coverPath": "<redacted>",
+        "tags": [],
+        "numTracks": 0,
+        "numAudioFiles": 0,
+        "numChapters": 0,
+        "duration": 0,
+        "size": 0,
+        "ebookFormat": "epub"
+      },
+      "numFiles": 3,
+      "size": 0
+    }
+  ],
+  "total": 3,
+  "limit": 3,
+  "page": 0,
+  "offset": 0,
+  "sortDesc": false,
+  "collapseseries": false,
+  "include": "",
+  "mediaType": "book",
+  "minified": true
+}

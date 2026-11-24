@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Whirr</title>
+<style>
+:root{--bg:#fdfdfc;--fg:#1a1a19;--muted:#5f5f5b;--rule:#e3e3df;--accent:#3a6b5f}
+@media (prefers-color-scheme:dark){:root{--bg:#16181a;--fg:#e8e8e4;--muted:#a0a099;--rule:#2c2f32;--accent:#7fbfae}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+padding:3rem 1.25rem 5rem}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .3rem}
+h2{font-size:1.15rem;margin:2.5rem 0 .6rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+.updated{color:var(--muted);font-size:.9rem;margin:0 0 2rem}
+.lede{font-size:1.05rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.93rem;display:block;overflow-x:auto}
+th,td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600}
+a{color:var(--accent)}
+strong{font-weight:600}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Whirr — Privacy Policy</h1>
+<p class="updated">Last updated: 21 November 2026</p>
+
+<p class="lede">Whirr is an iOS client for <a href="https://www.audiobookshelf.org">Audiobookshelf</a>,
+a self-hosted media server. This policy describes what Whirr does with your information.</p>
+
+<h2>The short version</h2>
+<p><strong>Whirr collects no data about you.</strong> There is no Whirr server, no account with the
+developer, no analytics, no telemetry, and no third-party crash reporting or advertising code in the
+app. Nothing you do in Whirr is transmitted to the developer. Optional RSS subscriptions, where
+enabled, contact the feed and media/artwork hosts selected by that subscription; those services
+receive ordinary network metadata and are governed by their own policies.</p>
+<p>If you turn on iCloud Sync for podcasts, Whirr keeps your podcast subscriptions and listening state in your own private iCloud database, which Apple runs. The developer cannot read it. See iCloud Sync for podcasts below.</p>
+<p>You do not have to take that on trust. The source code of every released version is published at
+<a href="https://github.com/whirr-app/Whirr">github.com/whirr-app/Whirr</a>, so the absence of
+analytics, telemetry, and tracking code can be checked directly.</p>
+
+<h2>There is no developer-operated service</h2>
+<p>Whirr does not have a backend. When you set up the app you enter the address of <strong>your
+own</strong> Audiobookshelf server. Signing in, browsing your server library, streaming,
+server-hosted downloads, artwork, and listening-progress sync go to that server. In a build where
+you enable native RSS subscriptions, Whirr also contacts the subscribed feed and the allowed
+enclosure/artwork hosts needed to provide that subscription. It never sends your Audiobookshelf
+credentials to those RSS origins.</p>
+<p>The developer has no access to that server, its contents, or any traffic between it and your
+device. Your relationship with that server is governed by whoever runs it, which in the ordinary
+case is you.</p>
+
+<h2>iCloud Sync for podcasts</h2>
+<p>iCloud Sync for podcasts is off by default. Nothing is sent to iCloud until you turn on Podcast Data › iCloud Sync in Whirr's podcast settings on that device. When it is on, Whirr uses Apple's CloudKit to keep the following in the private database of your iCloud account:</p>
+<ul>
+<li>the RSS podcasts you follow, including their feed addresses, titles and authors, and your show order;</li>
+<li>your podcast settings, overall and for each show;</li>
+<li>each episode's playback position, played and dismissed state, title and feed identifiers;</li>
+<li>Saved for Later and the last episode you played; and</li>
+<li>a random identifier for this installation of Whirr, used to order changes between devices.</li>
+</ul>
+<p>This data is stored in your iCloud storage and counts toward your quota; Apple's privacy policy governs it. There is still no Whirr server, and the developer has no access to it. Every value except a version number is stored as a CloudKit encrypted field, and becomes end-to-end encrypted if you turn on Advanced Data Protection for iCloud. Record names that are derived from your data are keyed hashes, so they do not reveal which podcasts you follow.</p>
+<p>Your Audiobookshelf server address, account, library and progress, passwords, tokens, feed passwords, downloaded audio, artwork and diagnostics are never synced.</p>
+<p>Turning sync off stops syncing and keeps your data on the device and in iCloud. Delete Podcast Data from iCloud removes the iCloud copy without changing what is on your devices.</p>
+
+<h2>Episodes sent to Apple Watch</h2>
+<p>When you send an RSS episode to Apple Watch, your iPhone passes the Watch the episode's title, show title, chapters, length, listening position and download address, using Apple's WatchConnectivity between your own paired devices. The Watch then downloads the episode itself from the podcast's media host, which receives ordinary network metadata as it would from your iPhone. Episodes from private feeds, which need a password or key, are never sent to the Watch. Your feed passwords, Audiobookshelf server, account and tokens are never sent for this.</p>
+<p>When you send an audiobook or an Audiobookshelf podcast episode to Apple Watch, your iPhone passes the Watch only which title it is, its name and author or show, and its size. The Watch then downloads it from your Audiobookshelf server using its own sign-in, as it does for a download you start on the Watch. Your iPhone sends no password, token or download address for this, and the Watch acts only on a request from the same Audiobookshelf account it is signed in to.</p>
+<p>The Watch tells your iPhone which episodes and books it holds, including ones you downloaded on the Watch itself, how their downloads are going, how much of its storage they use and where you are in each, so both devices show the same state. Removing a title, or signing out of Whirr on the Watch, deletes its copy from the Watch. Nothing about this reaches the developer.</p>
+<h2>Podcast backup files</h2>
+<p>Create Backup writes a file only when you ask for one, and you choose where it goes. The file is plain, unencrypted JSON containing the feed addresses of the podcasts you follow, your podcast settings and your listening state. It never contains passwords, feed passwords, tokens, Audiobookshelf data or audio. Some private feed addresses include an access key, so treat backup files as private. Whirr never uploads a backup anywhere on its own.</p>
+
+<h2>What is stored on your device</h2>
+<table>
+<tr><th>Data</th><th>Where it is kept</th><th>Notes</th></tr>
+<tr><td>Server address and account identity</td><td>App container</td><td>Never leaves the device except to reach that server</td></tr>
+<tr><td>Access and refresh tokens</td><td>iOS Keychain</td><td>Device-only; explicitly excluded from iCloud and desktop backups</td></tr>
+<tr><td>Your account password</td><td><strong>Not stored</strong></td><td>Used once to sign in, then discarded</td></tr>
+<tr><td>Library metadata and listening progress</td><td>Local database in the app container</td><td>Protected with iOS file protection</td></tr>
+<tr><td>Downloaded audiobooks, server-hosted podcasts, and books</td><td>App container</td><td>Excluded from iCloud backup; removed on sign-out</td></tr>
+<tr><td>Native RSS subscriptions and downloads, when enabled</td><td>App container</td><td>Device-owned; retained on sign-out and removable through the subscription controls</td></tr>
+<tr><td>Episodes and audiobooks sent to Apple Watch</td><td>Whirr's container on the Watch</td><td>Removed when you remove the title or sign out on the Watch; your iPhone forgets the audiobooks and Audiobookshelf episodes it sent when you sign out on the iPhone</td></tr>
+<tr><td>Cover artwork cache</td><td>App container</td><td>Account-owned server artwork clears on sign-out; device-owned RSS cache follows its subscription</td></tr>
+<tr><td>App-wide display preferences</td><td>iCloud key-value storage</td><td>A fixed allowlist of non-sensitive settings only — never server addresses, account identity, credentials, tokens, library contents, or media</td></tr>
+<tr><td>Podcast subscriptions and listening state, when iCloud Sync is on</td><td>Your private iCloud database</td><td>Encrypted CloudKit fields; see iCloud Sync for podcasts</td></tr>
+</table>
+
+<h2>Diagnostics</h2>
+<p>Whirr uses Apple's MetricKit to record local performance, crash, and responsiveness information.
+It stays on your device and is <strong>never uploaded</strong> — not to the developer, not to
+anyone.</p>
+<p>Settings › About › Report a Problem can build a diagnostics file from that information and from
+Whirr's own recent activity record. The file is only ever shared by you, through the system share
+sheet, to a destination you choose; the app never sends it anywhere on its own. You can read the
+whole file in the app before sharing it. Logging out deletes it.</p>
+<p>That file, and every log or error message Whirr writes, never contains your server address,
+account name, passwords, tokens, authorization headers, or the titles of anything in your
+library.</p>
+
+<h2>Tracking and advertising</h2>
+<p>Whirr does not track you. It contains no advertising identifier (IDFA), no App Tracking
+Transparency prompt, no advertising or attribution SDK, and no analytics SDK of any kind. No data is
+shared with data brokers or advertising networks, and no user profile is built for any purpose.</p>
+
+<h2>Links out of the app</h2>
+<p>An EPUB you read may contain external links. Whirr opens one only after you confirm it, only for
+<code>http</code>, <code>https</code>, <code>mailto</code>, and <code>tel</code> addresses, and only
+by handing it to the appropriate system app. Once a link opens elsewhere, that destination's own
+privacy policy applies. All other link types are refused.</p>
+
+<h2>Siri and App Shortcuts</h2>
+<p>Whirr's voice actions carry no title, author, account, server, or library information. They accept
+only a playback direction or a sleep-timer duration.</p>
+
+<h2>Children</h2>
+<p>Whirr is a client for a library you supply. It contains no first-party catalogue and shows no
+advertising. It collects no data from anyone, including children.</p>
+
+<h2>Deleting your data</h2>
+<p>Signing out of Whirr deletes your stored credentials, the local database for that account,
+server-hosted downloads, account-owned artwork cache, and any exported diagnostics from the device.
+Device-owned native RSS subscriptions and downloads, when enabled, remain until you remove them in
+the app. Deleting the app removes everything in its container. Signing out does not turn off iCloud Sync for podcasts or remove its iCloud copy, and neither does deleting the app; use Delete Podcast Data from iCloud for that. Backup files you created stay wherever you saved them.</p>
+<p>Because the developer holds no data about you, there is nothing to request, correct, export, or
+delete from the developer. Requests about your Audiobookshelf library should go to its operator;
+requests about an RSS feed or media host should go to that service's operator.</p>
+
+<h2>Your rights</h2>
+<p>Whirr processes no personal data on the developer's behalf, so there is no controller-held data
+subject to access, rectification, erasure, portability, or objection requests under the UK GDPR, the
+EU GDPR, or the CCPA/CPRA. Whirr sells no personal information and shares none.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the updated version will be posted at this address with a new
+"last updated" date. Material changes affecting how the app handles your information will also be
+noted in the app's release notes.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:support@whirrapp.uk">support@whirrapp.uk</a></p>
+
+<footer><a href="./">Whirr</a> · <a href="support.html">Support</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,75 @@
+# Rules about multiselect: the toolbar, the batch controller and the shared Download control.
+
+[[rule]]
+id = "selection-batch-ending-applied-only-by-the-controller"
+why = """\
+The request, confirmation, guard and ending of a batch live in `BatchSelectionController`. A screen \
+that applies `SelectionBatchEnding` itself would fork them again."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'SelectionBatchEnding\.apply'
+allow = ["App/Whirr/**/BatchSelectionController.swift"]
+example = 'let ending = SelectionBatchEnding.apply(selection: s, succeeded: done)'
+
+[[rule]]
+id = "selection-screens-keep-no-batch-state-of-their-own"
+why = """\
+The controller owns the working flag and the pending action. A screen keeping its own \
+`isPerformingSelectionAction` or `pendingSelectionAction` would fork the guard and the ending. \
+Downloads still carries its own and is outside this rule."""
+files = [
+  "App/Whirr/**/SavedForLaterView.swift",
+  "App/Whirr/**/HomeMoreView.swift",
+  "App/Whirr/**/HomeMoreView+*.swift",
+  "App/Whirr/**/LibraryBrowseView.swift",
+  "App/Whirr/**/LibraryBrowseView+*.swift",
+  "App/Whirr/**/LibraryCollectionView.swift",
+  "App/Whirr/**/LibraryCollectionView+*.swift",
+  "App/Whirr/**/PodcastShowView.swift",
+  "App/Whirr/**/PodcastShowView+*.swift",
+]
+forbid = 'isPerformingSelectionAction|pendingSelectionAction'
+example = '@State private var pendingSelectionAction: Action?'
+
+[[rule]]
+id = "batch-loop-lives-in-the-actions-model"
+why = """\
+The loop over a batch's targets lives in `ItemActionsModel.performBatch`. A view with its own loop \
+over its targets would fork the ending and the error handling."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'in targets \{'
+example = 'for target in targets {'
+
+[[rule]]
+id = "selection-begin-control-declared-once"
+why = """\
+Screens that hand-rolled the entry button drifted in label, entry animation and empty-list \
+handling, so `SelectionToolbar`'s shared `SelectionEntryButton` is the only thing that may produce \
+the `.selection.begin` identifier."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.selection\.begin'
+allow = ["App/Whirr/**/SelectionToolbar.swift"]
+example = '.accessibilityIdentifier("saved.selection.begin")'
+
+[[rule]]
+id = "selection-download-format-menu-written-once"
+why = """\
+The three-format Download menu is written once, in `SelectionDownloadControl`. A screen with its \
+own copy would drift in labels and in the sole-format shortcut."""
+files = ["App/Whirr/**/*.swift"]
+forbid = 'formatButton\("Download Audio"'
+allow = ["App/Whirr/**/SelectionDownloadControl.swift"]
+example = 'formatButton("Download Audio", format: .audio)'
+
+[[rule]]
+id = "selection-format-glyphs-only-on-library-titles"
+why = """\
+Library Titles draws a glyph on each format row; the other three toolbars draw text only. The \
+shared control offers both renderings, and each surface keeps the one it had, so only Library \
+Titles passes `showsFormatSymbols`."""
+files = [
+  "App/Whirr/**/HomeMoreView+Selection.swift",
+  "App/Whirr/**/LibraryCollectionView+Selection.swift",
+  "App/Whirr/**/SavedForLaterView.swift",
+]
+forbid = 'showsFormatSymbols'
+example = 'SelectionDownloadControl(showsFormatSymbols: true)'

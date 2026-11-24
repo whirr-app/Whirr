@@ -1,0 +1,25 @@
+{
+  "libraries": [
+    {
+      "id": "library_book_fixture",
+      "name": "Fixture Book Library",
+      "mediaType": "book",
+      "displayOrder": 1,
+      "folders": []
+    },
+    {
+      "id": "library_podcast_fixture",
+      "name": "Fixture Podcast Library",
+      "mediaType": "podcast",
+      "displayOrder": 2,
+      "folders": []
+    },
+    {
+      "id": "library_book_extra_fixture",
+      "name": "Fixture Secondary Library",
+      "mediaType": "book",
+      "displayOrder": 3,
+      "folders": []
+    }
+  ]
+}

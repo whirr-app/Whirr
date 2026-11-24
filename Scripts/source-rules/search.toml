@@ -1,0 +1,21 @@
+# Rules about Search.
+
+[[rule]]
+id = "search-tab-uses-system-owned-activation"
+why = """\
+Selecting the Search tab focuses the field through `tabViewSearchActivation(.searchTabSelection)`, \
+which the system owns. `SearchView` setting `searchIsFocused = true` itself would race the system's \
+activation."""
+files = ["App/Whirr/**/SearchView.swift"]
+forbid = 'searchIsFocused = true'
+example = 'searchIsFocused = true'
+
+[[rule]]
+id = "search-lists-take-the-page-inset-margin"
+why = """\
+Both Search lists take their horizontal margin from `SearchViewPresentation.pageInset`, the same \
+browse margin Home and Podcasts use. Hard-coding the compact margin leaves them misaligned once the \
+window outgrows the browse page."""
+files = ["App/Whirr/**/SearchResultsList.swift", "App/Whirr/**/SearchIdleView.swift"]
+forbid = '\.padding\(\.horizontal, WhirrSpacing\.medium\)'
+example = 'list.padding(.horizontal, WhirrSpacing.medium)'

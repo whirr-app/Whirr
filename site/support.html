@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support — Whirr</title>
+<style>
+:root{--bg:#fdfdfc;--fg:#1a1a19;--muted:#5f5f5b;--rule:#e3e3df;--accent:#3a6b5f;--code:#f2f2ee}
+@media (prefers-color-scheme:dark){:root{--bg:#16181a;--fg:#e8e8e4;--muted:#a0a099;--rule:#2c2f32;--accent:#7fbfae;--code:#22262a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+padding:3rem 1.25rem 5rem}
+main{max-width:44rem;margin:0 auto}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .3rem}
+h2{font-size:1.15rem;margin:2.5rem 0 .6rem;padding-top:1.2rem;border-top:1px solid var(--rule)}
+h3{font-size:1rem;margin:1.6rem 0 .35rem}
+.updated{color:var(--muted);font-size:.9rem;margin:0 0 2rem}
+.lede{font-size:1.05rem}
+code{background:var(--code);padding:.12em .38em;border-radius:3px;font-size:.88em}
+a{color:var(--accent)}
+strong{font-weight:600}
+ul{padding-left:1.2rem}
+li{margin:.3rem 0}
+footer{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Whirr — Support</h1>
+<p class="updated">Last updated: 8 November 2026</p>
+
+<p class="lede">Whirr is an iOS client for <a href="https://www.audiobookshelf.org">Audiobookshelf</a>.
+It plays audiobooks and podcasts and reads EPUBs from a server you run yourself.</p>
+
+<h2>What you need</h2>
+<ul>
+<li>An <strong>Audiobookshelf server</strong> you can reach from your device. Whirr does not provide
+one, and there is no Whirr account to create.</li>
+<li>iOS 26 or later, on iPhone or iPad.</li>
+</ul>
+
+<h2>Getting started</h2>
+<p>Open Whirr, enter your server's address, and sign in with your Audiobookshelf username and
+password. Your library appears once the first sync finishes.</p>
+
+<h2>Common problems</h2>
+
+<h3>The app can't reach my server</h3>
+<p>Check the address in a browser on the same device first. If it doesn't load there, it's a network
+or server problem rather than a Whirr problem. Most often it's one of:</p>
+<ul>
+<li><strong>You're away from home.</strong> A server on your home network isn't reachable from
+outside it unless you've set up remote access — a VPN such as Tailscale or WireGuard is the usual
+approach.</li>
+<li><strong>Wrong port.</strong> Audiobookshelf commonly runs on <code>:13378</code>. Include it if
+your server needs it.</li>
+<li><strong>Scheme.</strong> Whirr defaults to <code>https://</code>. If your server only serves
+plain HTTP, you must type <code>http://</code> deliberately.</li>
+</ul>
+
+<h3>My server uses plain HTTP</h3>
+<p>That's supported. Whirr does not warn you about it in the app, so be aware that on that route
+your login token and media travel unencrypted, and the protection is the network
+itself — a trusted LAN or a VPN tunnel. If you want encryption and your server is on a tailnet,
+Tailscale can issue a real certificate for your <code>*.ts.net</code> hostname.</p>
+
+<h3>I was signed out unexpectedly</h3>
+<p>If your session expires or your server rejects the token, Whirr asks you to sign in again but
+<strong>does not</strong> delete anything. Completed downloads stay playable and your local progress
+is kept. Signing back in as the same user on the same server restores normal operation.</p>
+
+<h3>Downloads aren't starting or finishing</h3>
+<ul>
+<li>Check whether downloads over cellular are enabled in Settings.</li>
+<li>Check your storage limit in Settings — Whirr honours a ceiling you set.</li>
+<li>Large downloads continue in the background, but iOS decides when to run them. Opening the app
+brings them forward.</li>
+</ul>
+
+<h3>Playback stops when I lock the screen</h3>
+<p>Whirr plays in the background and supports the lock screen and CarPlay-style remote controls. If
+playback stops, confirm Whirr isn't restricted in <strong>Settings ▸ General ▸ Background App
+Refresh</strong>.</p>
+
+<h3>An EPUB won't open</h3>
+<p>Whirr reads unencrypted EPUBs. DRM-protected books are not supported. Whirr also refuses files
+that expand far beyond a reasonable size, which protects your device against malformed archives.</p>
+
+<h2>Privacy</h2>
+<p>Whirr collects nothing about you and has no server of its own. See the
+<a href="privacy.html">privacy policy</a>.</p>
+
+<h2>Contact</h2>
+<p>Bug reports and feature requests: open an issue at
+<a href="https://github.com/whirr-app/Whirr/issues">github.com/whirr-app/Whirr/issues</a>.
+Anything you would rather not post publicly:
+<a href="mailto:support@whirrapp.uk">support@whirrapp.uk</a></p>
+<p>The quickest route is in the app: <strong>Settings › About › Report a Problem</strong> opens the
+bug form with your Whirr version, iOS version, and device already filled in, and
+<strong>Share Diagnostics</strong> builds a short text file worth attaching. You can read the file in
+the app before sharing it; it never includes your server address, account name, or anything from
+your library.</p>
+<p>Otherwise it helps to include your device model, iOS version, the Whirr version from Settings, and
+what you expected to happen. Please don't include your server address, username, or password.</p>
+
+<footer><a href="./">Whirr</a> · <a href="privacy.html">Privacy</a></footer>
+</main>
+</body>
+</html>

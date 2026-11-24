@@ -1,0 +1,6 @@
+[
+  {"id": "author_valid", "name": "Valid Author", "numBooks": 2},
+  {"id": 123, "name": "wrong-type-id"},
+  "not-an-object",
+  {"name": "missing-id"}
+]

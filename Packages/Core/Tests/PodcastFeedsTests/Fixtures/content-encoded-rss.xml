@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0">
+  <channel>
+    <title>Fixture Morning Briefing</title>
+    <link>https://example.com/podcasts/1001/morning-briefing</link>
+    <description><![CDATA[The Fixture Morning Briefing is placeholder news to start your day. Three invented stories, with synthetic reporting — in 10 minutes. Available weekdays at 6:30 a.m.<br><br><em> Support the fixture by joining at </em><a href="http://plus.example.com/"target="_blank"   ><em>plus.example.com</em></a><em>. You’ll get perks for over 25 placeholder podcasts.</em>]]></description>
+    <copyright>Copyright 2015-2026 Example Broadcaster</copyright>
+    <generator>Example Feed Publish Service v2.3.23</generator>
+    <language>en-us</language>
+    <itunes:author>Example Broadcaster</itunes:author>
+    <itunes:block>no</itunes:block>
+    <itunes:owner>
+      <itunes:email>podcasts@example.com</itunes:email>
+      <itunes:name>Example Broadcaster</itunes:name>
+    </itunes:owner>
+    <itunes:category text="News">
+      <itunes:category text="Daily News"/>
+    </itunes:category>
+    <media:thumbnail url="https://images.example.com/dims3/default/strip/false/crop/3000x1688+0+663/resize/3000/quality/66/format/jpg/?url=http%3A%2F%2Fstorage.example.org%2Fe0%2F7a%2Ffixture%2Fshow.png" height="1688" width="3000"/>
+    <itunes:image href="https://images.example.com/dims3/default/strip/false/crop/3000x3000+0+0/resize/1400/quality/66/format/jpg/?url=http%3A%2F%2Fstorage.example.org%2Fe0%2F7a%2Ffixture%2Fshow.png"/>
+    <itunes:type>episodic</itunes:type>
+    <image>
+      <url>https://images.example.com/dims3/default/strip/false/crop/3000x3000+0+0/resize/1400/quality/66/format/jpg/?url=http%3A%2F%2Fstorage.example.org%2Fe0%2F7a%2Ffixture%2Fshow.png</url>
+      <title>Fixture Morning Briefing</title>
+      <link>https://example.com/podcasts/1001/morning-briefing</link>
+    </image>
+    <lastBuildDate>Thu, 13 Aug 2026 10:15:52 +0000</lastBuildDate>
+    <media:restriction type="country" relationship="allow">ad at au be ca ch de dk es fi fr gb ie it nl no nz se us</media:restriction>
+    <podcast:funding url="https://plus.example.com/?utm_source=podcast_rss_funding_tag">Support the fixture by enrolling!</podcast:funding>
+    <item>
+      <title>Fixture Headline One, Fixture Headline Two, Fixture Headline Three</title>
+      <description><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Headline One<br>(05:38) Fixture Headline Two<br>(09:23) Fixture Headline Three<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></description>
+      <pubDate>Thu, 13 Aug 2026 10:15:49 +0000</pubDate>
+      <guid isPermaLink="false">11111111-2222-4333-8444-555555555501</guid>
+      <link>https://example.com/2026/08/fx-0001/headline-one-headline-two-headline-three</link>
+      <itunes:block>no</itunes:block>
+      <itunes:title>Fixture Headline One, Fixture Headline Two, Fixture Headline Three</itunes:title>
+      <itunes:duration>788</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <content:encoded><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Headline One<br>(05:38) Fixture Headline Two<br>(09:23) Fixture Headline Three<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></content:encoded>
+      <enclosure length="12609454" type="audio/mpeg" url="https://prefix.example.com/e/tracker.example.net/show-1001/audio.example.org/0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1/episodes/aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee01/audio/128/default.mp3?awCollectionId=0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1&amp;awEpisodeId=aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee01&amp;feed=FiXtUrE1&amp;t=podcast&amp;e=fx-0001&amp;p=1001&amp;d=788&amp;size=12609454"/>
+    </item>
+    <item>
+      <title>Fixture Results, A Placeholder’s Plan, Example Region Update</title>
+      <description><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Results<br>(05:38) A Placeholder’s Plan<br>(09:23) Example Region Update<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></description>
+      <pubDate>Wed, 12 Aug 2026 10:06:17 +0000</pubDate>
+      <guid isPermaLink="false">11111111-2222-4333-8444-555555555502</guid>
+      <link>https://example.com/2026/08/fx-0002/fixture-results-placeholder-plan-example-region-update</link>
+      <itunes:block>no</itunes:block>
+
+      <itunes:title>Fixture Results, A Placeholder’s Plan, Example Region Update</itunes:title>
+      <itunes:duration>807</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <content:encoded><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Results<br>(05:38) A Placeholder’s Plan<br>(09:23) Example Region Update<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></content:encoded>
+      <enclosure length="13016546" type="audio/mpeg" url="https://prefix.example.com/e/tracker.example.net/show-1001/audio.example.org/0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1/episodes/aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee02/audio/128/default.mp3?awCollectionId=0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1&amp;awEpisodeId=aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee02&amp;feed=FiXtUrE1&amp;t=podcast&amp;e=fx-0002&amp;p=1001&amp;d=807&amp;size=13016546"/>
+    </item>
+    <item>
+      <title>Placeholder Primaries, Example Stalemate, Fixture Weather</title>
+      <description><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Placeholder Primaries<br>(05:38) Example Stalemate<br>(09:23) Fixture Weather<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></description>
+      <pubDate>Tue, 11 Aug 2026 10:00:42 +0000</pubDate>
+      <guid isPermaLink="false">11111111-2222-4333-8444-555555555503</guid>
+      <link>https://example.com/2026/08/fx-0003/placeholder-primaries-example-stalemate-fixture-weather</link>
+      <itunes:block>no</itunes:block>
+      <itunes:title>Placeholder Primaries, Example Stalemate, Fixture Weather</itunes:title>
+      <itunes:duration>772</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <content:encoded><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Placeholder Primaries<br>(05:38) Example Stalemate<br>(09:23) Fixture Weather<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></content:encoded>
+      <enclosure length="12926686" type="audio/mpeg" url="https://prefix.example.com/e/tracker.example.net/show-1001/audio.example.org/0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1/episodes/aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee03/audio/128/default.mp3?awCollectionId=0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1&amp;awEpisodeId=aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee03&amp;feed=FiXtUrE1&amp;t=podcast&amp;e=fx-0003&amp;p=1001&amp;d=772&amp;size=12926686"/>
+    </item>
+    <item>
+      <title>Fixture Talks Drag, New Example Report, Placeholder Review</title>
+      <description><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Talks Drag<br>(05:38) New Example Report<br>(09:23) Placeholder Review<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></description>
+      <pubDate>Mon, 10 Aug 2026 09:55:01 +0000</pubDate>
+      <guid isPermaLink="false">11111111-2222-4333-8444-555555555504</guid>
+      <link>https://example.com/2026/08/fx-0004/fixture-talks-drag-new-example-report-placeholder-review</link>
+      <itunes:block>no</itunes:block>
+      <itunes:title>Fixture Talks Drag, New Example Report, Placeholder Review</itunes:title>
+      <itunes:duration>813</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episodeType>full</itunes:episodeType>
+      <content:encoded><![CDATA[A synthetic summary of today’s placeholder stories. The results — so far — are invented for this fixture. What does that mean for the example? Nothing at all.<br/><br/><em>Want more placeholder analysis? </em><a href="https://example.com/newsletter"target="_blank"   >Subscribe</a><em> to the fixture newsletter.</em><br/><br/>Today’s episode was edited by Editor One and Editor Two. <br/><br/>It was produced by Producer One.<br/><br/>(0:00) Introduction<br>(01:51) Fixture Talks Drag<br>(05:38) New Example Report<br>(09:23) Placeholder Review<br/><br/>See <a href="https://example.net/privacy">example.net/privacy</a> for information about sponsorship data.]]></content:encoded>
+      <enclosure length="13017001" type="audio/mpeg" url="https://prefix.example.com/e/tracker.example.net/show-1001/audio.example.org/0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1/episodes/aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee04/audio/128/default.mp3?awCollectionId=0f1e2d3c-4b5a-4968-8778-a6b5c4d3e2f1&amp;awEpisodeId=aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeee04&amp;feed=FiXtUrE1&amp;t=podcast&amp;e=fx-0004&amp;p=1001&amp;d=813&amp;size=13017001"/>
+    </item>
+</channel>
+</rss>

@@ -1,0 +1,33 @@
+{
+  "podcast": [
+    {
+      "libraryItem": {
+        "id": "item_podcast_fixture",
+        "libraryId": "library_podcast_fixture",
+        "mediaType": "podcast",
+        "media": {
+          "metadata": {
+            "title": "Fixture Podcast",
+            "author": "Fixture Publisher",
+            "description": null
+          },
+          "episodes": [
+            {
+              "id": "episode_fixture",
+              "title": "Fixture Episode",
+              "audioTrack": { "contentUrl": "<redacted>", "mimeType": "audio/mpeg" },
+              "publishedAt": 0,
+              "duration": 0
+            }
+          ]
+        },
+        "userMediaProgress": null
+      },
+      "matchKey": "authors",
+      "matchText": "Fixture Publisher"
+    }
+  ],
+  "tags": [],
+  "authors": [],
+  "series": []
+}

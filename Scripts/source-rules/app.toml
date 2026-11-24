@@ -1,0 +1,43 @@
+# Rules that span the App's screens. Area files hold rules about one screen family.
+
+[[rule]]
+id = "raw-duration-formatter-episode-rows-only"
+why = """\
+An ebook-only item has a server duration of 0, so formatting `durationSeconds` without checking \
+the kind captions every ebook "Duration unknown". `ItemDetailDurationPresentation.durationText` \
+owns that gate; only podcast episode rows, whose subject is an episode, may call the raw formatter."""
+files = ["App/Whirr/Views/**/*.swift"]
+forbid = 'PodcastCopy\.duration\(seconds:'
+allow = ["App/Whirr/Views/Downloads/DownloadsViewPresentation.swift"]
+example = 'Text(PodcastCopy.duration(seconds: item.durationSeconds))'
+
+[[rule]]
+id = "sheet-sizing-reads-window-size-class"
+why = """\
+Inside a presentation `\\.horizontalSizeClass` describes the sheet itself: a 570 pt `.form` sheet on \
+iPad reports `.compact`, so a host sizing a sheet from it narrows itself out of every regular mode. \
+Sheet-sizing hosts read `\\.windowHorizontalSizeClass`, which a root publishes."""
+files = [
+  "App/Whirr/**/SheetViewPresentationModifiers.swift",
+  "App/Whirr/**/PodcastEpisodeCardSheet.swift",
+  "App/Whirr/**/PlayerSheetPresentationModifiers.swift",
+  "App/Whirr/**/ItemDetailCardSheet.swift",
+]
+forbid = 'Environment\(\\\.horizontalSizeClass\)'
+example = '@Environment(\.horizontalSizeClass) private var sizeClass'
+ok = ['@Environment(\.windowHorizontalSizeClass) private var sizeClass']
+
+[[rule]]
+id = "only-roots-publish-window-size-class"
+why = """\
+Nothing between a window and a sheet may redefine the window's size class, or a sheet sizes itself \
+from a value its own host invented. Only a root, or a harness simulating a form factor, publishes it."""
+files = ["App/Whirr/**/*.swift"]
+forbid = '\.windowHorizontalSizeClass\('
+allow = [
+  "App/Whirr/RootView.swift",
+  "App/Whirr/UIHarness.swift",
+  "App/Whirr/UIHarness+Podcast.swift",
+  "App/Whirr/UIHarness+Search.swift",
+]
+example = 'content.windowHorizontalSizeClass(sizeClass)'

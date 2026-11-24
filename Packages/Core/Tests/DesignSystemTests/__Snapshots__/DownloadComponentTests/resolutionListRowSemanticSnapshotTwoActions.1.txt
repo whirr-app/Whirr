@@ -1,0 +1,14 @@
+▿ ResolutionListRowView
+  ▿ actions: 2 elements
+    ▿ Action
+      - accessibilityHint: "Keeps this device\'s progress"
+      - isDestructive: false
+      - label: "Keep This Device\'s Progress"
+    ▿ Action
+      - accessibilityHint: "Uses the server\'s progress"
+      - isDestructive: false
+      - label: "Use the Server\'s Progress"
+  - message: "This device and the server disagree about how far you got."
+  - onSelectAction: (Function)
+  - systemImage: "arrow.triangle.branch"
+  - title: "Which progress is right for \"Project Hail Mary\"?"

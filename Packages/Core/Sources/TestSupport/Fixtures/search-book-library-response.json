@@ -1,0 +1,40 @@
+{
+  "book": [
+    {
+      "libraryItem": {
+        "id": "item_book_fixture",
+        "libraryId": "library_book_fixture",
+        "mediaType": "book",
+        "media": {
+          "metadata": {
+            "title": "Fixture Book",
+            "subtitle": null,
+            "authorName": "Fixture Author",
+            "narratorName": "Fixture Narrator",
+            "seriesName": null,
+            "description": null
+          },
+          "duration": 3600.5,
+          "tracks": [
+            {
+              "index": 0,
+              "startOffset": 0,
+              "duration": 3600.5,
+              "title": "Fixture Track",
+              "contentUrl": "<redacted>",
+              "mimeType": "audio/mp4"
+            }
+          ],
+          "chapters": [],
+          "ebookFile": null
+        },
+        "userMediaProgress": null
+      },
+      "matchKey": "title",
+      "matchText": "Fixture Book"
+    }
+  ],
+  "tags": ["Fixture Tag"],
+  "authors": [],
+  "series": []
+}

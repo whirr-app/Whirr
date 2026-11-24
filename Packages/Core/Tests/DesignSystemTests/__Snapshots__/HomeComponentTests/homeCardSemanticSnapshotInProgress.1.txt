@@ -1,0 +1,31 @@
+▿ HomeCardView<Color>
+  - accessibilityHint: Optional<String>.none
+  - badgeKind: MediaKindBadge.audiobook
+  - badgeLabel: "Audiobook"
+  ▿ cover: clear
+    ▿ provider: ColorBox<ResolvedColorProvider>
+      ▿ base: ResolvedColorProvider
+        ▿ color: #00000000
+          ▿ base: #00000000
+            - linearRed: 0.0
+            - linearGreen: 0.0
+            - linearBlue: 0.0
+            - opacity: 0.0
+          - _headroom: nan
+  - finishedLabel: Optional<String>.none
+  - onSelect: (Function)
+  ▿ progressFraction: Optional<Double>
+    - some: 0.42
+  - reservesProgressLine: false
+  - showsEmptyProgressTrack: false
+  - sourceMarkLabel: Optional<String>.none
+  - sourceMarkSymbol: Optional<String>.none
+  - subtitle: "Andy Weir"
+  ▿ subtitleLineLimit: Optional<Int>
+    - some: 1
+  - title: "Project Hail Mary"
+  ▿ titleLineLimit: Optional<Int>
+    - some: 2
+  ▿ trailingCaption: Optional<String>
+    - some: "6h 50m left"
+  - wash: Optional<CoverWash>.none

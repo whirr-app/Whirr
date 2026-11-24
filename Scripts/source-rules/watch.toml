@@ -1,0 +1,13 @@
+# The Watch app. It has no test bundle of its own and the host regressions compile model files
+# only, so facts about its views are checked here.
+
+[[rule]]
+id = "watch-no-position-slider"
+why = """\
+A position `Slider` shipped in the Watch audio sheet and was removed: watchOS draws a `Slider` as a \
+bar with minus and plus buttons, which reads as volume, and its taps never reached `seek`. The \
+Digital Crown drives volume and the plus and minus skip buttons cover short moves, so Now Playing \
+carries no position slider and no scrubber."""
+files = ["App/WhirrWatch Watch App/**/*.swift"]
+forbid = 'Slider\(|NowPlayingScrubber'
+example = 'Slider(value: $position)'

@@ -1,0 +1,67 @@
+# The Smart Lists screens, section, editor and list screen.
+
+[[rule]]
+id = "smart-lists-no-separator-dot"
+why = """\
+No smart-list surface joins its words with a separator dot: VoiceOver reads it aloud as "dot", and \
+the copy reads as a list without it. Words are separated by commas or by layout."""
+files = ["App/Whirr/Views/SmartLists/**/*.swift"]
+forbid = '·'
+example = 'Text("3 episodes · Commute")'
+
+[[rule]]
+id = "smart-list-editor-lengths-on-wheels"
+why = """\
+Lengths are set on wheels, as Clock sets a timer: a stepper takes a tap per minute."""
+files = ["App/Whirr/**/SmartListEditorSheet.swift"]
+forbid = 'Stepper\('
+example = 'Stepper("Minimum", value: $minutes)'
+
+[[rule]]
+id = "smart-list-row-no-waveform"
+why = """\
+A waveform is the ad-analysis glyph, and an animated one reads as playing while paused. A list row \
+draws a play or pause button."""
+files = ["App/Whirr/**/SmartListRowView.swift"]
+forbid = 'waveform|\.variableColor'
+example = 'Image(systemName: "waveform")'
+
+[[rule]]
+id = "smart-list-play-button-uses-chrome-tint"
+why = """\
+The list's Play is the episode card's capsule: same label, same wash accent (`accent ?? \
+AppChrome.tint`), same toggle. Reaching for `brandTint` would make it a different control."""
+files = ["App/Whirr/**/SmartListPlayButton.swift"]
+forbid = 'brandTint'
+example = '.tint(AppChrome.brandTint)'
+
+[[rule]]
+id = "smart-lists-section-has-no-new-button"
+why = """\
+The tab's Smart Lists section has a plain heading and no New button of its own: lists are made \
+from the Smart Lists screen's toolbar, so the section neither names a New title nor lists the \
+templates."""
+files = ["App/Whirr/**/SmartListsSectionView.swift"]
+forbid = 'newTitle|templates'
+example = 'Button(newTitle) { create(.blank) }'
+
+[[rule]]
+id = "smart-list-screen-title-uses-shared-lists-fallback"
+why = """\
+The list's own model reads the store before it knows the name, so the title arrived about a second \
+after the push. The shared model already holds every list's name, so the screen titles itself \
+through `SmartListsPresentation.listTitle`, never from its own model alone."""
+files = ["App/Whirr/**/SmartListView.swift"]
+forbid = '\.navigationTitle\(model\.list\?\.name \?\? ""\)'
+example = '.navigationTitle(model.list?.name ?? "")'
+
+[[rule]]
+id = "smart-lists-delete-swipe-is-not-destructive"
+why = """\
+A destructive-role swipe removes the row before the confirmation, so a cancelled or failed delete \
+would spring it back. The delete swipe asks first and carries no `role: .destructive` within the \
+swipe block."""
+files = ["App/Whirr/**/EditSmartListsView.swift"]
+forbid = '\.swipeActions\([\s\S]{0,400}?role: \.destructive'
+example = '.swipeActions(edge: .trailing) { Button(role: .destructive) { remove(list) } label: { Text("Delete") } }'
+ok = ['.swipeActions(edge: .trailing) { Button { pendingDelete = list } label: { Text("Delete") } }']

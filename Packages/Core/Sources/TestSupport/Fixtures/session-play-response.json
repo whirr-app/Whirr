@@ -1,0 +1,92 @@
+{
+  "id": "session_fixture",
+  "userId": "user_fixture",
+  "libraryId": "library_book_fixture",
+  "libraryItemId": "item_book_fixture",
+  "bookId": "media_book_fixture",
+  "episodeId": null,
+  "mediaType": "book",
+  "mediaMetadata": {
+    "title": "Fixture Book",
+    "subtitle": null,
+    "authors": [{ "id": "author_fixture", "name": "Fixture Author" }],
+    "narrators": [],
+    "series": [],
+    "genres": [],
+    "publishedYear": null,
+    "explicit": false,
+    "abridged": false
+  },
+  "chapters": [
+    { "id": 0, "start": 0, "end": 2679.901678, "title": "Fixture Chapter 1" },
+    { "id": 1, "start": 2679.901678, "end": 5340.681723, "title": "Fixture Chapter 2" },
+    { "id": 2, "start": 5340.681723, "end": 8015.071564, "title": "Fixture Chapter 3" },
+    { "id": 3, "start": 8015.071564, "end": 10544.612426, "title": "Fixture Chapter 4" },
+    { "id": 4, "start": 10544.612426, "end": 11670.881451, "title": "Fixture Chapter 5" }
+  ],
+  "displayTitle": "Fixture Book",
+  "displayAuthor": "Fixture Author",
+  "coverPath": null,
+  "duration": 11670.881451,
+  "playMethod": 0,
+  "mediaPlayer": "unknown",
+  "deviceInfo": {
+    "id": "device_fixture",
+    "userId": "user_fixture",
+    "deviceId": "device_id_fixture",
+    "ipAddress": "<redacted>",
+    "clientVersion": "2.35.1",
+    "clientName": "abs-ios-fixture"
+  },
+  "serverVersion": "2.35.1",
+  "date": "2026-07-21",
+  "dayOfWeek": "Tuesday",
+  "timeListening": 0,
+  "startTime": 0,
+  "currentTime": 120.25,
+  "startedAt": 1700000000000,
+  "updatedAt": 1700000000000,
+  "audioTracks": [
+    {
+      "index": 1,
+      "startOffset": 0,
+      "duration": 2679.901678,
+      "title": "Fixture Track 1",
+      "contentUrl": "/api/items/item_book_fixture/file/101",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "index": 2,
+      "startOffset": 2679.901678,
+      "duration": 2660.780045,
+      "title": "Fixture Track 2",
+      "contentUrl": "/api/items/item_book_fixture/file/102",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "index": 3,
+      "startOffset": 5340.681723,
+      "duration": 2674.389841,
+      "title": "Fixture Track 3",
+      "contentUrl": "/api/items/item_book_fixture/file/103",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "index": 4,
+      "startOffset": 8015.071564,
+      "duration": 2529.540862,
+      "title": "Fixture Track 4",
+      "contentUrl": "/api/items/item_book_fixture/file/104",
+      "mimeType": "audio/mpeg"
+    },
+    {
+      "index": 5,
+      "startOffset": 10544.612426,
+      "duration": 1126.269025,
+      "title": "Fixture Track 5",
+      "contentUrl": "/api/items/item_book_fixture/file/105",
+      "mimeType": "audio/mpeg"
+    }
+  ],
+  "libraryItem": null
+}

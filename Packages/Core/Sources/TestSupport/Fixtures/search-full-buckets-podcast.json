@@ -1,0 +1,86 @@
+{
+  "podcast": [
+    {
+      "libraryItem": {
+        "id": "item_search_podcast_1",
+        "ino": "4000001",
+        "oldLibraryItemId": null,
+        "libraryId": "library_search_podcast",
+        "folderId": "folder_search_podcast",
+        "path": "/podcasts/The Fixture Hour",
+        "relPath": "The Fixture Hour",
+        "isFile": false,
+        "mtimeMs": 1748117484822,
+        "ctimeMs": 1748117484822,
+        "birthtimeMs": 1748117484822,
+        "addedAt": 1742399939342,
+        "updatedAt": 1785196823370,
+        "lastScan": 1748117497154,
+        "scanVersion": "2.23.0",
+        "isMissing": false,
+        "isInvalid": false,
+        "mediaType": "podcast",
+        "media": {
+          "id": "media_search_podcast_1",
+          "libraryItemId": "item_search_podcast_1",
+          "metadata": {
+            "title": "The Fixture Hour",
+            "author": "Fixture Productions",
+            "description": "The fixture’s synthetic show description.\n\nJoin the Fixture Club (www.example.invalid) for nothing at all.\n\nSome placeholder episodes to get you started:\n\nFIXTURE ONE example.invalid/1\n\n\nFIXTURE TWO example.invalid/2\n\n\nFIXTURE THREE example.invalid/3\n\n\nFIXTURE FOUR example.invalid/4",
+            "releaseDate": "2025-03-27T00:00:00Z",
+            "genres": [
+              "Fixture Genre",
+              "Podcasts"
+            ],
+            "feedUrl": "https://example.invalid/fixture-hour/feed.xml",
+            "imageUrl": "https://example.invalid/image/thumb/fixture-hour/600x600bb.jpg",
+            "itunesPageUrl": "https://example.invalid/fixture-hour/itunes?uo=4",
+            "itunesId": null,
+            "itunesArtistId": null,
+            "explicit": false,
+            "language": "en",
+            "type": "episodic",
+            "titleIgnorePrefix": "Fixture Hour, The"
+          },
+          "coverPath": "/podcasts/The Fixture Hour/cover.jpg",
+          "tags": [],
+          "episodes": [],
+          "autoDownloadEpisodes": true,
+          "autoDownloadSchedule": "0 0 * * *",
+          "lastEpisodeCheck": 1785196817748,
+          "maxEpisodesToKeep": 10,
+          "maxNewEpisodesToDownload": 3,
+          "size": 0
+        },
+        "libraryFiles": [
+          {
+            "ino": "4000002",
+            "metadata": {
+              "filename": "cover.jpg",
+              "ext": ".jpg",
+              "path": "/podcasts/The Fixture Hour/cover.jpg",
+              "relPath": "cover.jpg",
+              "size": 107919,
+              "mtimeMs": 1742399940157,
+              "ctimeMs": 1742399940157,
+              "birthtimeMs": 1742399940157
+            },
+            "isSupplementary": null,
+            "addedAt": 1742399940161,
+            "updatedAt": 1744026119543,
+            "fileType": "image"
+          }
+        ],
+        "size": 1000015838
+      }
+    }
+  ],
+  "tags": [],
+  "genres": [
+    {
+      "name": "Fixture Genre",
+      "numItems": 4
+    }
+  ],
+  "episodes": []
+}

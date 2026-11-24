@@ -1,0 +1,82 @@
+{
+  "id": "item_book_fixture",
+  "libraryId": "library_book_fixture",
+  "mediaType": "book",
+  "isFile": true,
+  "isInvalid": false,
+  "isMissing": false,
+  "path": "<redacted>",
+  "relPath": "<redacted>",
+  "libraryFiles": [
+    {
+      "ino": 0,
+      "metadata": {
+        "filename": "fixture.m4b",
+        "ext": "m4b",
+        "path": "<redacted>",
+        "size": 0
+      }
+    }
+  ],
+  "media": {
+    "id": "media_book_fixture",
+    "libraryItemId": "item_book_fixture",
+    "coverPath": "<redacted>",
+    "duration": 0,
+    "size": 0,
+    "tags": [],
+    "metadata": {
+      "title": "Fixture Book",
+      "subtitle": null,
+      "authorName": "Fixture Author",
+      "authors": [],
+      "narratorName": "Fixture Narrator",
+      "narrators": [],
+      "series": [],
+      "seriesName": null,
+      "genres": ["Fixture Genre"],
+      "description": null,
+      "publishedYear": null,
+      "publisher": null,
+      "language": "en"
+    },
+    "audioFiles": [
+      {
+        "index": 0,
+        "ino": 0,
+        "duration": 3600.5,
+        "bitRate": 0,
+        "codec": "aac",
+        "channels": 2,
+        "chapters": [],
+        "mimeType": "audio/mp4",
+        "metadata": {
+          "filename": "fixture.m4b",
+          "ext": "m4b",
+          "path": "<redacted>",
+          "size": 45000000
+        }
+      }
+    ],
+    "tracks": [
+      {
+        "index": 0,
+        "startOffset": 0,
+        "duration": 0,
+        "title": "Fixture Track",
+        "contentUrl": "<redacted>",
+        "mimeType": "audio/mp4",
+        "metadata": {}
+      }
+    ],
+    "chapters": [],
+    "ebookFile": null
+  },
+  "userMediaProgress": null,
+  "addedAt": 0,
+  "birthtimeMs": 0,
+  "ctimeMs": 0,
+  "mtimeMs": 0,
+  "updatedAt": 0,
+  "size": 0
+}

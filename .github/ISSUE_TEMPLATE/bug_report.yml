@@ -1,0 +1,65 @@
+name: Bug report
+description: Something in Whirr does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not paste server addresses, tokens, or account names.
+  - type: input
+    id: app-version
+    attributes:
+      label: Whirr version
+      description: Settings › About, or the App Store listing.
+      placeholder: "1.0.0 (42)"
+    validations:
+      required: true
+  - type: input
+    id: ios-version
+    attributes:
+      label: iOS version and device
+      placeholder: "iOS 26.0, iPhone 17 Pro"
+    validations:
+      required: true
+  - type: input
+    id: server-version
+    attributes:
+      label: Audiobookshelf server version
+      placeholder: "2.19.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+  - type: dropdown
+    id: content
+    attributes:
+      label: Content type involved
+      multiple: true
+      options:
+        - Audiobook
+        - Server podcast
+        - RSS podcast (no server)
+        - EPUB ebook
+        - Not content-specific
+  - type: dropdown
+    id: connectivity
+    attributes:
+      label: Connectivity when it happened
+      options:
+        - Online, same network as the server
+        - Online, remote from the server
+        - Offline
+        - Not sure

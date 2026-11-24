@@ -1,0 +1,318 @@
+{
+  "book": [
+    {
+      "libraryItem": {
+        "id": "item_search_authors_1",
+        "ino": "3000001",
+        "oldLibraryItemId": null,
+        "libraryId": "library_search_authors",
+        "folderId": "folder_search_authors",
+        "path": "/books/Fen Fixture/The Fixture at the End of the Shelf (101)",
+        "relPath": "Fen Fixture/The Fixture at the End of the Shelf (101)",
+        "isFile": false,
+        "mtimeMs": 1742026187548,
+        "ctimeMs": 1742026187548,
+        "birthtimeMs": 1742026187548,
+        "addedAt": 1742053119753,
+        "updatedAt": 1742053119753,
+        "lastScan": 1742053119751,
+        "scanVersion": "2.19.5",
+        "isMissing": false,
+        "isInvalid": false,
+        "mediaType": "book",
+        "media": {
+          "id": "media_search_authors_1",
+          "libraryItemId": "item_search_authors_1",
+          "metadata": {
+            "title": "The Fixture at the End of the Shelf",
+            "subtitle": null,
+            "authors": [
+              {
+                "id": "author_search_authors_1",
+                "name": "Fen Fixture"
+              }
+            ],
+            "narrators": [],
+            "series": [],
+            "genres": [],
+            "publishedYear": "2013",
+            "publishedDate": null,
+            "publisher": "Fixture House",
+            "description": null,
+            "isbn": null,
+            "asin": null,
+            "language": "eng",
+            "explicit": false,
+            "abridged": false,
+            "titleIgnorePrefix": "Fixture at the End of the Shelf, The",
+            "authorName": "Fen Fixture",
+            "authorNameLF": "Fixture, Fen",
+            "narratorName": "",
+            "seriesName": "",
+            "descriptionPlain": null
+          },
+          "coverPath": "/books/Fen Fixture/The Fixture at the End of the Shelf (101)/cover.jpg",
+          "tags": [],
+          "audioFiles": [],
+          "chapters": [],
+          "ebookFile": {
+            "ino": "3000002",
+            "metadata": {
+              "filename": "The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "ext": ".epub",
+              "path": "/books/Fen Fixture/The Fixture at the End of the Shelf (101)/The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "relPath": "The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "size": 131676,
+              "mtimeMs": 1742020731000,
+              "ctimeMs": 1742026186852,
+              "birthtimeMs": 1742026186852
+            },
+            "isSupplementary": null,
+            "addedAt": 1742052567562,
+            "updatedAt": 1742052567562,
+            "fileType": "ebook",
+            "ebookFormat": "epub"
+          },
+          "duration": 0,
+          "size": 131676,
+          "tracks": []
+        },
+        "libraryFiles": [
+          {
+            "ino": "3000002",
+            "metadata": {
+              "filename": "The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "ext": ".epub",
+              "path": "/books/Fen Fixture/The Fixture at the End of the Shelf (101)/The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "relPath": "The Fixture at the End of the Shelf - Fen Fixture.epub",
+              "size": 131676,
+              "mtimeMs": 1742020731000,
+              "ctimeMs": 1742026186852,
+              "birthtimeMs": 1742026186852
+            },
+            "isSupplementary": false,
+            "addedAt": 1742052567562,
+            "updatedAt": 1742052567562,
+            "fileType": "ebook"
+          }
+        ],
+        "size": 1039595
+      }
+    },
+    {
+      "libraryItem": {
+        "id": "item_search_authors_2",
+        "ino": "3000003",
+        "oldLibraryItemId": null,
+        "libraryId": "library_search_authors",
+        "folderId": "folder_search_authors",
+        "path": "/books/M L Placeholder/The Space Between Fixtures_ The heartbreaking book-club favourite (102)",
+        "relPath": "M L Placeholder/The Space Between Fixtures_ The heartbreaking book-club favourite (102)",
+        "isFile": false,
+        "mtimeMs": 1742028511656,
+        "ctimeMs": 1742028511656,
+        "birthtimeMs": 1742028511656,
+        "addedAt": 1742053342023,
+        "updatedAt": 1742053342023,
+        "lastScan": 1742053342022,
+        "scanVersion": "2.19.5",
+        "isMissing": false,
+        "isInvalid": false,
+        "mediaType": "book",
+        "media": {
+          "id": "media_search_authors_2",
+          "libraryItemId": "item_search_authors_2",
+          "metadata": {
+            "title": "The Space Between Fixtures: The heartbreaking book-club favourite",
+            "subtitle": null,
+            "authors": [
+              {
+                "id": "author_search_authors_2",
+                "name": "M L Placeholder"
+              }
+            ],
+            "narrators": [],
+            "series": [],
+            "genres": [],
+            "publishedYear": "2012",
+            "publishedDate": null,
+            "publisher": "Placeholder Books",
+            "description": null,
+            "isbn": null,
+            "asin": null,
+            "language": "eng",
+            "explicit": false,
+            "abridged": false,
+            "titleIgnorePrefix": "Space Between Fixtures: The heartbreaking book-club favourite, The",
+            "authorName": "M L Placeholder",
+            "authorNameLF": "Placeholder, M L",
+            "narratorName": "",
+            "seriesName": "",
+            "descriptionPlain": null
+          },
+          "coverPath": "/books/M L Placeholder/The Space Between Fixtures_ The heartbreaking book-club favourite (102)/cover.jpg",
+          "tags": [],
+          "audioFiles": [],
+          "chapters": [],
+          "ebookFile": {
+            "ino": "3000004",
+            "metadata": {
+              "filename": "The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "ext": ".epub",
+              "path": "/books/M L Placeholder/The Space Between Fixtures_ The heartbreaking book-club favourite (102)/The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "relPath": "The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "size": 115838,
+              "mtimeMs": 1742028323000,
+              "ctimeMs": 1742028511656,
+              "birthtimeMs": 1742028511656
+            },
+            "isSupplementary": null,
+            "addedAt": 1742052567579,
+            "updatedAt": 1742052567579,
+            "fileType": "ebook",
+            "ebookFormat": "epub"
+          },
+          "duration": 0,
+          "size": 115838,
+          "tracks": []
+        },
+        "libraryFiles": [
+          {
+            "ino": "3000004",
+            "metadata": {
+              "filename": "The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "ext": ".epub",
+              "path": "/books/M L Placeholder/The Space Between Fixtures_ The heartbreaking book-club favourite (102)/The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "relPath": "The Space Between Fixtures_ The heartbreakin - M L Placeholder.epub",
+              "size": 115838,
+              "mtimeMs": 1742028323000,
+              "ctimeMs": 1742028511656,
+              "birthtimeMs": 1742028511656
+            },
+            "isSupplementary": false,
+            "addedAt": 1742052567579,
+            "updatedAt": 1742052567579,
+            "fileType": "ebook"
+          }
+        ],
+        "size": 123757
+      }
+    },
+    {
+      "libraryItem": {
+        "id": "item_search_authors_3",
+        "ino": "3000005",
+        "oldLibraryItemId": null,
+        "libraryId": "library_search_authors",
+        "folderId": "folder_search_authors",
+        "path": "/books/M L Placeholder/The Space Between Fixtures (103)",
+        "relPath": "M L Placeholder/The Space Between Fixtures (103)",
+        "isFile": false,
+        "mtimeMs": 1742026178689,
+        "ctimeMs": 1742026178689,
+        "birthtimeMs": 1742026178689,
+        "addedAt": 1742053344720,
+        "updatedAt": 1742053344720,
+        "lastScan": 1742053344719,
+        "scanVersion": "2.19.5",
+        "isMissing": false,
+        "isInvalid": false,
+        "mediaType": "book",
+        "media": {
+          "id": "media_search_authors_3",
+          "libraryItemId": "item_search_authors_3",
+          "metadata": {
+            "title": "The Space Between Fixtures",
+            "subtitle": null,
+            "authors": [
+              {
+                "id": "author_search_authors_2",
+                "name": "M L Placeholder"
+              }
+            ],
+            "narrators": [],
+            "series": [],
+            "genres": [],
+            "publishedYear": "2012",
+            "publishedDate": null,
+            "publisher": "Placeholder Books",
+            "description": null,
+            "isbn": null,
+            "asin": null,
+            "language": "eng",
+            "explicit": false,
+            "abridged": false,
+            "titleIgnorePrefix": "Space Between Fixtures, The",
+            "authorName": "M L Placeholder",
+            "authorNameLF": "Placeholder, M L",
+            "narratorName": "",
+            "seriesName": "",
+            "descriptionPlain": null
+          },
+          "coverPath": "/books/M L Placeholder/The Space Between Fixtures (103)/cover.jpg",
+          "tags": [],
+          "audioFiles": [],
+          "chapters": [],
+          "ebookFile": {
+            "ino": "3000006",
+            "metadata": {
+              "filename": "The Space Between Fixtures - M L Placeholder.epub",
+              "ext": ".epub",
+              "path": "/books/M L Placeholder/The Space Between Fixtures (103)/The Space Between Fixtures - M L Placeholder.epub",
+              "relPath": "The Space Between Fixtures - M L Placeholder.epub",
+              "size": 100000,
+              "mtimeMs": 1742020589000,
+              "ctimeMs": 1742026178555,
+              "birthtimeMs": 1742026178555
+            },
+            "isSupplementary": null,
+            "addedAt": 1742052567579,
+            "updatedAt": 1742052567579,
+            "fileType": "ebook",
+            "ebookFormat": "epub"
+          },
+          "duration": 0,
+          "size": 100000,
+          "tracks": []
+        },
+        "libraryFiles": [
+          {
+            "ino": "3000006",
+            "metadata": {
+              "filename": "The Space Between Fixtures - M L Placeholder.epub",
+              "ext": ".epub",
+              "path": "/books/M L Placeholder/The Space Between Fixtures (103)/The Space Between Fixtures - M L Placeholder.epub",
+              "relPath": "The Space Between Fixtures - M L Placeholder.epub",
+              "size": 100000,
+              "mtimeMs": 1742020589000,
+              "ctimeMs": 1742026178555,
+              "birthtimeMs": 1742026178555
+            },
+            "isSupplementary": false,
+            "addedAt": 1742052567579,
+            "updatedAt": 1742052567579,
+            "fileType": "ebook"
+          }
+        ],
+        "size": 107919
+      }
+    }
+  ],
+  "narrators": [],
+  "tags": [],
+  "genres": [],
+  "series": [],
+  "authors": [
+    {
+      "id": "author_search_authors_3",
+      "asin": null,
+      "name": "Ola Fixture",
+      "description": null,
+      "imagePath": null,
+      "libraryId": "library_search_authors",
+      "addedAt": 1742053112509,
+      "updatedAt": 1742053112509,
+      "numBooks": 1
+    }
+  ]
+}

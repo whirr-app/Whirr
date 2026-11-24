@@ -1,0 +1,22 @@
+# The Up Next (listening queue) sheet.
+
+[[rule]]
+id = "up-next-sheet-edits-by-row-id"
+why = """\
+A book may be queued as several chapter rows, so a title no longer names one row. Every edit and \
+the start name the row (`remove(rowID:)`, `move(rowID:`); an identity-keyed edit would move or \
+delete all of a book's chapters at once."""
+files = ["App/Whirr/**/ListeningQueueSheet.swift"]
+forbid = 'remove\(identity:|move\(identity:'
+example = 'model.remove(identity: row.identity)'
+ok = ['model.remove(rowID: row.id)']
+
+[[rule]]
+id = "up-next-sheet-no-notification-haptic"
+why = """\
+Adding to, removing from or reordering Up Next is routine, so a successful edit taps an impact. \
+`.success` is the notification pattern iOS reserves for something the listener must notice, and \
+only the failure alert escalates."""
+files = ["App/Whirr/**/ListeningQueueSheet.swift"]
+forbid = '\.success'
+example = '.sensoryFeedback(.success, trigger: editTick)'

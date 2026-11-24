@@ -1,0 +1,18 @@
+# Source facts behind the first-party privacy manifest.
+
+[[rule]]
+id = "no-undeclared-required-reason-api"
+why = """\
+The privacy manifest does not declare `NSPrivacyAccessedAPICategoryActiveKeyboards`, because \
+first-party code never enumerates keyboards. A required-reason API used without a matching \
+declaration is an upload rejection (ITMS-91053). The first line of code that calls \
+`activeInputModes` fails here rather than in an Apple rejection weeks later. Either drop the call \
+or add the category and its reason to the manifest and to the approved set in \
+`PrivacyManifestContractTests`."""
+files = [
+  "App/Whirr/**/*.swift",
+  "App/WhirrWatch Watch App/**/*.swift",
+  "Packages/Core/Sources/**/*.swift",
+]
+forbid = 'activeInputModes'
+example = 'let modes = UITextInputMode.activeInputModes'

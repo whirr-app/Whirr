@@ -1,0 +1,185 @@
+{
+  "include": "",
+  "limit": 1,
+  "minified": false,
+  "page": 1,
+  "results": [
+    {
+      "books": [
+        {
+          "addedAt": 1794061812557,
+          "birthtimeMs": 1794061809839,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_hidden_book",
+          "ino": "4743483",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812554,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812341,
+              "fileType": "audio",
+              "ino": "4743484",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809839,
+                "ctimeMs": 1794061809840,
+                "ext": ".mp3",
+                "filename": "Hidden Book.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                "relPath": "Hidden Book.mp3",
+                "size": 20247
+              },
+              "updatedAt": 1794061812341
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812550,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743484",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Restricted Author",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Hidden Book"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809840,
+                  "ext": ".mp3",
+                  "filename": "Hidden Book.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                  "relPath": "Hidden Book.mp3",
+                  "size": 20247
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812550
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_6",
+            "libraryItemId": "li_hidden_book",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Restricted Author",
+              "authorNameLF": "Author, Restricted",
+              "authors": [
+                {
+                  "id": "id_7",
+                  "name": "Restricted Author"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "Hidden Book",
+              "titleIgnorePrefix": "Hidden Book"
+            },
+            "size": 20247,
+            "tags": [
+              "restricted"
+            ],
+            "tracks": [
+              {
+                "addedAt": 1794061812550,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_hidden_book/file/4743484",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743484",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Restricted Author",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Hidden Book"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809840,
+                  "ext": ".mp3",
+                  "filename": "Hidden Book.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                  "relPath": "Hidden Book.mp3",
+                  "size": 20247
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "Hidden Book.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812550
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Restricted Author/Hidden Book",
+          "relPath": "Restricted Author/Hidden Book",
+          "scanVersion": "2.35.1",
+          "size": 20247,
+          "updatedAt": 1794061813416
+        }
+      ],
+      "createdAt": 1794061813484,
+      "description": null,
+      "id": "id_10",
+      "lastUpdate": 1794061813484,
+      "libraryId": "library_books",
+      "name": "Only Hidden"
+    }
+  ],
+  "sortDesc": false,
+  "total": 3
+}

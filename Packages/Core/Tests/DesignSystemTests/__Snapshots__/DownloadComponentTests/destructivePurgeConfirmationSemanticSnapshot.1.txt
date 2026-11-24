@@ -1,0 +1,8 @@
+▿ DestructivePurgeConfirmationView
+  - cancelLabel: "Cancel"
+  - confirmAccessibilityHint: "Deletes the downloaded file"
+  - confirmLabel: "Delete"
+  - message: "This deletes the downloaded file for \"Project Hail Mary\" from this device."
+  - onCancel: (Function)
+  - onConfirm: (Function)
+  - title: "Delete download?"

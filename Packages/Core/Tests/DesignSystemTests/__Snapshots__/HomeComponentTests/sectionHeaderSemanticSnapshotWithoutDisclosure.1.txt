@@ -1,0 +1,4 @@
+▿ BrowseSectionHeaderView
+  - accessibilityHint: Optional<String>.none
+  - onSelect: Optional<() -> ()>.none
+  - title: "Downloads"

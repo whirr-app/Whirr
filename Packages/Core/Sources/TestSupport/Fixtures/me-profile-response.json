@@ -1,0 +1,11 @@
+{
+  "id": "user_fixture",
+  "username": "fixture-user",
+  "type": "user",
+  "isActive": true,
+  "isLocked": false,
+  "librariesAccessible": ["library_book_fixture", "library_podcast_fixture"],
+  "permissions": {},
+  "mediaProgress": [],
+  "bookmarks": []
+}

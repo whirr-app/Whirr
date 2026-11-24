@@ -1,0 +1,1010 @@
+{
+  "include": "",
+  "limit": 0,
+  "minified": false,
+  "page": 0,
+  "results": [
+    {
+      "books": [
+        {
+          "addedAt": 1794061812818,
+          "birthtimeMs": 1794061809836,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_ancillary_sword",
+          "ino": "4743475",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812816,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812343,
+              "fileType": "audio",
+              "ino": "4743476",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809836,
+                "ctimeMs": 1794061809836,
+                "ext": ".mp3",
+                "filename": "Ancillary Sword.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Ann Leckie/Ancillary Sword/Ancillary Sword.mp3",
+                "relPath": "Ancillary Sword.mp3",
+                "size": 20244
+              },
+              "updatedAt": 1794061812343
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812816,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743476",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Ann Leckie",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Ancillary Sword"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809836,
+                  "ctimeMs": 1794061809836,
+                  "ext": ".mp3",
+                  "filename": "Ancillary Sword.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Ann Leckie/Ancillary Sword/Ancillary Sword.mp3",
+                  "relPath": "Ancillary Sword.mp3",
+                  "size": 20244
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812816
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_3",
+            "libraryItemId": "li_ancillary_sword",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Ann Leckie",
+              "authorNameLF": "Leckie, Ann",
+              "authors": [
+                {
+                  "id": "id_4",
+                  "name": "Ann Leckie"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "Ancillary Sword",
+              "titleIgnorePrefix": "Ancillary Sword"
+            },
+            "size": 20244,
+            "tags": [],
+            "tracks": [
+              {
+                "addedAt": 1794061812816,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_ancillary_sword/file/4743476",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743476",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Ann Leckie",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Ancillary Sword"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809836,
+                  "ctimeMs": 1794061809836,
+                  "ext": ".mp3",
+                  "filename": "Ancillary Sword.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Ann Leckie/Ancillary Sword/Ancillary Sword.mp3",
+                  "relPath": "Ancillary Sword.mp3",
+                  "size": 20244
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "Ancillary Sword.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812816
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Ann Leckie/Ancillary Sword",
+          "relPath": "Ann Leckie/Ancillary Sword",
+          "scanVersion": "2.35.1",
+          "size": 20244,
+          "updatedAt": 1794061812818
+        },
+        {
+          "addedAt": 1794061812894,
+          "birthtimeMs": 1794061809835,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_ancillary_justice",
+          "ino": "4743473",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812893,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812343,
+              "fileType": "audio",
+              "ino": "4743474",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809836,
+                "ctimeMs": 1794061809836,
+                "ext": ".mp3",
+                "filename": "Ancillary Justice.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Ann Leckie/Ancillary Justice/Ancillary Justice.mp3",
+                "relPath": "Ancillary Justice.mp3",
+                "size": 20246
+              },
+              "updatedAt": 1794061812343
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812891,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743474",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Ann Leckie",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Ancillary Justice"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809836,
+                  "ctimeMs": 1794061809836,
+                  "ext": ".mp3",
+                  "filename": "Ancillary Justice.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Ann Leckie/Ancillary Justice/Ancillary Justice.mp3",
+                  "relPath": "Ancillary Justice.mp3",
+                  "size": 20246
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812891
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_5",
+            "libraryItemId": "li_ancillary_justice",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Ann Leckie",
+              "authorNameLF": "Leckie, Ann",
+              "authors": [
+                {
+                  "id": "id_4",
+                  "name": "Ann Leckie"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "Ancillary Justice",
+              "titleIgnorePrefix": "Ancillary Justice"
+            },
+            "size": 20246,
+            "tags": [],
+            "tracks": [
+              {
+                "addedAt": 1794061812891,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_ancillary_justice/file/4743474",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743474",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Ann Leckie",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Ancillary Justice"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809836,
+                  "ctimeMs": 1794061809836,
+                  "ext": ".mp3",
+                  "filename": "Ancillary Justice.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Ann Leckie/Ancillary Justice/Ancillary Justice.mp3",
+                  "relPath": "Ancillary Justice.mp3",
+                  "size": 20246
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "Ancillary Justice.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812891
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Ann Leckie/Ancillary Justice",
+          "relPath": "Ann Leckie/Ancillary Justice",
+          "scanVersion": "2.35.1",
+          "size": 20246,
+          "updatedAt": 1794061812894
+        },
+        {
+          "addedAt": 1794061812557,
+          "birthtimeMs": 1794061809839,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_hidden_book",
+          "ino": "4743483",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812554,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812341,
+              "fileType": "audio",
+              "ino": "4743484",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809839,
+                "ctimeMs": 1794061809840,
+                "ext": ".mp3",
+                "filename": "Hidden Book.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                "relPath": "Hidden Book.mp3",
+                "size": 20247
+              },
+              "updatedAt": 1794061812341
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812550,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743484",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Restricted Author",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Hidden Book"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809840,
+                  "ext": ".mp3",
+                  "filename": "Hidden Book.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                  "relPath": "Hidden Book.mp3",
+                  "size": 20247
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812550
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_6",
+            "libraryItemId": "li_hidden_book",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Restricted Author",
+              "authorNameLF": "Author, Restricted",
+              "authors": [
+                {
+                  "id": "id_7",
+                  "name": "Restricted Author"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "Hidden Book",
+              "titleIgnorePrefix": "Hidden Book"
+            },
+            "size": 20247,
+            "tags": [
+              "restricted"
+            ],
+            "tracks": [
+              {
+                "addedAt": 1794061812550,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_hidden_book/file/4743484",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743484",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Restricted Author",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Hidden Book"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809840,
+                  "ext": ".mp3",
+                  "filename": "Hidden Book.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Restricted Author/Hidden Book/Hidden Book.mp3",
+                  "relPath": "Hidden Book.mp3",
+                  "size": 20247
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "Hidden Book.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812550
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Restricted Author/Hidden Book",
+          "relPath": "Restricted Author/Hidden Book",
+          "scanVersion": "2.35.1",
+          "size": 20247,
+          "updatedAt": 1794061813416
+        },
+        {
+          "addedAt": 1794061812683,
+          "birthtimeMs": 1794061809839,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_the_long_way",
+          "ino": "4743480",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812681,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812342,
+              "fileType": "audio",
+              "ino": "4743481",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809839,
+                "ctimeMs": 1794061809839,
+                "ext": ".mp3",
+                "filename": "The Long Way.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                "relPath": "The Long Way.mp3",
+                "size": 20245
+              },
+              "updatedAt": 1794061812342
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812680,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743481",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "The Long Way"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "The Long Way.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                  "relPath": "The Long Way.mp3",
+                  "size": 20245
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812680
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_8",
+            "libraryItemId": "li_the_long_way",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Becky Chambers",
+              "authorNameLF": "Chambers, Becky",
+              "authors": [
+                {
+                  "id": "id_9",
+                  "name": "Becky Chambers"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "The Long Way",
+              "titleIgnorePrefix": "Long Way, The"
+            },
+            "size": 20245,
+            "tags": [],
+            "tracks": [
+              {
+                "addedAt": 1794061812680,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_the_long_way/file/4743481",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743481",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "The Long Way"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "The Long Way.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                  "relPath": "The Long Way.mp3",
+                  "size": 20245
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "The Long Way.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812680
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Becky Chambers/The Long Way",
+          "relPath": "Becky Chambers/The Long Way",
+          "scanVersion": "2.35.1",
+          "size": 20245,
+          "updatedAt": 1794061812683
+        }
+      ],
+      "createdAt": 1794061813455,
+      "description": "Leckie, then Chambers",
+      "id": "id_1",
+      "lastUpdate": 1794061813455,
+      "libraryId": "library_books",
+      "name": "Space Opera"
+    },
+    {
+      "books": [
+        {
+          "addedAt": 1794061812752,
+          "birthtimeMs": 1794061809838,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_record_of_a_spaceborn_few",
+          "ino": "4743478",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812751,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812342,
+              "fileType": "audio",
+              "ino": "4743479",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809838,
+                "ctimeMs": 1794061809839,
+                "ext": ".mp3",
+                "filename": "Record of a Spaceborn Few.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Becky Chambers/Record of a Spaceborn Few/Record of a Spaceborn Few.mp3",
+                "relPath": "Record of a Spaceborn Few.mp3",
+                "size": 20258
+              },
+              "updatedAt": 1794061812342
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812751,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743479",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Record of a Spaceborn Few"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809838,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "Record of a Spaceborn Few.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/Record of a Spaceborn Few/Record of a Spaceborn Few.mp3",
+                  "relPath": "Record of a Spaceborn Few.mp3",
+                  "size": 20258
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812751
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_12",
+            "libraryItemId": "li_record_of_a_spaceborn_few",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Becky Chambers",
+              "authorNameLF": "Chambers, Becky",
+              "authors": [
+                {
+                  "id": "id_9",
+                  "name": "Becky Chambers"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "Record of a Spaceborn Few",
+              "titleIgnorePrefix": "Record of a Spaceborn Few"
+            },
+            "size": 20258,
+            "tags": [],
+            "tracks": [
+              {
+                "addedAt": 1794061812751,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_record_of_a_spaceborn_few/file/4743479",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743479",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "Record of a Spaceborn Few"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809838,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "Record of a Spaceborn Few.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/Record of a Spaceborn Few/Record of a Spaceborn Few.mp3",
+                  "relPath": "Record of a Spaceborn Few.mp3",
+                  "size": 20258
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "Record of a Spaceborn Few.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812751
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Becky Chambers/Record of a Spaceborn Few",
+          "relPath": "Becky Chambers/Record of a Spaceborn Few",
+          "scanVersion": "2.35.1",
+          "size": 20258,
+          "updatedAt": 1794061812752
+        },
+        {
+          "addedAt": 1794061812683,
+          "birthtimeMs": 1794061809839,
+          "ctimeMs": 1794061809840,
+          "folderId": "id_2",
+          "id": "li_the_long_way",
+          "ino": "4743480",
+          "isFile": false,
+          "isInvalid": false,
+          "isMissing": false,
+          "lastScan": 1794061812681,
+          "libraryFiles": [
+            {
+              "addedAt": 1794061812342,
+              "fileType": "audio",
+              "ino": "4743481",
+              "isSupplementary": null,
+              "metadata": {
+                "birthtimeMs": 1794061809839,
+                "ctimeMs": 1794061809839,
+                "ext": ".mp3",
+                "filename": "The Long Way.mp3",
+                "mtimeMs": 1794061774000,
+                "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                "relPath": "The Long Way.mp3",
+                "size": 20245
+              },
+              "updatedAt": 1794061812342
+            }
+          ],
+          "libraryId": "library_books",
+          "media": {
+            "audioFiles": [
+              {
+                "addedAt": 1794061812680,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743481",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "The Long Way"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "The Long Way.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                  "relPath": "The Long Way.mp3",
+                  "size": 20245
+                },
+                "mimeType": "audio/mpeg",
+                "timeBase": "1/14112000",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812680
+              }
+            ],
+            "chapters": [],
+            "coverPath": null,
+            "duration": 20,
+            "ebookFile": null,
+            "id": "id_8",
+            "libraryItemId": "li_the_long_way",
+            "metadata": {
+              "abridged": false,
+              "asin": null,
+              "authorName": "Becky Chambers",
+              "authorNameLF": "Chambers, Becky",
+              "authors": [
+                {
+                  "id": "id_9",
+                  "name": "Becky Chambers"
+                }
+              ],
+              "description": null,
+              "descriptionPlain": null,
+              "explicit": false,
+              "genres": [],
+              "isbn": null,
+              "language": null,
+              "narratorName": "",
+              "narrators": [],
+              "publishedDate": null,
+              "publishedYear": null,
+              "publisher": null,
+              "series": [],
+              "seriesName": "",
+              "subtitle": null,
+              "title": "The Long Way",
+              "titleIgnorePrefix": "Long Way, The"
+            },
+            "size": 20245,
+            "tags": [],
+            "tracks": [
+              {
+                "addedAt": 1794061812680,
+                "bitRate": 8000,
+                "channelLayout": "mono",
+                "channels": 1,
+                "chapters": [],
+                "codec": "mp3",
+                "contentUrl": "/api/items/li_the_long_way/file/4743481",
+                "discNumFromFilename": null,
+                "discNumFromMeta": null,
+                "duration": 20,
+                "embeddedCoverArt": null,
+                "error": null,
+                "exclude": false,
+                "format": "MP2/3 (MPEG audio layer 2/3)",
+                "index": 1,
+                "ino": "4743481",
+                "language": null,
+                "manuallyVerified": false,
+                "metaTags": {
+                  "tagArtist": "Becky Chambers",
+                  "tagEncoder": "Lavf62.12.101",
+                  "tagTitle": "The Long Way"
+                },
+                "metadata": {
+                  "birthtimeMs": 1794061809839,
+                  "ctimeMs": 1794061809839,
+                  "ext": ".mp3",
+                  "filename": "The Long Way.mp3",
+                  "mtimeMs": 1794061774000,
+                  "path": "/books/Becky Chambers/The Long Way/The Long Way.mp3",
+                  "relPath": "The Long Way.mp3",
+                  "size": 20245
+                },
+                "mimeType": "audio/mpeg",
+                "startOffset": 0,
+                "timeBase": "1/14112000",
+                "title": "The Long Way.mp3",
+                "trackNumFromFilename": null,
+                "trackNumFromMeta": null,
+                "updatedAt": 1794061812680
+              }
+            ]
+          },
+          "mediaType": "book",
+          "mtimeMs": 1794061774000,
+          "oldLibraryItemId": null,
+          "path": "/books/Becky Chambers/The Long Way",
+          "relPath": "Becky Chambers/The Long Way",
+          "scanVersion": "2.35.1",
+          "size": 20245,
+          "updatedAt": 1794061812683
+        }
+      ],
+      "createdAt": 1794061813504,
+      "description": null,
+      "id": "id_11",
+      "lastUpdate": 1794061813504,
+      "libraryId": "library_books",
+      "name": "Chambers"
+    }
+  ],
+  "sortDesc": false,
+  "total": 2
+}

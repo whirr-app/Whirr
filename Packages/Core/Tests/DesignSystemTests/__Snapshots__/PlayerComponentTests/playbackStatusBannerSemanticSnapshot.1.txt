@@ -1,0 +1,7 @@
+▿ PlaybackStatusBanner
+  - kind: PlaybackStatusKind.buffering
+  - message: "Catching up on your connection."
+  - retryAction: Optional<() -> ()>.none
+  - retryTitle: Optional<String>.none
+  - systemImage: "arrow.triangle.2.circlepath"
+  - title: "Buffering"

@@ -1,0 +1,23 @@
+Whirr
+Copyright (C) 2026 Rhys Thomas
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation, version 3 of the License
+only (SPDX: GPL-3.0-only).
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+General Public License, in the LICENSE file, for more details.
+
+Name and icon
+
+The licence covers the source code only. It grants no right to the name "Whirr", the Whirr app
+icon, or other Whirr branding. A modified or redistributed build must use a different name and
+icon, and must not suggest that it is the official app or endorsed by its author.
+
+Third-party software
+
+Whirr includes third-party packages under their own licences (MIT, BSD-3-Clause, Apache-2.0, and
+the CryptoSwift licence) and a font under the SIL Open Font License 1.1. Their texts ship in the
+app, on the Acknowledgements screen in Settings, and in
+Packages/Core/Sources/AppModel/Resources/Licenses/ and App/Whirr/Resources/Fonts/OFL.txt.

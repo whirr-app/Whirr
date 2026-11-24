@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Whirr - an iPhone app for Audiobookshelf</title>
+<meta name="description" content="Whirr is an iPhone and iPad app for Audiobookshelf. Audiobooks, podcasts and ebooks from a server you run yourself.">
+<meta name="color-scheme" content="light dark">
+<style>
+:root{--bg:#fdfdfc;--fg:#1a1a19;--muted:#5f5f5b;--rule:#e3e3df;--accent:#3a6b5f;--panel:#f3f2ee;--on-accent:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#16181a;--fg:#e8e8e4;--muted:#a0a099;--rule:#2c2f32;--accent:#7fbfae;--panel:#1f2224;--on-accent:#10201b}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+h1{font-size:clamp(2.4rem,6vw,3.4rem);line-height:1.1;margin:0 0 .8rem;letter-spacing:-.02em}
+h2{font-size:1.6rem;line-height:1.25;margin:0 0 .7rem;letter-spacing:-.01em}
+p{margin:0 0 1rem}
+.lede{font-size:1.2rem}
+.muted{color:var(--muted);font-size:.95rem}
+.hero{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;padding:4rem 0 3rem}
+.beta{display:inline-block;margin:.6rem 0 1rem;padding:.7rem 1.2rem;border-radius:999px;
+background:var(--accent);color:var(--on-accent);font-weight:600;text-decoration:none}
+.feature{display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;
+padding:3rem 0;border-top:1px solid var(--rule)}
+.feature.flip{grid-template-columns:1fr auto}
+.feature.flip .shot{order:2}
+.shot img{display:block;width:240px;height:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.14))}
+.hero .shot img{width:280px}
+.watch{display:flex;gap:1.25rem;align-items:center;margin-top:1.5rem}
+.watch img{width:150px;height:auto;border-radius:34px;flex:none}
+.watch p{margin:0}
+.panel{background:var(--panel);border-radius:18px;padding:2rem;margin:1rem 0 3rem}
+.panel p:last-child{margin-bottom:0}
+.extras{padding:3rem 0;border-top:1px solid var(--rule)}
+.extras .lead{max-width:40rem}
+.extras .intro{display:grid;grid-template-columns:1fr auto;gap:3.5rem;align-items:center}
+.pair{display:flex;gap:1.25rem}
+.pair img{display:block;width:200px;height:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.14))}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+.card{background:var(--panel);border-radius:18px;padding:1.5rem}
+.card h3{font-size:1.15rem;margin:0 0 .5rem}
+.card p{margin:0}
+footer{border-top:1px solid var(--rule);padding:1.5rem 0 3rem}
+footer nav a{margin-right:1.5rem}
+footer p{margin-top:1rem}
+@media (max-width:720px){
+.hero,.feature,.feature.flip{grid-template-columns:1fr;gap:2rem}
+.hero{padding-top:2.5rem}
+.feature.flip .shot{order:0}
+.shot{justify-self:center}
+.shot img,.hero .shot img{width:220px}
+.watch{flex-direction:column;align-items:flex-start}
+.cards{grid-template-columns:1fr}
+.extras .intro{grid-template-columns:1fr;gap:2rem}
+.pair{justify-content:center}
+.pair img{width:150px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+<div>
+<h1>Whirr</h1>
+<p class="lede">A proper iPhone and iPad app for <a href="https://www.audiobookshelf.org">Audiobookshelf</a>.
+Your audiobooks, podcasts and ebooks, from a server you run yourself.</p>
+<a class="beta" href="https://testflight.apple.com/join/912PrsFr">Join the free beta on TestFlight</a>
+<p class="muted">Needs iOS 26 or later.</p>
+</div>
+<picture class="shot">
+<source srcset="img/home-dark.webp" media="(prefers-color-scheme: dark)">
+<img src="img/home-light.webp" width="560" height="1160" alt="Whirr's home screen, with audiobooks to carry on listening to and ebooks to carry on reading">
+</picture>
+</header>
+
+<section class="feature">
+<picture class="shot">
+<source srcset="img/search-dark.webp" media="(prefers-color-scheme: dark)">
+<img src="img/search-light.webp" width="560" height="1160" loading="lazy" alt="Searching for a podcast to follow">
+</picture>
+<div>
+<h2>Follow any podcast</h2>
+<p>Search for a show or paste its RSS feed link and Whirr will follow it on your phone. No need to
+add it to your server first, and new episodes turn up in the background.</p>
+<p>If you're an admin on your server you can save an episode to Audiobookshelf, or move the whole
+show across once you know it's a keeper.</p>
+</div>
+</section>
+
+<section class="extras">
+<div class="intro">
+<div class="lead">
+<h2>Skips the ads</h2>
+<p>Whirr can skip the adverts in podcasts you've downloaded. It works through each episode on your
+phone, learns the ads that keep coming round, and jumps over them as you listen. If it gets one
+wrong, one tap puts it back. If it misses one, mark it in the transcript and it'll learn it.</p>
+<p class="muted">Turn it on in Settings.</p>
+</div>
+<div class="pair">
+<img src="img/transcript.webp" width="560" height="1160" loading="lazy" alt="An episode transcript with the sponsor read marked as an ad and skipped">
+<img src="img/adskip.webp" width="560" height="1160" loading="lazy" alt="The player after jumping over an ad, with an Undo button">
+</div>
+</div>
+<div class="cards">
+<div class="card">
+<h3>Transcripts</h3>
+<p>Open a transcript of any downloaded episode. It follows along as you listen, you can search it,
+and tapping a sentence takes you straight there (English only for now).</p>
+</div>
+<div class="card">
+<h3>Look Back</h3>
+<p>Dozed off mid-chapter? Look Back writes out the last few minutes of the book so you can find the
+bit you remember and carry on from there.</p>
+</div>
+</div>
+</section>
+
+<section class="feature flip">
+<picture class="shot">
+<source srcset="img/player-dark.webp" media="(prefers-color-scheme: dark)">
+<img src="img/player-light.webp" width="560" height="1160" loading="lazy" alt="The player, with chapter, sleep timer and speed controls">
+</picture>
+<div>
+<h2>Made for long listens</h2>
+<p>Chapters, a sleep timer, playback speed and AirPlay. Your place syncs back to Audiobookshelf, so
+you can pick up on another device where you left off.</p>
+</div>
+</section>
+
+<section class="feature">
+<picture class="shot">
+<source srcset="img/reader-dark.webp" media="(prefers-color-scheme: dark)">
+<img src="img/reader-light.webp" width="560" height="1160" loading="lazy" alt="Reading an EPUB in Whirr">
+</picture>
+<div>
+<h2>Ebooks too</h2>
+<p>Whirr reads the EPUBs in your library (DRM-free ones) and keeps your reading position on the
+server with everything else.</p>
+</div>
+</section>
+
+<section class="feature flip">
+<picture class="shot">
+<source srcset="img/podcasts-dark.webp" media="(prefers-color-scheme: dark)">
+<img src="img/podcasts-light.webp" width="560" height="1160" loading="lazy" alt="The podcasts tab, with the latest episodes from followed shows">
+</picture>
+<div>
+<h2>Offline, and on your wrist</h2>
+<p>Download anything before the flight or the Tube and it plays without a signal.</p>
+<div class="watch">
+<img src="img/watch.webp" width="300" height="365" loading="lazy" alt="Whirr playing an audiobook on Apple Watch">
+<p>The Apple Watch app plays downloaded audiobooks, and works as a remote for your phone.</p>
+</div>
+</div>
+</section>
+
+<section class="panel">
+<h2>No account, no tracking</h2>
+<p>Whirr has no account of its own and collects no data about you. No analytics and no ads. If you
+turn on iCloud sync, your podcast state goes to your own private iCloud database, which only you can
+read.</p>
+<p>It's open source under the GPL, so you can check all of that for yourself.</p>
+</section>
+
+<footer>
+<nav>
+<a href="support.html">Support</a>
+<a href="privacy.html">Privacy</a>
+<a href="https://github.com/whirr-app/Whirr">Source</a>
+</nav>
+<p class="muted">Whirr is an independent app and isn't affiliated with the Audiobookshelf project.</p>
+</footer>
+
+</div>
+</body>
+</html>

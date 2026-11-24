@@ -1,0 +1,20 @@
+▿ 6 key/value pairs
+  ▿ (2 elements)
+    - key: "actionAccessibilityHint"
+    ▿ value: Optional<String>
+      - some: "Opens the sign-in sheet to reconnect to the server"
+  ▿ (2 elements)
+    - key: "actionTitle"
+    - value: "Reconnect"
+  ▿ (2 elements)
+    - key: "message"
+    - value: "Existing downloads remain available. Reconnect to download or sync."
+  ▿ (2 elements)
+    - key: "onAction"
+    - value: (Function)
+  ▿ (2 elements)
+    - key: "systemImage"
+    - value: "person.crop.circle.badge.exclamationmark"
+  ▿ (2 elements)
+    - key: "title"
+    - value: "Reconnect to Audiobookshelf"

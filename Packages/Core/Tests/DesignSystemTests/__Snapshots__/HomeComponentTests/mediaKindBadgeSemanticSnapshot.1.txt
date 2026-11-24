@@ -1,0 +1,3 @@
+▿ MediaKindBadgeView
+  - kind: MediaKindBadge.ebook
+  - label: "eBook"

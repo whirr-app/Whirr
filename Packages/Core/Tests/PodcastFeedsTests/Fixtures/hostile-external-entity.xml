@@ -1,0 +1,2 @@
+<!DOCTYPE rss [<!ENTITY hosts SYSTEM "file:///etc/hosts">]>
+<rss><channel><title>&hosts;</title></channel></rss>

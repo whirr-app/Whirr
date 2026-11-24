@@ -1,0 +1,52 @@
+{
+  "id": "item_podcast_fixture",
+  "libraryId": "library_podcast_fixture",
+  "mediaType": "podcast",
+  "isFile": false,
+  "isInvalid": false,
+  "isMissing": false,
+  "path": "<redacted>",
+  "relPath": "<redacted>",
+  "libraryFiles": [],
+  "media": {
+    "id": "media_podcast_fixture",
+    "libraryItemId": "item_podcast_fixture",
+    "coverPath": "<redacted>",
+    "size": 0,
+    "tags": [],
+    "metadata": {
+      "title": "Fixture Podcast",
+      "author": "Fixture Publisher",
+      "description": null,
+      "feedUrl": "<redacted>",
+      "imageUrl": "<redacted>",
+      "genres": [],
+      "language": "en",
+      "type": "episodic"
+    },
+    "episodes": [
+      {
+        "id": "episode_fixture",
+        "title": "Fixture Episode",
+        "audioTrack": {
+          "contentUrl": "<redacted>",
+          "mimeType": "audio/mpeg"
+        },
+        "publishedAt": 0,
+        "duration": 0
+      }
+    ],
+    "autoDownloadEpisodes": false,
+    "autoDownloadSchedule": null,
+    "maxEpisodesToKeep": 0,
+    "maxNewEpisodesToDownload": 0
+  },
+  "userMediaProgress": null,
+  "episodeDownloadsQueued": [],
+  "addedAt": 0,
+  "birthtimeMs": 0,
+  "ctimeMs": 0,
+  "mtimeMs": 0,
+  "updatedAt": 0,
+  "size": 0
+}

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" >
+<channel>
+  <title>Fixture Community Radio</title>
+  <link>https://radio.example.org/about.html</link>
+  <description>A fixture podcast whose shows are produced by the community.</description>
+  <language>en-us</language>
+  <itunes:image href="http://radio.example.org/images/feed_itunes.png"/>
+  <itunes:author>Fixture Community Radio</itunes:author>
+  <image>
+    <url>https://radio.example.org/images/feed_small.png</url>
+    <title>Fixture Community Radio</title>
+    <link>https://radio.example.org/about.html</link>
+  </image>
+  <item>
+    <itunes:explicit>yes</itunes:explicit>
+    <googleplay:explicit>Yes</googleplay:explicit>
+    <title>FCR0002: A short episode </title>
+    <googleplay:image href="http://radio.example.org/images/feed_itunes.png"/>
+    <link>https://radio.example.org/eps/fcr0002/index.html</link>
+    <description><![CDATA[<p>A short episode.</p>]]>
+</description>
+    <itunes:summary><![CDATA[
+
+A short episode.
+
+]]>
+</itunes:summary>
+    <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://hub.radio.example.org/ccdn.php?filename=/eps/fcr0002/fcr0002.mp3" length="2962375" type="audio/mpeg"/>
+    <guid>https://hub.radio.example.org/ccdn.php?filename=/eps/fcr0002/fcr0002.mp3</guid>
+  </item>
+  <item>
+    <itunes:explicit>no</itunes:explicit>
+    <title>FCR0001: An episode with very long show notes</title>
+    <link>https://radio.example.org/eps/fcr0001/index.html</link>
+    <description><![CDATA[<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+<p>Fixture show notes paragraph with a <a href="https://example.org/notes">link</a> and some detail about the episode topic.</p>
+]]>
+</description>
+    <pubDate>Fri, 20 Nov 2026 00:00:00 +0000</pubDate>
+    <enclosure url="https://hub.radio.example.org/ccdn.php?filename=/eps/fcr0001/fcr0001.mp3" length="3109209" type="audio/mpeg"/>
+    <guid>https://hub.radio.example.org/ccdn.php?filename=/eps/fcr0001/fcr0001.mp3</guid>
+  </item>
+  </channel>
+</rss>

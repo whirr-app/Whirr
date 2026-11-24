@@ -1,0 +1,14 @@
+{
+  "app": "audiobookshelf",
+  "serverVersion": "2.37.2",
+  "isInit": true,
+  "language": "en-us",
+  "authMethods": [
+    "openid"
+  ],
+  "authFormData": {
+    "authLoginCustomMessage": "",
+    "authOpenIDButtonText": "Sign in with Fixture SSO",
+    "authOpenIDAutoLaunch": false
+  }
+}
